@@ -1,0 +1,33 @@
+name: "Nova issue"
+description: "Template para criação de uma nova issue"
+title: "[Inserir Conventional Commits names aqui] <inserir título aqui>"
+labels: []
+assignees: []
+
+body:
+  - type: input
+    id: titulo
+    attributes:
+      label: "Título da tarefa"
+      description: "Informe um título curto e objetivo"
+      placeholder: "Ex: Adicionar uma template para issues"
+    validations:
+      required: true
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: "Descrição"
+      description: "Explique o que precisa ser feito"
+      placeholder: "Em formato de lista Ex: -Afazer 1"
+    validations:
+      required: true
+
+  - type: textarea
+    id: comprovacao
+    attributes:
+      label: "Formas de comprovar a conclusão"
+      description: "Liste como será possível verificar que a tarefa foi concluída"
+      placeholder: "Ex: Prints de tela, testes passando, logs de execução, também formato de lista"
+    validations:
+      required: true
