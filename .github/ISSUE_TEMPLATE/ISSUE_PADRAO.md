@@ -1,4 +1,11 @@
-<!-- O título padrão é [conventional commit] titulo -->
+---
+name: "Nova issue"
+about: "Template para criação de uma nova issue"
+title: "[Conventional Commits] <inserir título aqui>"
+labels: []
+assignees: []
+---
+
 <!-- De uma breve explicação por extenso do que deve ser feito -->
 ## Descrição
 complete
