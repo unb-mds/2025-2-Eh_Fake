@@ -1,0 +1,116 @@
+Backlog do É Fake Release 1
+Mais importante: Sistema Básico de Verificação de Notícias
+
+**Feature 1: Classificação e Verificação de Notícias (MVP)**
+Descrição: Sistema básico para verificar e classificar notícias através de IA
+
+**User Stories:**
+**1: Como usuário, quero verificar uma notícia colocando uma notícia na barra de pesquisa, e mostrar as notícias mineradas dentro do banco de dados ou ver as notícias na página principal.**
+
+**Critérios de Aceitação:**
+
+-Campo de entrada na barra de pesquisa
+
+-Botão de submissão
+
+-Exibição do resultado da classificação (Verdade e É Fake)
+
+-Feedback visual durante o processamento
+
+-Prioridade: Alta
+
+
+**2: Como sistema, preciso integrar agente IA para classificação**
+
+**Critérios de Aceitação:**
+
+-Integração com API de IA
+
+-Processamento assíncrono
+
+-Tratamento de erros da API (usando guardrails e o Ragflow para evitar alucinações)
+
+-Prioridade: Alta
+
+**Feature 2: Busca e Navegação**
+Descrição: Funcionalidades de busca e exibição de notícias
+
+**User Stories:**
+**3: Como usuário, quero buscar notícias** 
+
+**Critérios de Aceitação:**
+
+-Barra de busca visível (SearchBar)
+
+-Busca em tempo real ou por submit
+
+-Exibição dos resultados em Grid (3x1)
+
+-Indicador de classificação nos resultados, com os motivos de cada notícia receber a classificação
+ 
+-Prioridade: Alta
+
+
+**Feature 3: Experiência do Usuário e Design**
+Descrição: Interface amigável e responsiva
+
+**User Stories:**
+**4: Como usuário, quero uma interface intuitiva e limpa e acessível** 
+
+**Critérios de Aceitação:**
+
+-Design responsivo
+
+-Navegação simples
+
+-Cores e indicadores visuais para cada classificação
+
+-Modo de acessibilidade ao site para facilitar o uso por pessoas com dificuldade de visão
+
+-Loading states adequados
+
+Exemplos: Protótipo mostrado na reunião de 19/09
+
+**Feature 4: Documentação e Não Funcionais**
+Descrição: Aspectos técnicos e documentação
+
+**User Stories:**
+**5: Como desenvolvedor, preciso de documentação clara (Readme)**
+
+**Critérios de Aceitação:**
+
+-README.md com instruções completas de setup
+
+-GitHub Pages com documentação do projeto
+
+-Guia de contribuição detalhado
+
+-Explicação da arquitetura e decisões técnicas
+
+-Figma atualizado com protótipos e designs
+
+**Prioridade: Média**
+
+
+6: **Como sistema, preciso ser performático e escalável**
+
+Critérios de Aceitação:
+
+Tempo de resposta < 10 segundos
+
+Monitoramento de performance
+
+Prioridade: Baixa
+
+**Decisões de Design Confirmadas:**
+-✅ Layout em sistema de cartões misto (baseado nos dois protótipos)
+
+-✅ Exibição de texto completo + motivos da classificação
+
+-✅ Foco em acessibilidade e clareza visual
+
+-✅ Categorias simplificadas: "Verdade" e "É Fake"
+
+-✅ Remoção da categoria "Não é bem assim"
+
+
