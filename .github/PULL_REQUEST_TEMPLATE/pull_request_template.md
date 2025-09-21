@@ -1,6 +1,6 @@
 # Pull Request
 
-Aviso: o envio de documentação não precisa passar por um pull request até o fim da matéria, caso o projeto continue as regras deverão ser repensadas. Caso perceba que o documento está desatualizado a alteração pode ser feita na hora por qualquer membro do projeto
+Aviso: o envio de documentação não precisa passar por um pull request até o fim da matéria, caso o projeto continue as regras deverão ser repensadas. Caso perceba que o documento está desatualizado a alteração pode ser feita na hora por qualquer membro do projeto.
 
 ## Descrição
 
