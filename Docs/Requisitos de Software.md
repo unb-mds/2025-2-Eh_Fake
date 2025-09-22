@@ -36,7 +36,7 @@ A Engenharia de Requisitos é a disciplina que estabelece as bases para o sucess
 
 ---
 
-## ** Visão Geral**
+## **Visão Geral**
 
 ### **Passo 1: Identificação de Stakeholders e Necessidades**
 1. Identifique os stakeholders de um sistema de e-commerce
