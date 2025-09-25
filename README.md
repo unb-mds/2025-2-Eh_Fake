@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Eh fake 
 
-## Getting Started
+Sejam bem vindos ao github do projeto **Eh fake**! Esse projeto visa ajudar as pessoas a identificarem a veracidade das notícias por meio de agentes de inteligência artificial que analisam os principais meios de transmissão de notícias. Além dessa análise, aplica-se uma lógica para filtrar aquilo que não parece verídico do que pode ser comprovado.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+<!-- Isso aqui é para ser como um sumário -->
+- Quer ver o nosso processo criativo e organizacional? [Acesse o nosso figma](https://www.figma.com/board/IEMLIEgwQhLgx0DYJ65hG0/Projeto_Eh_fake?node-id=0-1&t=MRTNctqCu7azt13s-1)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Quer ler a nossa documentação? [Acesse a nossa GitHub page] () **atualmente fora de operação!**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<!-- A partir daqui não tem erro, sempre que fizer uma coisa nova que for relevante para vir para o README é só colocar -->
+## Licença
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+O projeto Eh fake é desenvolvido sob licença do [MIT](https://github.com/unb-mds/2025-2-Eh_Fake/blob/main/LICENSE)
