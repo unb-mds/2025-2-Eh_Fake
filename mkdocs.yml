@@ -1,0 +1,20 @@
+site_name: Eh Fake
+theme:
+  name: material
+  language: pt
+
+nav:
+  - Início: index.md
+  - Sobre o Projeto: sobre.md
+  - Documentação:
+      - Backlog: Backlog.md
+      - Documentação Next.js: documentacao_nextjs.md
+      - Documentação React: documentacao_react.md
+      - Documentação Tailwind: documentacao_tailwind.md
+      - Normas de Envio: normas_de_envio.md
+      - Requisitos de Software: Requisitos de Software.md
+      - Relatórios:
+          - Relatório Sprint 00: relatorio_sprint_00.md
+          - Relatório Sprint 01: relatorio_sprint_01.md
+          - Relatório Sprint 02: relatorio_sprint_02.md
+          - Relatório Sprint 03: relatorio_sprint_03.md
