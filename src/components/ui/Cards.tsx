@@ -10,7 +10,7 @@ export interface NewsCardData {
 }
 
 export const NewsCard: React.FC<{ data: NewsCardData }> = ({ data }) => (
-  <article className="flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_8px_24px_rgba(0,0,0,0.18)]">
+  <article className="flex flex-col overflow-hidden rounded-2xl border border-black/10 bg-white shadow-[0_8px_24px_rgba(0,0,0,0.18)] h-[400px]">
     <div className="relative h-48 w-full">
       <Image
         src={data.imageSrc}
@@ -28,7 +28,9 @@ export const NewsCard: React.FC<{ data: NewsCardData }> = ({ data }) => (
           {data.subtitle}
         </h3>
       </div>
-      <p className="text-sm leading-relaxed text-gray-700">{data.description}</p>
+      <p className="text-sm leading-relaxed text-gray-700 line-clamp-3">
+        {data.description}
+      </p>
     </div>
   </article>
 );

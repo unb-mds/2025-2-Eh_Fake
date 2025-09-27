@@ -56,6 +56,42 @@ const news: NewsCardData[] = [
     imageSrc:
       "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=960&q=80",
   },
+  {
+    id: "7",
+    title: "Nova pesquisa revela impacto das fake news na saúde pública",
+    subtitle: "Saúde",
+    description:
+      "Estudo aponta que desinformação sobre vacinas contribuiu para aumento de doenças evitáveis. testetestetestetestetestetestetestetestetestetestetestetestetestetestetesteteste",
+    imageSrc:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=960&q=80",
+  },
+  {
+    id: "8",
+    title: "Empresas de tecnologia se unem contra fake news",
+    subtitle: "Tecnologia",
+    description:
+      "Gigantes da tecnologia anunciam parceria para desenvolver ferramentas de combate à desinformação.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=960&q=80",
+  },
+  {
+    id: "9",
+    title: "Campanha global incentiva checagem de fatos",
+    subtitle: "Internacional",
+    description:
+      "Organizações internacionais lançam campanha para conscientizar sobre os perigos das fake news.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=960&q=80",
+  },
+  {
+    id: "10",
+    title: "Estudo revela como fake news afetam eleições",
+    subtitle: "Política",
+    description:
+      "Pesquisadores analisam impacto da desinformação em processos eleitorais ao redor do mundo.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=960&q=80",
+  },
 ];
 
 export async function GET() {
