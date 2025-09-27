@@ -7,7 +7,7 @@ Sejam bem vindos ao github do projeto **Eh fake**! Esse projeto visa ajudar as p
 <!-- Isso aqui é para ser como um sumário -->
 - Quer ver o nosso processo criativo e organizacional? [Acesse o nosso figma](https://www.figma.com/board/IEMLIEgwQhLgx0DYJ65hG0/Projeto_Eh_fake?node-id=0-1&t=MRTNctqCu7azt13s-1)
 
-- Quer ler a nossa documentação? [Acesse a nossa GitHub page] (https://unb-mds.github.io/2025-2-Eh_Fake/)
+- Quer ler a nossa documentação? [Acesse a nossa GitHub page](https://unb-mds.github.io/2025-2-Eh_Fake/)
 
 ---
 
