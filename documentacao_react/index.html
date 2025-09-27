@@ -1,0 +1,1422 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../documentacao_nextjs/">
+      
+      
+        <link rel="next" href="../documentacao_tailwind/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Documentação React - Eh Fake</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#guia-resumido-de-react" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Eh Fake" class="md-header__button md-logo" aria-label="Eh Fake" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Eh Fake
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Documentação React
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Eh Fake" class="md-nav__button md-logo" aria-label="Eh Fake" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Eh Fake
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sobre o Projeto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documentação
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentação
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backlog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Backlog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao_nextjs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentação Next.js
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Documentação React
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentação React
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sumario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sumário
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-conceitos-fundamentais" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Conceitos fundamentais
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Conceitos fundamentais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 JSX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Componentes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Props
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Eventos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-renderizacao-condicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 Renderização condicional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-listas-e-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 Listas e keys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-hooks-essenciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Hooks essenciais
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Hooks essenciais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-usestate" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 useState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-useeffect" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 useEffect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-usecontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 useContext
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-useref" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 useRef
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-padroes-e-boas-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Padrões e boas práticas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Padrões e boas práticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-componentes-de-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Componentes de layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-lifting-state-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Lifting state up
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-custom-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Custom hooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-controlled-vs-uncontrolled-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Controlled vs Uncontrolled components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao_tailwind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentação Tailwind
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../normas_de_envio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Normas de Envio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requisitos%20de%20Software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Requisitos de Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Relatórios
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Relatórios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relatorio_sprint_00/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relatório Sprint 00
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relatorio_sprint_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relatório Sprint 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relatorio_sprint_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relatório Sprint 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relatorio_sprint_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relatório Sprint 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sumario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sumário
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-conceitos-fundamentais" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Conceitos fundamentais
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Conceitos fundamentais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-jsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 JSX
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Componentes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-props" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Props
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 State
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-eventos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 Eventos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-renderizacao-condicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 Renderização condicional
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-listas-e-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.7 Listas e keys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-hooks-essenciais" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Hooks essenciais
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Hooks essenciais">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-usestate" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 useState
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-useeffect" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 useEffect
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-usecontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 useContext
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-useref" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4 useRef
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-padroes-e-boas-praticas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Padrões e boas práticas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Padrões e boas práticas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-componentes-de-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Componentes de layout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-lifting-state-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Lifting state up
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-custom-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Custom hooks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-controlled-vs-uncontrolled-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Controlled vs Uncontrolled components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="guia-resumido-de-react">Guia resumido de React</h1>
+<p>Aviso: o guia foi produzido com base no protótipo do frontend do site, esse arquivo pode sofrer mudanças no futuro 
+Baseado na <a href="https://react.dev">documentação oficial do React</a> e com ajuda do GPT na escrita dos códigos, mas passaram pela revisão do Romm-0.</p>
+<hr />
+<h3 id="sumario">Sumário</h3>
+<ol>
+<li>
+<p><a href="#1-conceitos-fundamentais">Conceitos fundamentais</a>
+   1.1 <a href="#11-jsx">JSX</a>
+   1.2 <a href="#12-componentes">Componentes</a>
+   1.3 <a href="#13-props">Props</a>
+   1.4 <a href="#14-state">State</a>
+   1.5 <a href="#15-eventos">Eventos</a>
+   1.6 <a href="#16-renderização-condicional">Renderização condicional</a>
+   1.7 <a href="#17-listas-e-keys">Listas e keys</a></p>
+</li>
+<li>
+<p><a href="#2-hooks-essenciais">Hooks essenciais</a>
+   2.1 <a href="#21-usestate"><code>useState</code></a>
+   2.2 <a href="#22-useeffect"><code>useEffect</code></a>
+   2.3 <a href="#23-usecontext"><code>useContext</code></a>
+   2.4 <a href="#24-useref"><code>useRef</code></a></p>
+</li>
+<li>
+<p><a href="#3-padrões-e-boas-práticas">Padrões e boas práticas</a>
+   3.1 <a href="#31-componentes-de-layout">Componentes de layout</a>
+   3.2 <a href="#32-lifting-state-up">Lifting state up</a>
+   3.3 <a href="#33-custom-hooks">Custom hooks</a>
+   3.4 <a href="#34-controlled-vs-uncontrolled-components">Controlled vs Uncontrolled components</a></p>
+</li>
+</ol>
+<hr />
+<h2 id="1-conceitos-fundamentais">1. Conceitos fundamentais</h2>
+<h3 id="11-jsx">1.1 JSX</h3>
+<ul>
+<li>
+<p>Sintaxe que mistura <strong>JavaScript</strong> com <strong>HTML</strong>.</p>
+</li>
+<li>
+<p>Não é obrigatório, mas facilita bastante. Para mantermos apenas uma forma de escrever o código vamos considera-lo como obrigatório.</p>
+</li>
+</ul>
+<p><strong>Em JSX:</strong></p>
+<pre><code class="language-jsx">function Header() {
+  return (
+    &lt;header className=&quot;p-4 bg-gray-900 text-white&quot;&gt;
+      &lt;h1&gt;É Fake&lt;/h1&gt;
+    &lt;/header&gt;
+  );
+}
+</code></pre>
+<p><strong>Em HTML:</strong></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Exemplo Header&lt;/title&gt;
+  &lt;script src=&quot;https://cdn.tailwindcss.com&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header class=&quot;p-4 bg-gray-900 text-white&quot;&gt;
+    &lt;h1&gt;É Fake&lt;/h1&gt;
+  &lt;/header&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr />
+<h3 id="12-componentes">1.2 Componentes</h3>
+<ul>
+<li>
+<p>Unidades reutilizáveis de UI.</p>
+</li>
+<li>
+<p>Usam a palavra reservada <code>function</code></p>
+</li>
+<li>
+<p>Sempre iniciam com letra maiúsculas.</p>
+</li>
+</ul>
+<p><strong>Exemplo:</strong> card que exibe um título e um status.</p>
+<pre><code class="language-jsx">function Card({ title, status }) {
+  return (
+    &lt;div className=&quot;border rounded-xl p-4 shadow-md&quot;&gt;
+      &lt;h2 className=&quot;font-bold&quot;&gt;{title}&lt;/h2&gt;
+      &lt;StatusLabel status={status} /&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<hr />
+<h3 id="13-props">1.3 Props</h3>
+<ul>
+<li>
+<p>Dados passados de pai para filho.</p>
+</li>
+<li>
+<p>Úteis para cards, botões e layouts reutilizáveis.</p>
+</li>
+</ul>
+<p><strong>Exemplo:</strong> pai card tem filho status</p>
+<pre><code class="language-jsx">&lt;Card title=&quot;Vacina causa doença?&quot; status=&quot;fake&quot; /&gt;
+</code></pre>
+<hr />
+<h3 id="14-state">1.4 State</h3>
+<ul>
+<li>
+<p>Dados que mudam ao longo da execução.</p>
+</li>
+<li>
+<p><code>useState</code> é a forma principal de controle.</p>
+</li>
+<li>
+<p>Uteis para inputs, filtros e paginação.</p>
+</li>
+</ul>
+<p><strong>Exemplo:</strong> Search bar</p>
+<pre><code class="language-jsx">import { useState } from &quot;react&quot;;
+
+function SearchBar() {
+  const [query, setQuery] = useState(&quot;&quot;);
+
+  return (
+    &lt;input
+      className=&quot;border p-2 rounded w-full&quot;
+      value={query}
+      onChange={(e) =&gt; setQuery(e.target.value)}
+      placeholder=&quot;Digite sua pesquisa&quot;
+    /&gt;
+  );
+}
+</code></pre>
+<hr />
+<h3 id="15-eventos">1.5 Eventos</h3>
+<ul>
+<li>
+<p>Ligados a interações (<code>onClick</code>, <code>onChange</code>, etc).</p>
+</li>
+<li>
+<p>Usados em botões de busca, navegação de páginas e seleção de filtros.</p>
+</li>
+</ul>
+<p><strong>Exemplo:</strong> Botão genérico</p>
+<pre><code class="language-jsx">function Button({ onClick, label }) {
+  return (
+    &lt;button
+      className=&quot;bg-blue-600 text-white px-4 py-2 rounded-lg&quot;
+      onClick={onClick}
+    &gt;
+      {label}
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+<hr />
+<h3 id="16-renderizacao-condicional">1.6 Renderização condicional</h3>
+<ul>
+<li>
+<p>Mostra UI diferente dependendo do estado ou props.</p>
+</li>
+<li>
+<p>Fundamental para exibir resultados: <strong>É fake, É verdade, Meia verdade, Duvidosa</strong>.</p>
+</li>
+</ul>
+<p><strong>Exemplo:</strong> Filtra de acordo com o status</p>
+<pre><code class="language-jsx">function StatusLabel({ status }) {
+  if (status === &quot;fake&quot;) return &lt;p className=&quot;text-red-600&quot;&gt;É fake&lt;/p&gt;;
+  if (status === &quot;true&quot;) return &lt;p className=&quot;text-green-600&quot;&gt;É verdade&lt;/p&gt;;
+  if (status === &quot;doubt&quot;) return &lt;p className=&quot;text-orange-600&quot;&gt;Meia verdade&lt;/p&gt;;
+  if (status === &quot;doubt&quot;) return &lt;p className=&quot;text-blue-600&quot;&gt;Duvidosa&lt;/p&gt;;
+  return null;
+}
+</code></pre>
+<hr />
+<h3 id="17-listas-e-keys">1.7 Listas e keys</h3>
+<ul>
+<li>
+<p>Renderização de múltiplos itens.</p>
+</li>
+<li>
+<p>Usada para resultados de pesquisa.</p>
+</li>
+</ul>
+<p><strong>Exemplo:</strong> Renderiza os resultados da busca</p>
+<pre><code class="language-jsx">function Results({ data }) {
+  return (
+    &lt;div className=&quot;grid grid-cols-2 gap-4&quot;&gt;
+      {data.map((item) =&gt; (
+        &lt;Card key={item.id} title={item.title} status={item.status} /&gt;
+      ))}
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<hr />
+<h2 id="2-hooks-essenciais">2. Hooks essenciais</h2>
+<h3 id="21-usestate">2.1 <code>useState</code></h3>
+<ul>
+<li>Estado local do componente.</li>
+</ul>
+<pre><code class="language-jsx">const [value, setValue] = useState(initialValue);
+</code></pre>
+<hr />
+<h3 id="22-useeffect">2.2 <code>useEffect</code></h3>
+<ul>
+<li>
+<p>Executa efeitos colaterais (ex.: chamadas de API).</p>
+</li>
+<li>
+<p>Útil em páginas Next.js para buscar dados após interação (Já que a gente vai usar next não faz mal ter uma menção aqui).</p>
+</li>
+</ul>
+<p><strong>Exemplo:</strong> Busca de acordo com a query</p>
+<pre><code class="language-jsx">import { useState, useEffect } from &quot;react&quot;;
+
+function NewsFetcher({ query }) {
+  const [results, setResults] = useState([]);
+
+  useEffect(() =&gt; {
+    if (!query) return;
+    fetch(`/api/search?q=${query}`)
+      .then((res) =&gt; res.json())
+      .then((data) =&gt; setResults(data));
+  }, [query]);
+
+  return &lt;Results data={results} /&gt;;
+}
+</code></pre>
+<hr />
+<h3 id="23-usecontext">2.3 <code>useContext</code></h3>
+<ul>
+<li>
+<p>Compartilha informações globalmente.</p>
+</li>
+<li>
+<p>Útil para autenticação ou tema (dark mode).</p>
+</li>
+</ul>
+<p><strong>Exemplo:</strong> Troca entre tema claro e tema escuro</p>
+<pre><code class="language-jsx">import { createContext, useContext, useState } from &quot;react&quot;;
+
+const ThemeContext = createContext();
+
+export function ThemeProvider({ children }) {
+  const [dark, setDark] = useState(false);
+  return (
+    &lt;ThemeContext.Provider value={{ dark, setDark }}&gt;
+      {children}
+    &lt;/ThemeContext.Provider&gt;
+  );
+}
+
+export function ToggleTheme() {
+  const { dark, setDark } = useContext(ThemeContext);
+  return (
+    &lt;button onClick={() =&gt; setDark(!dark)}&gt;
+      {dark ? &quot;Modo Claro&quot; : &quot;Modo Escuro&quot;}
+    &lt;/button&gt;
+  );
+}
+</code></pre>
+<hr />
+<h3 id="24-useref">2.4 <code>useRef</code></h3>
+<ul>
+<li>Mantém valores persistentes ou acessa elementos do DOM.</li>
+</ul>
+<p><strong>Exemplo:</strong> focar input automaticamente.</p>
+<pre><code class="language-jsx">import { useRef } from &quot;react&quot;;
+
+function AutoFocusInput() {
+  const inputRef = useRef(null);
+
+  return (
+    &lt;&gt;
+      &lt;input ref={inputRef} className=&quot;border p-2&quot; /&gt;
+      &lt;button onClick={() =&gt; inputRef.current.focus()}&gt;
+        Focar
+      &lt;/button&gt;
+    &lt;/&gt;
+  );
+}
+</code></pre>
+<hr />
+<h2 id="3-padroes-e-boas-praticas">3. Padrões e boas práticas</h2>
+<h3 id="31-componentes-de-layout">3.1 Componentes de layout</h3>
+<ul>
+<li>Organização visual comum a todas as páginas.</li>
+</ul>
+<pre><code class="language-jsx">function Layout({ children }) {
+  return (
+    &lt;div className=&quot;min-h-screen flex flex-col&quot;&gt;
+      &lt;header className=&quot;bg-gray-800 text-white p-4&quot;&gt;É Fake&lt;/header&gt;
+      &lt;main className=&quot;flex-1&quot;&gt;{children}&lt;/main&gt;
+      &lt;footer className=&quot;bg-gray-200 text-center p-2&quot;&gt;Rodapé&lt;/footer&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre>
+<hr />
+<h3 id="32-lifting-state-up">3.2 Lifting state up</h3>
+<ul>
+<li>
+<p>Estado compartilhado deve ficar no pai.</p>
+</li>
+<li>
+<p>Útil para barra de pesquisa - resultados.</p>
+</li>
+</ul>
+<pre><code class="language-jsx">function App() {
+  const [query, setQuery] = useState(&quot;&quot;);
+  return (
+    &lt;&gt;
+      &lt;SearchBar query={query} setQuery={setQuery} /&gt;
+      &lt;NewsFetcher query={query} /&gt;
+    &lt;/&gt;
+  );
+}
+</code></pre>
+<hr />
+<h3 id="33-custom-hooks">3.3 Custom hooks</h3>
+<ul>
+<li>Encapsular lógica reutilizável (ex.: busca de notícias).</li>
+</ul>
+<pre><code class="language-jsx">import { useState, useEffect } from &quot;react&quot;;
+
+export function useFetch(url) {
+  const [data, setData] = useState(null);
+
+  useEffect(() =&gt; {
+    if (!url) return;
+    fetch(url).then(res =&gt; res.json()).then(setData);
+  }, [url]);
+
+  return data;
+}
+</code></pre>
+<hr />
+<h3 id="34-controlled-vs-uncontrolled-components">3.4 Controlled vs Uncontrolled components</h3>
+<ul>
+<li>
+<p><strong>Controlado:</strong> estado gerenciado pelo React (<code>value</code> + <code>onChange</code>).</p>
+</li>
+<li>
+<p><strong>Não controlado:</strong> valores lidos via <code>ref</code>.</p>
+</li>
+</ul>
+<p><strong>Recomendação:</strong> usar <strong>controlados</strong> para inputs de pesquisa e filtros.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
