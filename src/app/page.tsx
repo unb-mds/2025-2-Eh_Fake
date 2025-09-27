@@ -2,7 +2,7 @@
 
 import Title from "@/components/Title";
 import SearchBar from "@/components/SearchBar";
-//import LoadCards from "@/components/LoadCards"; 
+import LoadCards from "@/components/LoadCards"; 
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Title />
       <SearchBar />
-      {/* <LoadCards /> */}
+      <LoadCards />
       <Footer />
     </>
   );
