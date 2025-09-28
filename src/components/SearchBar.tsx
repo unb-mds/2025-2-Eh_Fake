@@ -46,7 +46,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
               id="search"
               type="search"
               value={query} // Estado do termo de busca
-              onChange={(event) => setQuery(event.target.value)} // Atualiza o estado ao digitar
+              onChange={(event) => setQuery(event.target.value)}
               placeholder="Busque por título ou veracidade"
               autoComplete="off"
               className="w-full rounded-full border border-transparent bg-transparent pl-10 pr-12 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none"
