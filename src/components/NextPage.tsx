@@ -16,17 +16,20 @@ const Pagination: React.FC<PaginationProps> = ({
   const pages = usePagination(totalPages, currentPage);
 
   return (
-    <nav className="flex items-center justify-center gap-2 text-sm">
+    <nav className="flex items-center justify-center gap-2 text-sm mb-6">
+      {/* Botão de voltar */}
       <button
         type="button"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="grid h-9 w-9 place-items-center rounded-full border border-gray-300 text-gray-700 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40"
+        className="px-4 py-2 text-gray-700 transition hover:text-black hover:scale-120 disabled:cursor-not-allowed disabled:opacity-40" 
         aria-label="Página anterior"
       >
-        {"<"}
+        Voltar
       </button>
+      {/* Aviso: Coloquei scale-120 para aumentar o botão ao passar o mouse, diga como fica melhor, dessa forma ou como no botão de próximo? */}
 
+      {/* Botões de páginas (numéricos) */}
       {pages.map((token, index) =>
         token === "ellipsis" ? (
           <span key={`ellipsis-${index}`} className="px-2 text-gray-400">
@@ -37,10 +40,10 @@ const Pagination: React.FC<PaginationProps> = ({
             key={token}
             type="button"
             onClick={() => onPageChange(token)}
-            className={`grid h-9 min-w-[2.25rem] place-items-center rounded-full border transition ${
+            className={`px-4 py-2 rounded border transition ${
               currentPage === token
-                ? "border-gray-900 bg-gray-900 text-white"
-                : "border-gray-300 text-gray-700 hover:bg-gray-100"
+                ? "border-white bg-gray-900 text-white"
+                : "border-white text-gray-700 hover:bg-gray-100"
             }`}
             aria-current={currentPage === token ? "page" : undefined}
           >
@@ -49,14 +52,15 @@ const Pagination: React.FC<PaginationProps> = ({
         ),
       )}
 
+      {/* Botão de próxima página */}
       <button
         type="button"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="grid h-9 w-9 place-items-center rounded-full border border-gray-300 text-gray-700 transition hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40"
+        className="px-4 py-2 rounded text-gray-700 transition hover:bg-gray-200 disabled:cursor-not-allowed disabled:opacity-40"
         aria-label="Próxima página"
       >
-        {">"}
+        Próxima
       </button>
     </nav>
   );

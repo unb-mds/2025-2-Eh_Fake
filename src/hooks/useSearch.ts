@@ -8,6 +8,7 @@ export const useSearch = (onSearch?: (term: string) => void) => {
     const trimmedQuery = query.trim();
 
     if (!trimmedQuery) {
+      onSearch?.("");
       return;
     }
 

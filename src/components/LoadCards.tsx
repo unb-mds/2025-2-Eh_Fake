@@ -4,10 +4,15 @@ import { useEffect, useMemo, useState } from "react";
 import Container from "@/components/ui/container";
 import NewsCardGrid, { NewsCardData } from "@/components/ui/Cards";
 import Pagination from "@/components/NextPage";
+import { useSearchFilter } from "@/hooks/useSearchFilter";
 
 const PAGE_SIZE = 6;
 
-const LoadCards: React.FC = () => {
+interface LoadCardsProps {
+  searchTerm: string;
+}
+
+const LoadCards: React.FC<LoadCardsProps> = ({ searchTerm }) => {
   const [items, setItems] = useState<NewsCardData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -23,7 +28,6 @@ const LoadCards: React.FC = () => {
         }
         const data = (await response.json()) as NewsCardData[];
         setItems(data);
-        setCurrentPage(1);
       })
       .catch((err: Error) => {
         if (err.name !== "AbortError") {
@@ -35,14 +39,28 @@ const LoadCards: React.FC = () => {
     return () => controller.abort();
   }, []);
 
+  const filteredItems = useSearchFilter(items, searchTerm);
+  const normalizedSearchTerm = searchTerm.trim();
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [normalizedSearchTerm]);
+
+  useEffect(() => {
+    const total = Math.max(1, Math.ceil(filteredItems.length / PAGE_SIZE));
+    if (currentPage > total) {
+      setCurrentPage(total);
+    }
+  }, [filteredItems, currentPage]);
+
   const { pagedItems, totalPages } = useMemo(() => {
-    const total = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
+    const total = Math.max(1, Math.ceil(filteredItems.length / PAGE_SIZE));
     const startIndex = (currentPage - 1) * PAGE_SIZE;
     return {
-      pagedItems: items.slice(startIndex, startIndex + PAGE_SIZE),
+      pagedItems: filteredItems.slice(startIndex, startIndex + PAGE_SIZE),
       totalPages: total,
     };
-  }, [items, currentPage]);
+  }, [filteredItems, currentPage]);
 
   return (
     <Container>
@@ -50,13 +68,24 @@ const LoadCards: React.FC = () => {
       {error && <p className="px-4 text-sm text-red-600">{error}</p>}
       {!loading && !error && (
         <div className="space-y-6">
-          <NewsCardGrid items={pagedItems} />
-          {totalPages > 1 && (
-            <Pagination
-              totalPages={totalPages}
-              currentPage={currentPage}
-              onPageChange={setCurrentPage}
-            />
+          {filteredItems.length === 0 ? (
+            <div className="flex items-center justify-center">
+              <p className="text-lg font-semibold text-gray-700 text-center">
+                Nenhuma notícia encontrada
+                {normalizedSearchTerm ? ` para “${normalizedSearchTerm}”.` : "."}
+              </p>
+            </div>
+          ) : (
+            <>
+              <NewsCardGrid items={pagedItems} />
+              {totalPages > 1 && (
+                <Pagination
+                  totalPages={totalPages}
+                  currentPage={currentPage}
+                  onPageChange={setCurrentPage}
+                />
+              )}
+            </>
           )}
         </div>
       )}

@@ -13,17 +13,18 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   return (
     <Container>
       <div className="w-full px-4 -mt-12 mb-14">
+        {/* Formulário de busca */}
         <form
           onSubmit={handleSubmit}
-          className="mx-auto flex w-full max-w-3xl items-center gap-3 rounded-full bg-white py-5 px-2 shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur supports-[backdrop-filter]:bg-white/40"
+          className="mx-auto flex w-full max-w-3xl items-center gap-3 rounded-full bg-white py-5 px-4 shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur supports-[backdrop-filter]:bg-white/40"
         >
           <label htmlFor="search" className="sr-only">
             Buscar notícias
           </label>
 
-          {/* Ícone de busca */}
           <div className="relative flex w-full items-center">
-            <span className="absolute left-3 inline-flex h-6 w-6 items-center justify-center text-gray-700">
+            {/* Ícone de busca */}
+            <span className="pointer-events-none absolute left-2 inline-flex h-6 w-6 items-center justify-center text-gray-600">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -32,7 +33,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="h-6 w-6"
+                className="h-5 w-5"
                 aria-hidden="true"
               >
                 <circle cx="11" cy="11" r="7" />
@@ -40,23 +41,23 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
               </svg>
             </span>
 
-            {/* Campo de busca */}
+            {/* Campo de entrada para busca */}
             <input
               id="search"
               type="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Busque por termos ou títulos"
+              value={query} // Estado do termo de busca
+              onChange={(event) => setQuery(event.target.value)} // Atualiza o estado ao digitar
+              placeholder="Busque por título ou veracidade"
               autoComplete="off"
-              className="w-full rounded-full border border-transparent bg-transparent pl-12 pr-10 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none"
+              className="w-full rounded-full border border-transparent bg-transparent pl-10 pr-12 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none"
             />
 
-            {/* Botão de limpar */}
+            {/* Botão para limpar */}
             {query && (
               <button
                 type="button"
                 onClick={handleClear}
-                className="absolute right-3 inline-flex h-6 w-6 items-center justify-center text-gray-700 hover:text-black hover:scale-110 transition-transform focus:outline-none"
+                className="absolute right-2 top-1/2 inline-flex h-6 w-6 -translate-y-1/2 items-center justify-center text-gray-600 transition-transform hover:scale-110 hover:text-black focus:outline-none"
                 aria-label="Limpar busca"
                 title="Limpar"
               >
@@ -68,7 +69,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="h-6 w-6"
+                  className="h-5 w-5"
                   aria-hidden="true"
                 >
                   <path d="M18 6L6 18" />
