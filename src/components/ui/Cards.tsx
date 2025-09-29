@@ -5,7 +5,7 @@ export interface NewsCardData {
   id: string;
   title: string;
   description: string;
-  imageSrc: string;
+  imageSrc?: string | null;
   imageAlt?: string;
   status?: "Fake" | "Real" | "Error";
   confidence?: number;
@@ -42,6 +42,14 @@ const resolveStatus = (status?: NewsCardData["status"]) =>
 export const NewsCard: React.FC<{ data: NewsCardData }> = ({ data }) => {
   const style = resolveStatus(data.status);
 
+  // Fallbacks por status
+  const fallbackImages: Record<string, string> = {
+    Real: "https://picsum.photos/id/870/200",
+    Fake: "https://picsum.photos/id/870/200?grayscale",
+    Error: "https://picsum.photos/id/870/200blur=4"
+  };
+  const fallbackSrc = fallbackImages[data.status ?? "Error"];
+
   return (
     <article
       className={`flex flex-col rounded-3xl ${style.background} p-6 shadow-[0_16px_32px_rgba(15,23,42,0.08)] transition-transform hover:-translate-y-1 hover:shadow-[0_0_10px_rgba(0,0,0,0.5)]`}
@@ -77,7 +85,7 @@ export const NewsCard: React.FC<{ data: NewsCardData }> = ({ data }) => {
 
         <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl shadow-md">
           <Image
-            src={data.imageSrc}
+            src={data.imageSrc ?? fallbackSrc}
             alt={data.imageAlt ?? data.title}
             fill
             className="object-cover"
@@ -107,8 +115,15 @@ export const NewsCard: React.FC<{ data: NewsCardData }> = ({ data }) => {
 
 const NewsCardGrid: React.FC<{ items: NewsCardData[] }> = ({ items }) => (
   <section className="mx-auto grid w-full gap-6 px-4 sm:grid-cols-2 lg:grid-cols-3">
-    {items.map((item) => (
-      <NewsCard key={item.id} data={item} />
+    {items.map((item, index) => (
+      <NewsCard
+        key={index}
+        data={{
+          ...item,
+          id: String(index),
+          imageSrc: item.imageSrc ?? null,
+        }}
+      />
     ))}
   </section>
 );

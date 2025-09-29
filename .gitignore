@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+noticias.json
 
 # debug
 npm-debug.log*
@@ -39,3 +40,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Firebase service account key
+config/serviceAccountKey.json
