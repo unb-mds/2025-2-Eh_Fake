@@ -46,7 +46,7 @@ export const NewsCard: React.FC<{ data: NewsCardData }> = ({ data }) => {
   const fallbackImages: Record<string, string> = {
     Real: "https://picsum.photos/id/870/200",
     Fake: "https://picsum.photos/id/870/200?grayscale",
-    Error: "https://picsum.photos/id/870/200blur=4"
+    Error: "https://picsum.photos/id/870/200?blur=4"
   };
   const fallbackSrc = fallbackImages[data.status ?? "Error"];
 
