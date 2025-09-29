@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-const { dbAdmin } = require("@/lib/firebaseAdmin");
+import { dbAdmin } from "@/lib/firebaseAdmin";
 
 export async function GET() {
   try {
