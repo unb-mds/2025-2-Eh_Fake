@@ -11,6 +11,19 @@ Sejam bem vindos ao github do projeto **Eh fake**! Esse projeto visa ajudar as p
 
 ---
 
+## Como rodar o projeto
+
+1. Baixe o node js 
+- Para o windows ou mac: abra o site do [Node js](https://www.nodejs.tech/pt-br/download) e baixe a versão de sua preferência. Recomendamos a versão LTS atual.
+- Para sistemas linux: use o comando `sudo apt install nodejs npm -y` ou qualquer variação disso de acordo com o package mananger da sua distro linux.
+
+2. Faça um clone do repositório ou baixe o zip por dentro do github
+
+3. Por dentro da IDE de sua preferência rode o comando `npm ci` para baixar as dependências do projeto e após isso é só rodar `npm run dev` e clicar no link que aparecer no terminal.
+4. Caso esteja pelo Windows para rodar scrip pelo terminal pode ser necessário usar `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` antes do passo 3.
+
+---
+
 <!-- A partir daqui não tem erro, sempre que fizer uma coisa nova que for relevante para vir para o README é só colocar -->
 ## Licença
 
