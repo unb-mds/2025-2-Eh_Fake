@@ -11,7 +11,9 @@ nav:
       - Documentação Next.js: documentacao_nextjs.md
       - Documentação React: documentacao_react.md
       - Documentação Tailwind: documentacao_tailwind.md
+      - Documentação Git: documentacao_git.md
       - Normas de Envio: normas_de_envio.md
+      - Documento de Estratégia: Documento de Estratégia.md
       - Requisitos de Software: Requisitos de Software.md
       - Relatórios:
           - Relatório Sprint 00: relatorio_sprint_00.md
