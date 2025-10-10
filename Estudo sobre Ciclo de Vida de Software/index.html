@@ -1,0 +1,913 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>O Ciclo de Vida de Software: Uma Análise Detalhada - Eh Fake</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#o-ciclo-de-vida-de-software-uma-analise-detalhada" class="md-skip">
+          Ir para o conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Eh Fake" class="md-header__button md-logo" aria-label="Eh Fake" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Eh Fake
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              O Ciclo de Vida de Software: Uma Análise Detalhada
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando a pesquisa
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Eh Fake" class="md-nav__button md-logo" aria-label="Eh Fake" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Eh Fake
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Início
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sobre/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sobre o Projeto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Documentação
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Documentação
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Backlog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Backlog
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao_nextjs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentação Next.js
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao_react/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentação React
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao_tailwind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentação Tailwind
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../documentacao_git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documentação Git
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../normas_de_envio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Normas de Envio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Documento%20de%20Estrat%C3%A9gia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Documento de Estratégia
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Requisitos%20de%20Software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Requisitos de Software
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Relatórios
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            Relatórios
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relatorio_sprint_00/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relatório Sprint 00
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relatorio_sprint_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relatório Sprint 01
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relatorio_sprint_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relatório Sprint 02
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relatorio_sprint_03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Relatório Sprint 03
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fases-essenciais-do-ciclo-de-vida-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fases Essenciais do Ciclo de Vida de Software
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fases Essenciais do Ciclo de Vida de Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-planeamento-e-analise-de-requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Planeamento e Análise de Requisitos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-design-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Design (Projeto)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-implementacao-codificacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Implementação (Codificação)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-testes" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Testes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-implantacao-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Implantação (Deployment)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-manutencao-e-operacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Manutenção e Operação
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelos-de-ciclo-de-vida-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modelos de Ciclo de Vida de Software
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modelos de Ciclo de Vida de Software">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-modelo-cascata-waterfall" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Modelo Cascata (Waterfall)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-modelo-em-v-v-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Modelo em V (V-Model)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-modelo-espiral" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Modelo Espiral
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-modelos-iterativos-e-incrementais" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Modelos Iterativos e Incrementais
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-metodologias-ageis" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Metodologias Ágeis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="o-ciclo-de-vida-de-software-uma-analise-detalhada">O Ciclo de Vida de Software: Uma Análise Detalhada</h1>
+<p>O Ciclo de Vida de Desenvolvimento de Software (SDLC) é uma metodologia estruturada que delineia as fases pelas quais um software passa, desde a sua concepção até à sua retirada. A sua implementação eficaz é crucial para o sucesso de qualquer projeto de software, garantindo que o produto final seja de alta qualidade, cumpra os requisitos do cliente e seja entregue dentro do prazo e do orçamento previstos.</p>
+<hr />
+<h2 id="fases-essenciais-do-ciclo-de-vida-de-software">Fases Essenciais do Ciclo de Vida de Software</h2>
+<p>Cada fase do ciclo de vida tem os seus próprios objetivos, atividades e entregas. Embora a ordem e a ênfase possam variar de acordo com o modelo de ciclo de vida escolhido, as seguintes fases são universalmente reconhecidas:</p>
+<h3 id="1-planeamento-e-analise-de-requisitos">1. Planeamento e Análise de Requisitos</h3>
+<ul>
+<li><strong>Atividades:</strong> Esta fase envolve uma comunicação intensiva com os stakeholders para compreender as suas necessidades e expectativas. As atividades incluem a realização de entrevistas, workshops, questionários e a análise de sistemas existentes. Os requisitos são classificados em funcionais (o que o sistema deve fazer) e não funcionais (como o sistema deve funcionar, por exemplo, desempenho, segurança, usabilidade).</li>
+<li><strong>Entregas:</strong> O resultado principal desta fase é o Documento de Especificação de Requisitos de Software (ERS), que serve como um contrato entre a equipa de desenvolvimento e o cliente. Outras entregas podem incluir um plano de projeto, uma análise de viabilidade e uma estimativa de custos e prazos.</li>
+</ul>
+<h3 id="2-design-projeto">2. Design (Projeto)</h3>
+<ul>
+<li><strong>Atividades:</strong> Com base nos requisitos, a equipa de desenvolvimento projeta a arquitetura do software. Isto é feito em dois níveis:<ul>
+<li><strong>Design de Alto Nível (Arquitetural):</strong> Define a estrutura geral do sistema, os seus principais componentes e a forma como interagem.</li>
+<li><strong>Design de Baixo Nível (Detalhado):</strong> Descreve em detalhe cada componente do sistema, incluindo as suas estruturas de dados, algoritmos e interfaces. Nesta fase, também são criados protótipos e wireframes para visualizar a interface do utilizador e a experiência do utilizador.</li>
+</ul>
+</li>
+<li><strong>Entregas:</strong> O Documento de Design de Software (DDS) é a principal entrega, contendo todas as especificações de design.</li>
+</ul>
+<h3 id="3-implementacao-codificacao">3. Implementação (Codificação)</h3>
+<ul>
+<li><strong>Atividades:</strong> Os programadores escrevem o código-fonte do software na linguagem de programação escolhida, seguindo as diretrizes do documento de design. São utilizadas ferramentas de controlo de versões (como o Git) para gerir as alterações ao código. A revisão de código por pares é uma prática comum para garantir a qualidade e a consistência do código.</li>
+<li><strong>Entregas:</strong> O código-fonte do software, juntamente com a documentação técnica, são as principais entregas.</li>
+</ul>
+<h3 id="4-testes">4. Testes</h3>
+<ul>
+<li><strong>Atividades:</strong> O software é submetido a um processo rigoroso de testes para identificar e corrigir defeitos. Os diferentes níveis de teste incluem:<ul>
+<li><strong>Teste de Unidade:</strong> Testa componentes individuais do software.</li>
+<li><strong>Teste de Integração:</strong> Testa a interação entre os componentes.</li>
+<li><strong>Teste de Sistema:</strong> Testa o sistema como um todo.</li>
+<li><strong>Teste de Aceitação do Utilizador (UAT):</strong> Realizado pelo cliente para validar que o software cumpre os seus requisitos. Outros tipos de teste, como os de desempenho, segurança e usabilidade, também podem ser realizados.</li>
+</ul>
+</li>
+<li><strong>Entregas:</strong> Relatórios de teste, listas de bugs e, finalmente, uma versão estável e testada do software.</li>
+</ul>
+<h3 id="5-implantacao-deployment">5. Implantação (Deployment)</h3>
+<ul>
+<li><strong>Atividades:</strong> O software é instalado e configurado no ambiente de produção para que os utilizadores finais possam começar a usá-lo. Estratégias de implantação como "blue-green" ou "canary" podem ser utilizadas para minimizar o tempo de inatividade e o risco. A automação da implantação através de pipelines de Integração Contínua/Entrega Contínua (CI/CD) é uma prática recomendada.</li>
+<li><strong>Entregas:</strong> O software em produção, manuais de utilizador e documentação de suporte.</li>
+</ul>
+<h3 id="6-manutencao-e-operacao">6. Manutenção e Operação</h3>
+<ul>
+<li><strong>Atividades:</strong> Esta é a fase mais longa do ciclo de vida, durante a qual o software é monitorizado e mantido. Os tipos de manutenção incluem:<ul>
+<li><strong>Corretiva:</strong> Correção de bugs descobertos após o lançamento.</li>
+<li><strong>Adaptativa:</strong> Adaptação do software a mudanças no ambiente (por exemplo, um novo sistema operativo).</li>
+<li><strong>Perfectiva:</strong> Implementação de novas funcionalidades ou melhorias.</li>
+<li><strong>Preventiva:</strong> Melhorias no software para evitar problemas futuros.</li>
+</ul>
+</li>
+<li><strong>Entregas:</strong> Novas versões do software com correções de bugs, atualizações e novas funcionalidades.</li>
+</ul>
+<hr />
+<h2 id="modelos-de-ciclo-de-vida-de-software">Modelos de Ciclo de Vida de Software</h2>
+<p>A escolha do modelo de ciclo de vida adequado é um fator crítico para o sucesso de um projeto.</p>
+<h3 id="1-modelo-cascata-waterfall">1. Modelo Cascata (Waterfall)</h3>
+<ul>
+<li><strong>Descrição:</strong> Um modelo linear e sequencial onde cada fase deve ser concluída antes do início da seguinte. É o modelo mais tradicional e rígido.</li>
+<li><strong>Vantagens:</strong> Simples de entender e gerir; a disciplina rigorosa resulta numa documentação completa.</li>
+<li><strong>Desvantagens:</strong> Pouco flexível a mudanças; os erros detetados tardiamente são caros de corrigir; o cliente só vê o produto final no fim do projeto.</li>
+<li><strong>Quando usar:</strong> Projetos pequenos com requisitos bem definidos e estáveis.</li>
+</ul>
+<h3 id="2-modelo-em-v-v-model">2. Modelo em V (V-Model)</h3>
+<ul>
+<li><strong>Descrição:</strong> Uma extensão do modelo cascata que enfatiza a verificação e a validação. Para cada fase de desenvolvimento, existe uma fase de teste correspondente.</li>
+<li><strong>Vantagens:</strong> Deteta erros numa fase inicial; a forte ênfase nos testes resulta num produto de maior qualidade.</li>
+<li><strong>Desvantagens:</strong> Rígido e pouco flexível, tal como o modelo cascata.</li>
+<li><strong>Quando usar:</strong> Projetos onde a fiabilidade e a precisão são críticas.</li>
+</ul>
+<h3 id="3-modelo-espiral">3. Modelo Espiral</h3>
+<ul>
+<li><strong>Descrição:</strong> Combina elementos do modelo de prototipagem e do modelo cascata. O desenvolvimento é feito em espirais, com cada volta a representar um conjunto de atividades das fases de desenvolvimento, incluindo a análise de risco.</li>
+<li><strong>Vantagens:</strong> A forte ênfase na análise de risco ajuda a evitar problemas; é flexível e permite alterações ao longo do projeto.</li>
+<li><strong>Desvantagens:</strong> Complexo de gerir; pode ser caro.</li>
+<li><strong>Quando usar:</strong> Projetos grandes, complexos e de alto risco.</li>
+</ul>
+<h3 id="4-modelos-iterativos-e-incrementais">4. Modelos Iterativos e Incrementais</h3>
+<ul>
+<li><strong>Descrição:</strong> O software é desenvolvido em pequenos ciclos (iterações), com uma parte funcional do sistema (incremento) a ser entregue no final de cada ciclo.</li>
+<li><strong>Vantagens:</strong> O cliente recebe feedback antecipado e contínuo; é mais fácil de gerir o risco; as mudanças são mais fáceis de implementar.</li>
+<li><strong>Desvantagens:</strong> Requer um bom planeamento para dividir o sistema em incrementos.</li>
+<li><strong>Quando usar:</strong> Projetos grandes e complexos onde os requisitos podem mudar.</li>
+</ul>
+<h3 id="5-metodologias-ageis">5. Metodologias Ágeis</h3>
+<ul>
+<li><strong>Descrição:</strong> Uma abordagem iterativa e incremental que valoriza a colaboração, a flexibilidade e a entrega contínua de software funcional. O Manifesto Ágil define os seus valores e princípios. Exemplos populares incluem o Scrum (com os seus papéis, eventos e artefactos) e o Kanban (que se foca na visualização do fluxo de trabalho e na limitação do trabalho em curso).</li>
+<li><strong>Vantagens:</strong> Grande capacidade de adaptação a mudanças; promove a colaboração e a comunicação; entrega de valor ao cliente de forma rápida e contínua.</li>
+<li><strong>Desvantagens:</strong> Requer uma equipa experiente e autogerida; a falta de documentação detalhada pode ser um problema em alguns projetos.</li>
+<li><strong>Quando usar:</strong> Projetos onde os requisitos são incertos ou mudam frequentemente.</li>
+</ul>
+<p>🔗Link para estudo: <a href="https://www.youtube.com/watch?v=DzqranCyk6w">Vídeo-aula</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "Mais 1 nesta p\u00e1gina", "search.result.more.other": "Mais # nesta p\u00e1gina", "search.result.none": "Nenhum resultado encontrado", "search.result.one": "1 resultado encontrado", "search.result.other": "# resultados encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
