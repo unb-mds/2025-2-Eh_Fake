@@ -24,7 +24,7 @@ services:
       - '5050:80'
     depends_on:
       - db
-    # Acesse o postgreSql : http://localhost:5050/browser/
+    # Acesse o postgreSql : http://localhost:5050
     # Email : admin@local.com
     # Senha : admin
 volumes:

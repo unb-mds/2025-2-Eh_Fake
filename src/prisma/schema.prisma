@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// Define o gerador de cliente - diz ao Prisma para gerar o cliente em JavaScript/TypeScript
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Define a fonte de dados - aponta para a URL no arquivo .env
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Modelo de dados para a tabela 'news'. Prisma mapeará isso para a tabela real.
+model News {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  imageSrc    String?  // O '?' indica que o campo é opcional (pode ser nulo)
+  imageAlt    String?
+  status      Status   @default(Error)
+  confidence  Decimal? @db.Decimal(5, 2) // Mapeia para o tipo NUMERIC com precisão
+  source      String?
+  link        String?
+  created_at  DateTime @default(now()) @map("created_at") @db.Timestamp(6)
+
+  // Mapeia este modelo para a tabela 'news' no banco (útil se os nomes forem diferentes)
+  @@map("news")
+}
+
+// Define o ENUM correspondente ao tipo 'news_status' do PostgreSQL
+enum Status {
+  Fake
+  Real
+  Error
+}
