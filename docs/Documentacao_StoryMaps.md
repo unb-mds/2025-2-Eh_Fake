@@ -1,0 +1,1 @@
+![alt text](<Captura de tela 2025-10-12 144024.png>)
