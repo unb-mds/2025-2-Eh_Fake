@@ -22,12 +22,11 @@ const Pagination: React.FC<PaginationProps> = ({
         type="button"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="px-4 py-2 text-gray-700 transition hover:text-black hover:scale-120 disabled:cursor-not-allowed disabled:opacity-40" 
+        className="px-4 py-2 rounded text-gray-700 transition hover:bg-gray-200 disabled:cursor-not-allowed disabled:opacity-40"
         aria-label="Página anterior"
       >
         Voltar
       </button>
-      {/* Aviso: Coloquei scale-120 para aumentar o botão ao passar o mouse, diga como fica melhor, dessa forma ou como no botão de próximo? */}
 
       {/* Botões de páginas (numéricos) */}
       {pages.map((token, index) =>

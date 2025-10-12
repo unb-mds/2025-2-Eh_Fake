@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import ThemeProviderComponent from '@/components/theme/Provider';
 
 export const metadata: Metadata = {
   title: 'Eh fake',
@@ -13,10 +14,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="bg-white text-gray-800 antialiased">
-        <div className="flex min-h-screen flex-col">
-          {children}
-        </div>
+      <body className="bg-light-primary text-light-secondary dark:bg-dark-primary dark:text-dark-secondary antialiased">
+        <ThemeProviderComponent>
+          <div className="flex min-h-screen flex-col">
+            {children}
+          </div>
+        </ThemeProviderComponent>
       </body>
     </html>
   );
