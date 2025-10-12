@@ -8,6 +8,7 @@ nav:
   - Sobre o Projeto: sobre.md
   - Documentação:
       - Backlog: Backlog.md
+      - Documentação StoryMap: Documentacao_StoryMaps.md
       - Documentação Next.js: documentacao_nextjs.md
       - Documentação React: documentacao_react.md
       - Documentação Tailwind: documentacao_tailwind.md
