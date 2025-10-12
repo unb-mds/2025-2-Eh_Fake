@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 // Define o gerador de cliente - diz ao Prisma para gerar o cliente em JavaScript/TypeScript
 generator client {
   provider = "prisma-client-js"
@@ -20,8 +14,11 @@ model News {
   id          Int      @id @default(autoincrement())
   title       String
   description String
-  imageSrc    String?  // O '?' indica que o campo é opcional (pode ser nulo)
-  imageAlt    String?
+  // PostgreSQL lower-cases unquoted identifiers, and the init SQL
+  // creates columns like `imagesrc` and `imagealt`. Map the Prisma
+  // fields to those column names so queries use the correct columns.
+  imageSrc    String?  @map("imagesrc") // O '?' indica que o campo é opcional (pode ser nulo)
+  imageAlt    String?  @map("imagealt")
   status      Status   @default(Error)
   confidence  Decimal? @db.Decimal(5, 2) // Mapeia para o tipo NUMERIC com precisão
   source      String?
