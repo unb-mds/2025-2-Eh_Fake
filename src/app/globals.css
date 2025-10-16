@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+[data-theme-initializing] body {
+  opacity: 0;
+}

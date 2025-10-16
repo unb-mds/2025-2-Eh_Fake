@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="bg-light-primary text-light-secondary dark:bg-dark-primary dark:text-dark-secondary antialiased">
+      <body className="antialiased bg-light-primary text-dark-primary dark:bg-dark-primary dark:text-light-primary transition-colors duration-300">
         <ThemeProviderComponent>
           <div className="flex min-h-screen flex-col">
             {children}
