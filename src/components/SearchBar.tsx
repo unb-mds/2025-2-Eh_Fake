@@ -13,18 +13,16 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   return (
     <Container>
       <div className="w-full px-4 -mt-12 mb-14">
-        {/* Formulário de busca */}
         <form
           onSubmit={handleSubmit}
-          className="mx-auto flex w-full max-w-3xl items-center gap-3 rounded-full bg-white py-5 px-4 shadow-[0_0_10px_rgba(0,0,0,0.5)] backdrop-blur supports-[backdrop-filter]:bg-white/40"
+          className="mx-auto flex w-full max-w-3xl items-center gap-3 rounded-full bg-light-secondary/60 py-5 px-4 shadow-[0_0_10px_rgba(150,150,150,0.5)] backdrop-blur transition-colors duration-300 supports-[backdrop-filter]:bg-light-secondary/50 dark:bg-dark-secondary/80 dark:supports-[backdrop-filter]:bg-dark-secondary/70"
         >
           <label htmlFor="search" className="sr-only">
             Buscar notícias
           </label>
 
           <div className="relative flex w-full items-center">
-            {/* Ícone de busca */}
-            <span className="pointer-events-none absolute left-2 inline-flex h-6 w-6 items-center justify-center text-gray-600">
+            <span className="pointer-events-none absolute left-2 inline-flex h-6 w-6 items-center justify-center text-gray-600 dark:text-light-primary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -41,23 +39,21 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
               </svg>
             </span>
 
-            {/* Campo de entrada para busca */}
             <input
               id="search"
               type="search"
-              value={query} // Estado do termo de busca
+              value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Busque por título ou veracidade"
               autoComplete="off"
-              className="w-full rounded-full border border-transparent bg-transparent pl-10 pr-12 text-base text-gray-900 placeholder:text-gray-500 focus:outline-none"
+              className="w-full rounded-full bg-transparent pl-10 pr-12 text-base text-dark-primary placeholder:text-gray-500 focus:outline-none dark:text-light-primary dark:placeholder:text-light-primary/70"
             />
 
-            {/* Botão para limpar */}
             {query && (
               <button
                 type="button"
                 onClick={handleClear}
-                className="absolute right-2 top-1/2 inline-flex h-6 w-6 -translate-y-1/2 items-center justify-center text-gray-600 transition-transform hover:scale-110 hover:text-black focus:outline-none"
+                className="absolute right-2 top-1/2 inline-flex h-6 w-6 -translate-y-1/2 items-center hover:cursor-pointer justify-center text-gray-600 transition-transform hover:scale-120 hover:text-gray-500 focus:outline-none"
                 aria-label="Limpar busca"
                 title="Limpar"
               >
