@@ -11,16 +11,102 @@ Sejam bem vindos ao github do projeto **Eh fake**! Esse projeto visa ajudar as p
 
 ---
 
-## Como rodar o projeto
+## 🚀 Como Rodar o Projeto
 
-1. Baixe o node js 
-- Para o windows ou mac: abra o site do [Node js](https://www.nodejs.tech/pt-br/download) e baixe a versão de sua preferência. Recomendamos a versão LTS atual.
-- Para sistemas linux: use o comando `sudo apt install nodejs npm -y` ou qualquer variação disso de acordo com o package mananger da sua distro linux.
+### 🧩 Pré-requisitos
+Antes de começar, certifique-se de ter instalado em sua máquina:
 
-2. Faça um clone do repositório ou baixe o zip por dentro do github
+- **[Node.js](https://nodejs.org/)** 
+  - **Windows/Mac:** Baixe diretamente do site.  
+  - **Linux:**  
+    ```bash
+    sudo apt install nodejs npm -y
+    ```
+- **[Docker](https://www.docker.com/)** e **Docker Compose** instalados e em execução.
 
-3. Por dentro da IDE de sua preferência rode o comando `npm ci` para baixar as dependências do projeto e após isso é só rodar `npm run dev` e clicar no link que aparecer no terminal.
-4. Caso esteja pelo Windows para rodar scrip pelo terminal pode ser necessário usar `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` antes do passo 3.
+---
+
+### 📦 Passo a passo
+
+#### 1️⃣ Clonar o repositório
+Faça o clone do projeto ou baixe o `.zip` diretamente do GitHub:
+```bash
+git clone https://github.com/unb-mds/2025-2-Eh_Fake
+cd 2025-2-Eh_Fake
+```
+
+---
+
+#### 2️⃣ Instalar dependências
+Entre no diretório do projeto e execute:
+```bash
+npm ci
+```
+
+> 💡 Caso esteja no **Windows PowerShell**, talvez seja necessário permitir scripts antes de rodar:
+> ```bash
+> Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+> ```
+
+---
+
+#### 3️⃣ Subir o banco de dados com Docker
+Dentro do diretório `src`, execute:
+```bash
+cd src
+docker-compose up -d
+```
+
+Isso iniciará o contêiner PostgreSQL com o banco configurado para o projeto.
+
+---
+
+#### 4️⃣ Criar o arquivo `.env`
+Ainda dentro da pasta `src`, crie um arquivo chamado `.env` com o seguinte conteúdo:
+
+```env
+DATABASE_URL="postgresql://user_noticias:password_segura@localhost:5433/app_noticias?schema=public"
+```
+
+---
+
+#### 5️⃣ Gerar o Prisma Client
+Após subir o banco e criar o `.env`, execute:
+```bash
+npx prisma generate
+```
+
+---
+
+#### 6️⃣ Executar o servidor de desenvolvimento
+Por fim, rode o projeto com:
+```bash
+npm run dev
+```
+
+Após o comando, clique no link que aparecer no terminal (geralmente `http://localhost:3000`).
+
+---
+
+### 🧠 Dica
+Se quiser resetar o banco de dados (caso algo dê errado), você pode usar:
+```bash
+docker-compose down -v
+docker-compose up -d
+npx prisma db push
+```
+
+---
+
+### ✅ Resumo rápido
+
+| Etapa | Comando principal |
+|-------|-------------------|
+| Instalar dependências | `npm ci` |
+| Subir banco (Docker) | `docker-compose up -d` |
+| Gerar Prisma Client | `npx prisma generate` |
+| Rodar o servidor | `npm run dev` |
+
 
 ---
 

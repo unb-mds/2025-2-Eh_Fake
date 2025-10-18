@@ -1,17 +1,36 @@
 import { NextResponse } from "next/server";
-import { dbAdmin } from "@/lib/firebaseAdmin";
+import prisma from "@/lib/prisma";
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const ref = dbAdmin.ref("news");
-    const snapshot = await ref.once("value");
-    const raw = snapshot.val();
+    const { searchParams } = new URL(request.url);
 
-    const newsArray = raw == null ? [] : Array.isArray(raw) ? raw : Object.values(raw);
+    const searchTerm = searchParams.get("q")?.trim() || "";
 
-    return NextResponse.json(newsArray, { status: 200 });
+    const whereCondition = searchTerm
+      ? {
+          OR: [
+            { title: { contains: searchTerm, mode: "insensitive" } },
+            { description: { contains: searchTerm, mode: "insensitive" } },
+            { source: { contains: searchTerm, mode: "insensitive" } },
+          ],
+        }
+      : {};
+
+    const news = await prisma.news.findMany({
+      where: whereCondition,
+      orderBy: [
+        { confidence: "desc" },
+        { created_at: "desc" },
+      ],
+    });
+    return NextResponse.json(news, { status: 200 });
+
   } catch (err) {
-    console.error("Erro ao buscar notícias via admin:", err);
-    return NextResponse.json({ error: "Não foi possível carregar notícias" }, { status: 500 });
+    console.error("Erro ao buscar notícias via Prisma:", err);
+    return NextResponse.json(
+      { error: "Não foi possível carregar notícias" },
+      { status: 500 }
+    );
   }
 }
