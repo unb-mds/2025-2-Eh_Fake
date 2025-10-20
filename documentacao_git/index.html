@@ -479,6 +479,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#5-coautoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Coautoria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#informacoes-adicionais" class="md-nav__link">
     <span class="md-ellipsis">
       Informações Adicionais
@@ -796,6 +805,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#5-coautoria" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Coautoria
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#informacoes-adicionais" class="md-nav__link">
     <span class="md-ellipsis">
       Informações Adicionais
@@ -869,10 +887,17 @@ git pull origin main # ou git pull --rebase origin main para histórico linear
 </code></pre>
 <p>Usar <code>git pull --rebase</code> ajuda a manter o histórico linear e organizado, evitando commits extras de merge quando várias pessoas contribuem na mesma branch.</p>
 <hr />
+<h3 id="5-coautoria">5. Coautoria</h3>
+<p>Para quando dois ou mais participarem da criação de um mesmo commit, utilize o <code>Co-authored-by</code> na mensagem:</p>
+<pre><code class="language-bash">git commit -m &quot;Refactor usability tests.
+Co-authored-by: NOME &lt;EMAIL@EXEMPLO.COM&gt;
+Co-authored-by: OUTRO-NOME &lt;OUTRO-EMAIL@EXEMPLO.COM&gt;&quot;
+</code></pre>
+<p><a href="https://docs.github.com/pt/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors">Clique aqui</a> para ver a explicação completa.</p>
+<hr />
 <h3 id="informacoes-adicionais">Informações Adicionais</h3>
 <ul>
 <li><a href="https://git-scm.com/doc">Documentação oficial do Git</a>  </li>
-<li><a href="https://www.conventionalcommits.org/pt-br/v1.0.0/">Conventional Commits</a>  </li>
 <li><a href="https://education.github.com/git-cheat-sheet-education.pdf">Git Cheat Sheet PDF</a></li>
 <li>https://www.youtube.com/watch?v=UBAX-13g8OM</li>
 <li>https://www.youtube.com/watch?v=192HgwRgOYE</li>
