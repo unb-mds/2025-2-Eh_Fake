@@ -66,12 +66,22 @@ Usar `git pull --rebase` ajuda a manter o histórico linear e organizado, evitan
 
 ---
 
-### Informações Adicionais
+### 5. Coautoria
 
+Para quando dois ou mais participarem da criação de um mesmo commit, utilize o `Co-authored-by` na mensagem:
+
+```bash
+git commit -m "Refactor usability tests.
+Co-authored-by: NOME <EMAIL@EXEMPLO.COM>
+Co-authored-by: OUTRO-NOME <OUTRO-EMAIL@EXEMPLO.COM>"
+```
+
+[Clique aqui](https://docs.github.com/pt/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) para ver a explicação completa.
+
+---
+
+### Informações Adicionais
 - [Documentação oficial do Git](https://git-scm.com/doc)  
-- [Conventional Commits](https://www.conventionalcommits.org/pt-br/v1.0.0/)  
 - [Git Cheat Sheet PDF](https://education.github.com/git-cheat-sheet-education.pdf)
 - https://www.youtube.com/watch?v=UBAX-13g8OM
 - https://www.youtube.com/watch?v=192HgwRgOYE
-
-
