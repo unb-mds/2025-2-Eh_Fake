@@ -71,7 +71,7 @@ Usar `git pull --rebase` ajuda a manter o histórico linear e organizado, evitan
 Para quando dois ou mais participarem da criação de um mesmo commit, utilize o `Co-authored-by` na mensagem:
 
 ```bash
-git commit -m "Refactor usability tests.
+git commit -m "[Feat] adiciona um botão vermelho.
 Co-authored-by: NOME <EMAIL@EXEMPLO.COM>
 Co-authored-by: OUTRO-NOME <OUTRO-EMAIL@EXEMPLO.COM>"
 ```
@@ -83,5 +83,5 @@ Co-authored-by: OUTRO-NOME <OUTRO-EMAIL@EXEMPLO.COM>"
 ### Informações Adicionais
 - [Documentação oficial do Git](https://git-scm.com/doc)  
 - [Git Cheat Sheet PDF](https://education.github.com/git-cheat-sheet-education.pdf)
-- https://www.youtube.com/watch?v=UBAX-13g8OM
-- https://www.youtube.com/watch?v=192HgwRgOYE
+- [https://www.youtube.com/watch?v=UBAX-13g8OM](https://www.youtube.com/watch?v=UBAX-13g8OM)
+- [https://www.youtube.com/watch?v=192HgwRgOYE](https://www.youtube.com/watch?v=192HgwRgOYE)
