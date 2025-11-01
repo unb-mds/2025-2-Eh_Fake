@@ -8,6 +8,8 @@ nav:
   - Sobre o Projeto: sobre.md
   - Documentação:
       - Backlog: Backlog.md
+      - Como baixar o RagFlow: como_baixar_ragflow.md
+      - 
       - Documentação StoryMap: Documentacao_StoryMaps.md
       - Documentação Next.js: documentacao_nextjs.md
       - Documentação React: documentacao_react.md
@@ -15,6 +17,10 @@ nav:
       - Documentação Git: documentacao_git.md
       - Documentação Rag/RagFlow: documentacao_rag_ragflow.md
       - Normas de Envio: normas_de_envio.md
+      - Estudo sobre Gestão: Estudo sobre Gestão.md
+      - Estudo sobre Metodologias Ágeis e Scrum: Agilidade e Scrum.md
+      - Estudo sobre Ciclo de Vida de Software: Estudo sobre Ciclo de Vida de Software.md
+      - Documentação sobre Agentes de IA: Agentes de IA.md
       - Documento de Estratégia: Documento de Estratégia.md
       - Requisitos de Software: Requisitos de Software.md
       - Relatórios:
