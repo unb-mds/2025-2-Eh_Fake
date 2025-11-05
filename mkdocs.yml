@@ -84,7 +84,7 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://unb-mds.github.io/2025-2-Eh_Fake/
+      link: https://github.com/unb-mds/2025-2-Eh_Fake
   generator: false 
 
 # Copyright no rodapé
