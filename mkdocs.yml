@@ -1,6 +1,9 @@
 site_name: Eh Fake
 theme:
   name: material
+  palette:
+    primary: indigo
+    accent: blue
   language: pt
 
 nav:
