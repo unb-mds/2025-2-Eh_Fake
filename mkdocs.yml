@@ -25,6 +25,9 @@ plugins:
 # Tema Material com ultra-personalização
 theme:
   name: material
+  palette:
+    primary: indigo
+    accent: blue
   language: pt
   palette:
     # Paleta clara
