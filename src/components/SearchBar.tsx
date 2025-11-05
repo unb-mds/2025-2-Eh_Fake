@@ -87,7 +87,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
   return (
     <Container>
-      <div className="w-full px-4 -mt-12 mb-14 relative">
+      <div className="w-full px-4 -mt-12 mb-6 relative">
         {isFocused && (
           <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40" onClick={() => setIsFocused(false)} />
         )}
@@ -166,9 +166,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
                   <button
                     type="button"
                     onClick={() => handleSuggestionClick(suggestion)}
-                    className={`w-full text-left px-4 py-2 hover:bg-light-primary/10 dark:hover:bg-dark-primary/10 transition-colors ${
-                      index === selectedIndex ? "bg-light-primary/20 dark:bg-dark-primary/20" : ""
-                    }`}
+                    className={`w-full text-left px-4 py-2 hover:bg-light-primary/10 dark:hover:bg-dark-primary/10 transition-colors ${index === selectedIndex ? "bg-light-primary/20 dark:bg-dark-primary/20" : ""
+                      }`}
                   >
                     <span className="text-dark-primary dark:text-light-primary">{suggestion}</span>
                   </button>
