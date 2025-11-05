@@ -119,7 +119,6 @@ nav:
       - Documentação sobre Agentes de IA: Agentes de IA.md
       - Documento de Estratégia: Documento de Estratégia.md
       - Requisitos de Software: Requisitos de Software.md
-=======
       - Tecnologias:
           - Documentação Next.js: documentacao_nextjs.md
           - Documentação React: documentacao_react.md
@@ -130,7 +129,6 @@ nav:
           - Normas de Envio: normas_de_envio.md
           - Documento de Estratégia: "Documento de Estratégia.md"
           - Requisitos de Software: "Requisitos de Software.md"
->>>>>>> Stashed changes
       - Relatórios:
           - Relatório Sprint 00: relatorio_sprint_00.md
           - Relatório Sprint 01: relatorio_sprint_01.md
