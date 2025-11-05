@@ -1,11 +1,11 @@
 site_name: Eh Fake
 site_description: Documentação completa do projeto Eh Fake, incluindo guias, relatórios e estratégias para desenvolvimento ágil.
 site_author: Equipe Eh Fake
-site_url: https://pichau.github.io/2025-2-Eh_Fake/  # Ajuste conforme o repositório GitHub Pages
+site_url: https://unb-mds.github.io/2025-2-Eh_Fake/  # Ajuste conforme o repositório GitHub Pages
 
 # Repositório para integração GitHub
-repo_name: Pichau/2025-2-Eh_Fake
-repo_url: https://github.com/Pichau/2025-2-Eh_Fake
+repo_name: unb-mds/2025-2-Eh_Fake
+repo_url: https://unb-mds.github.io/2025-2-Eh_Fake/
 edit_uri: edit/main/docs/  # Permite edição direta no GitHub
 
 # Plugins para funcionalidades avançadas
@@ -84,10 +84,8 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Pichau/2025-2-Eh_Fake
-    - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/seu-perfil  # Ajuste ou remova
-  generator: false  # Remove "Made with Material for MkDocs"
+      link: https://unb-mds.github.io/2025-2-Eh_Fake/
+  generator: false 
 
 # Copyright no rodapé
 copyright: |
