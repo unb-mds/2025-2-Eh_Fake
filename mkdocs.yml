@@ -1,8 +1,102 @@
 site_name: Eh Fake
+site_description: Documentação completa do projeto Eh Fake, incluindo guias, relatórios e estratégias para desenvolvimento ágil.
+site_author: Equipe Eh Fake
+site_url: https://pichau.github.io/2025-2-Eh_Fake/  # Ajuste conforme o repositório GitHub Pages
+
+# Repositório para integração GitHub
+repo_name: Pichau/2025-2-Eh_Fake
+repo_url: https://github.com/Pichau/2025-2-Eh_Fake
+edit_uri: edit/main/docs/  # Permite edição direta no GitHub
+
+# Plugins para funcionalidades avançadas
+plugins:
+  - search:
+      lang: pt
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+  - minify:
+      minify_html: true
+      minify_css: true
+      minify_js: true
+  - glightbox  # Para galerias de imagens interativas
+  - awesome-pages  # Organização automática de páginas (opcional, mas útil para nav dinâmica)
+
+# Tema Material com ultra-personalização
 theme:
   name: material
   language: pt
+  palette:
+    # Paleta clara
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Modo claro
+      primary: blue
+      accent: orange
+    # Paleta escura
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Modo escuro
+      primary: blue
+      accent: orange
+  font:
+    text: Roboto
+    code: Fira Code
+  favicon: assets/favicon.ico  # Adicione um favicon em docs/assets/
+  logo: assets/logo.png  # Adicione um logo em docs/assets/ (crie se necessário)
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.footnote.tooltips
+    - content.tabs.link
+    - content.tooltips
+    - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
 
+# Links sociais no rodapé
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Pichau/2025-2-Eh_Fake
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/seu-perfil  # Ajuste ou remova
+  generator: false  # Remove "Made with Material for MkDocs"
+
+# Copyright no rodapé
+copyright: |
+  &copy; 2025 Equipe Eh Fake. Todos os direitos reservados.
+
+# SEO e Analytics (opcional, adicione se desejar)
+# extra:
+#   analytics:
+#     provider: google
+#     property: G-XXXXXXXXXX  # Substitua pelo seu GA ID
+
+# Navegação organizada e aprimorada
 nav:
   - Início: index.md
   - Sobre o Projeto: sobre.md
@@ -10,6 +104,7 @@ nav:
       - Backlog: Backlog.md
       - Como baixar o RagFlow: como_baixar_ragflow.md
       - Documentação StoryMap: Documentacao_StoryMaps.md
+<<<<<<< Updated upstream
       - Documentação Next.js: documentacao_nextjs.md
       - Documentação React: documentacao_react.md
       - Documentação Tailwind: documentacao_tailwind.md
@@ -22,8 +117,32 @@ nav:
       - Documentação sobre Agentes de IA: Agentes de IA.md
       - Documento de Estratégia: Documento de Estratégia.md
       - Requisitos de Software: Requisitos de Software.md
+=======
+      - Tecnologias:
+          - Documentação Next.js: documentacao_nextjs.md
+          - Documentação React: documentacao_react.md
+          - Documentação Tailwind: documentacao_tailwind.md
+          - Documentação Git: documentacao_git.md
+          - Documentação Rag/RagFlow: documentacao_rag_ragflow.md
+      - Processo:
+          - Normas de Envio: normas_de_envio.md
+          - Documento de Estratégia: "Documento de Estratégia.md"
+          - Requisitos de Software: "Requisitos de Software.md"
+>>>>>>> Stashed changes
       - Relatórios:
           - Relatório Sprint 00: relatorio_sprint_00.md
           - Relatório Sprint 01: relatorio_sprint_01.md
           - Relatório Sprint 02: relatorio_sprint_02.md
           - Relatório Sprint 03: relatorio_sprint_03.md
+      - Estudos e Reuniões:
+          - Agentes de IA: "Agentes de IA.md"
+          - Agilidade e Scrum: "Agilidade e Scrum.md"
+          - Estudo sobre Ciclo de Vida de Software: "Estudo sobre Ciclo de Vida de Software.md"
+          - Estudo sobre Gestão: "Estudo sobre Gestão.md"
+          - Como Baixar RagFlow: como_baixar_ragflow.md
+          - Reuniões:
+              - Relatório da reunião de planejamento semanal (21-09-2025): reunioes/Relatório da reunião de planejamento semanal (21-09-2025).md
+              - Relatório Reunião Eh fake 07 10 2025: reunioes/Relatório Reunião Eh fake 07 10 2025.md
+              - Relatório Reunião Eh fake 23 09 2025: reunioes/Relatório Reunião Eh fake 23 09 2025.md
+              - Relatório Reunião Eh fake 28 09 2025: reunioes/Relatório Reunião Eh fake 28 09 2025.md
+              - Relatório Reunião Eh fake 30 09 2025: reunioes/Relatório Reunião Eh fake 30 09 2025.md
