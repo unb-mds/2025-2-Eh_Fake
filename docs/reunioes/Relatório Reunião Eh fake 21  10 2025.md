@@ -2,7 +2,7 @@
 **Data:** 21/10/2025  
 **Responsável:** Davi  
 
-## Sprint 10  
+## Sprint 8
 
 ---
 
