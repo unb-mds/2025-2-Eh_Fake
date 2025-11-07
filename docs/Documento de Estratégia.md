@@ -1,7 +1,7 @@
 # Documento de Estratégia: Projeto É FAKE
 
 **Responsável:** Davi Severiano Freitas  
-**Versão:** 1.0 – 1 de outubro de 2025  
+**Versão:** 1.1 – 7 de novembro de 2025  
 
 ---
 
@@ -55,22 +55,22 @@ O objetivo é democratizar a verificação de fatos, oferecendo uma ferramenta q
 
 | Estratégia             | Ação                                      | Responsável       | Prazo        |
 |------------------------|-------------------------------------------|------------------|--------------|
-| Criar MVP rápido       | Desenvolver backend em Python e frontend em React | Equipe de Dev    | 13 semanas   |
+| Criar MVP rápido       | Desenvolver aplicação full-stack com Next.js (Frontend + API Routes)           | Equipe de Dev    | 13 semanas   |
 | Melhorar acurácia da IA| Integrar com modelos de NLP e fine-tuning | Equipe de IA/ML  | Semanas 5-11 |
 
 ---
 
 ## 5. Tecnologias e Ferramentas
 - **Frontend:** React, Next.js, Tailwind  
-- **Backend:** Python, FastAPI  
-- **Banco de Dados:** PostgreSQL, Firebase  
+- **Minerador:** Python
+- **Banco de Dados:** PostgreSQL  
 - **IA e NLP:** RAGFlow (motor de RAG) com Gemini (LLM)  
 - **DevOps:** Docker, GitHub Actions  
 
 ---
 
 ## 6. Indicadores de Sucesso (KPIs)
-- Tempo médio de resposta da verificação: **3s**  
+- Tempo médio de resposta da verificação: **30s**  
 - Precisão da IA: **90%**  
 
 ---
@@ -95,12 +95,12 @@ O objetivo é democratizar a verificação de fatos, oferecendo uma ferramenta q
 - **Sprint 4 (22/09 a 28/09):** Documentação da arquitetura C4 (Níveis 1, 2 e 3), criação do backlog da Release 1, desenvolvimento inicial do frontend (página inicial, searchbar, cards).  
 
 ### Fase 3: Entrega da Release 1
-- **Sprint 5 (29/09 a 05/10):** Estrutura do backend (PostgreSQL), API inicial integrada ao frontend. **Entrega da Release 1 (01/10).**  
-- **Sprint 6 (06/10 a 12/10):** Implementação do schema completo no DB (tabelas, relacionamentos) e camada de acesso a dados (ORM) no backend.  
+- **Sprint 5 (29/09 a 05/10):**  **Entrega da Release 1 (01/10).**  
+- **Sprint 6 (06/10 a 12/10):** Estrutura do PostgreSQL no Docker, configuração do Prisma, API Route (Next.js) inicial integrada ao frontend.
 
 ### Fase 4: Coleta de Dados e IA
 - **Sprint 7 (13/10 a 19/10):** Desenvolvimento do módulo *Minerador* para coletar notícias no PostgreSQL.  
-- **Sprint 8 (20/10 a 26/10):** Estruturação do backend para processar dados do PostgreSQL e alimentar o RAGFlow.  
+- **Sprint 8 (20/10 a 26/10):** Estruturação PostgreSQL e alimentar o RAGFlow.  
 - **Sprint 9 (27/10 a 02/11):** Integração do RAGFlow com Gemini, API orquestra análise de notícias.  
 
 ### Fase 5: Testes e Refinamento
