@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 from newsplease import NewsPlease
 import json
 import os
+import time
+import re
 from datetime import date, datetime, timedelta
 
 # --- Variáveis Globais (Mantenha estas no topo do seu minerador.py) ---
@@ -13,56 +15,110 @@ BASE_OUTPUT_DIR = 'noticias'
 
 # 1. Mapeamento de Sites: Adicione aqui todos os sites que você quer rastrear.
 # Cada entrada requer o URL e a função específica de coleta de links.
+# No topo do seu minerador.py, atualize o dicionário:
+
 SITE_MAP = {
-    "G1": {
-        "homepage": "https://g1.globo.com/",
-        "scraper": "scrape_g1_links"  # Nome da função de raspagem
-    },
-    "FOLHA": {
-        "homepage": "https://www.folha.uol.com.br/",
-        "scraper": "scrape_folha_links"
-    },
-    "UOL": {
-        "homepage": "https://www.uol.com.br/",
-        "scraper": "scrape_uol_links" # Nome da nova função
+    #"G1": {
+    #    "homepage": "https://g1.globo.com/",
+    #    "scraper": "scrape_g1_links"
+    #},
+    #"OLHAR_DIGITAL": {
+    #    "homepage": "https://olhardigital.com.br/",
+    #    "scraper": "scrape_olhardigital_links"
+    #},
+    "TECMUNDO": {
+        "homepage": "https://www.tecmundo.com.br/",
+        "scraper": "scrape_tecmundo_links"
     }
-    # Adicione mais sites aqui futuramente
-}
+} #Adicionar mais futuramente
 # -------------------------------------------------------------
 
 
 # --- FUNÇÕES DE COLETA DE LINKS (SCRAPERS) ---
 
-def scrape_g1_links(homepage_url):
-    """Função específica para coletar URLs de artigos da homepage do G1."""
-    print(f"Buscando links em G1: {homepage_url}...")
+
+def scrape_g1_links(homepage_url, max_depth=2):
+    """
+    Rastreia a homepage do G1 e suas páginas de categoria até a profundidade definida.
     
-    try:
-        response = requests.get(homepage_url, timeout=10)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
-        links_encontrados = set()
-        ano_atual_str = str(HOJE.year)
+    Usa um filtro rigoroso para coletar apenas links de artigos com o ano atual.
+    max_depth=2: Nível 1 (Homepage) + Nível 2 (Páginas de Categoria).
+    """
+    
+    # Conjuntos para gerenciar as URLs e garantir que não haja repetição
+    urls_to_crawl = {homepage_url}  # URLs que precisam ser visitadas neste ou em futuros níveis
+    urls_crawled = set()            # URLs que já foram visitadas
+    urls_found = set()              # URLs FINAIS de artigos de notícia (o que realmente queremos)
+    
+    current_depth = 1 
+    ano_atual_str = str(HOJE.year)
+    
+    # Regex para identificar links de artigos finais do G1
+    # Ex: /politica/noticia/2025/11/07/titulo-do-artigo.ghtml
+    # O news-please extrai melhor artigos que terminam em .ghtml ou .html
+    article_pattern = re.compile(r'/noticia/\d{4}/\d{2}/\d{2}/.+?\.ghtml|\.html')
+
+    print(f"Buscando links em G1 até a profundidade {max_depth}...")
+
+    while current_depth <= max_depth:
+        print(f"  > Rastreando Nível {current_depth} ({len(urls_to_crawl)} URLs na fila)...")
         
-        for a in soup.find_all('a', href=True):
-            href = a['href']
+        # Faz uma cópia dos links para processar e limpa a fila para o próximo nível
+        urls_to_process = urls_to_crawl.copy()
+        urls_to_crawl.clear() 
+        
+        # Adiciona os links processados à lista global de rastreados
+        urls_crawled.update(urls_to_process)
+        
+        for url in urls_to_process:
             
-            # Filtros do G1: deve ser do G1, ser uma notícia e conter o ano atual
-            if 'g1.globo.com/' in href and '/noticia/' in href and ano_atual_str in href:
-                full_url = requests.compat.urljoin(homepage_url, href).split('#')[0]
-                links_encontrados.add(full_url)
+            # Pula se a URL já for um artigo (não precisa mais raspá-la)
+            if article_pattern.search(url):
+                urls_found.add(url)
+                continue
+
+            try:
+                # Adiciona um pequeno atraso (respeito ao servidor)
+                time.sleep(0.5) 
                 
-        return list(links_encontrados)
+                response = requests.get(url, timeout=10)
+                response.raise_for_status()
+                soup = BeautifulSoup(response.text, 'html.parser')
+                
+                for a in soup.find_all('a', href=True):
+                    # Transforma o link em absoluto
+                    href = requests.compat.urljoin(homepage_url, a['href']).split('#')[0]
+                    
+                    # Filtra links que não são do G1
+                    if 'g1.globo.com' not in href:
+                        continue
+                        
+                    # Filtro 1: Se é um link de Artigo Final
+                    if article_pattern.search(href) and ano_atual_str in href:
+                        urls_found.add(href)
+                        
+                    # Filtro 2: Se é um link de Categoria (e não foi rastreado e não é um artigo final)
+                    elif (current_depth < max_depth and 
+                          href not in urls_crawled and 
+                          not article_pattern.search(href) and
+                          href not in urls_to_crawl):
+                        
+                        # Adiciona à fila para ser visitado no próximo nível
+                        urls_to_crawl.add(href)
+                        
+            except requests.exceptions.RequestException as e:
+                # Ignora URLs que dão erro 404, timeout, etc.
+                pass 
+                
+        current_depth += 1
+        
+    print(f"\nTotal de links de artigos finais encontrados (Nível 1 a {max_depth}): {len(urls_found)}")
+    return list(urls_found)
 
-    except Exception as e:
-        print(f"Erro ao obter links do G1: {e}")
-        return []
 
-# NOVO: Função para a Folha (EXEMPLO DE RASPADOR ÚNICO)
-# ATENÇÃO: Os seletores da Folha (classes, tags) são fictícios e devem ser inspecionados no site real.
-def scrape_folha_links(homepage_url):
-    """Função específica para coletar URLs de artigos da homepage da Folha."""
-    print(f"Buscando links em Folha: {homepage_url}...")
+def scrape_olhardigital_links(homepage_url):
+    """Função específica para coletar URLs de artigos da homepage do Olhar Digital."""
+    print(f"Buscando links em Olhar Digital: {homepage_url}...")
     
     try:
         response = requests.get(homepage_url, timeout=10)
@@ -70,39 +126,66 @@ def scrape_folha_links(homepage_url):
         soup = BeautifulSoup(response.text, 'html.parser')
         links_encontrados = set()
         
-        # Exemplo de seletor para a Folha: Procura por tags <a> dentro de elementos que parecem notícias
-        for link_element in soup.select('a[data-type="noticia"]'): # Seletor totalmente hipotético
-            href = link_element['href']
-            
-            # Filtro: Garante que é um link válido da Folha (exclui links externos ou de redes sociais)
-            if href.startswith('https://www1.folha.uol.com.br/'): 
-                links_encontrados.add(href.split('#')[0])
-                
+        # Seletores combinados:
+        # 1. 'a.p-ftfeat': Capta os destaques principais (conforme seu primeiro código)
+        # 2. 'a.p-item': Capta os itens de lista de notícias (conforme este seu novo código)
+        # 3. 'div[class^="card-"] a': Mantém um seletor genérico para links em cards
+        seletores_precisos = [
+            'a.p-ftfeat',
+            'a.p-item',
+            'div[class^="card-"] a'
+        ]
+        
+        for seletor in seletores_precisos:
+            for link_element in soup.select(seletor):
+                 href = link_element.get('href')
+    
+                 # Filtro: Garante que é um link válido de artigo no domínio principal e não é um link de mídia.
+                 if href and 'olhardigital.com.br' in href and not any(ext in href for ext in ['.jpg', '.png', '.mp4', '.gif']):
+                     links_encontrados.add(href.split('#')[0])
+                     
+        print(f"Total de links potencialmente úteis encontrados no Olhar Digital: {len(links_encontrados)}")
         return list(links_encontrados)
 
     except Exception as e:
-        print(f"Erro ao obter links da Folha: {e}")
+        print(f"Erro ao obter links do Olhar Digital: {e}")
         return []
-    
 
-def scrape_uol_links(homepage_url):
-    print(f"Buscando links em UOL: {homepage_url}...")
+
+def scrape_tecmundo_links(homepage_url):
+    """Função otimizada para coletar URLs de artigos da homepage do TecMundo."""
+    print(f"Buscando links em TecMundo: {homepage_url}...")
+    
     try:
         response = requests.get(homepage_url, timeout=10)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
         links_encontrados = set()
+        
+        # OTIMIZAÇÃO: Busca por TODOS os links (<a>) que estão dentro de uma tag <article>.
+        # <article> é a tag semântica para um bloco de conteúdo independente (artigo/notícia).
+        # Isto é MUITO mais robusto do que usar classes que mudam.
+        for a_tag in soup.select('article a[href]'):
+             href = a_tag.get('href')
 
-        # ESTE SELETOR É APENAS UM EXEMPLO. VOCÊ DEVE INSPECIONAR O REAL.
-        for a in soup.select('div.manchete-box a'): 
-            href = a['href']
-            if 'uol.com.br/noticias/' in href:
-                links_encontrados.add(href.split('#')[0])
+             # 1. CONVERSÃO DE URL: Garante que a URL seja absoluta.
+             full_url = requests.compat.urljoin(homepage_url, href).split('#')[0]
 
+             # 2. FILTRO RIGOROSO: Garante que seja um artigo e não um link de vídeo externo.
+             # * Deve ser do domínio tecmundo.
+             # * Deve ser um artigo (geralmente não é um link de YouTube, de Guia de Compras genérico, ou de outro site).
+             if ('tecmundo.com.br' in full_url and 
+                 not any(ext in full_url for ext in ['youtube.com', 'guia-de-compras', 'minha-serie'])):
+                 
+                 links_encontrados.add(full_url)
+                     
+        print(f"Total de links potencialmente úteis encontrados no TecMundo: {len(links_encontrados)}")
         return list(links_encontrados)
+
     except Exception as e:
-        print(f"Erro ao obter links do UOL: {e}")
+        print(f"Erro ao obter links do TecMundo: {e}")
         return []
+
 
 # --- FUNÇÃO PRINCIPAL DE EXTRAÇÃO E SALVAMENTO ---
 
@@ -180,9 +263,9 @@ def run_all_crawlers():
     
     # Mapeamento do nome da função (string) para a função real
     function_map = {
-    "scrape_g1_links": scrape_g1_links,
-    "scrape_folha_links": scrape_folha_links,
-    "scrape_uol_links": scrape_uol_links, # Adicione aqui
+        "scrape_g1_links": scrape_g1_links,
+        "scrape_olhardigital_links": scrape_olhardigital_links,
+        "scrape_tecmundo_links": scrape_tecmundo_links
     }
 
     for site_name, config in SITE_MAP.items():
