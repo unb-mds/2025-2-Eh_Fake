@@ -19,34 +19,98 @@ CREATE TABLE news (
 );
 
 -- Inserção dos dados de exemplo para popular o banco
-INSERT INTO news (title, description, imageAlt, status, confidence, source, link, imageSrc) VALUES
-('TSE destrói urnas para ocultar dados eleitorais', 'Boato alega que o Tribunal Superior Eleitoral destrói urnas eletrônicas para apagar informações. O TSE esclarece que apenas recicla equipamentos antigos, cuja vida útil terminou.', 'Urna eletrônica sendo desmontada', 'Fake', 100.00, 'Justiça Eleitoral', 'https://www.justicaeleitoral.jus.br/fato-ou-boato/', 'https://picsum.photos/id/1073/200'),
-('Terremoto de magnitude 7,4 atinge as Filipinas', 'Um forte terremoto atingiu o sul das Filipinas, gerando alertas de tsunami na região. Autoridades locais e agências internacionais monitoram os impactos.', 'Mapa das Filipinas com epicentro do terremoto', 'Real', 99.80, 'Estadão', 'https://www.estadao.com.br/internacional/terremoto-de-magnitude-74-atinge-as-filipinas-e-ha-alerta-para-tsunami-no-japao/', 'https://picsum.photos/id/1013/200'),
-('Jornal da Globo comete erro de português em gráfico', 'Durante a exibição de dados sobre a Covid-19, um gráfico no "Jornal da Globo" exibiu a palavra "transmição" incorretamente. O erro foi corrigido na versão disponível no Globoplay.', 'Gráfico de telejornal com erro ortográfico', 'Error', 100.00, 'Hugo Gloss', 'https://hugogloss.uol.com.br/tv/jornal-da-globo-comete-erro-basico-de-portugues-em-grafico-e-deixa-internautas-sem-acreditar-que-coisa-mais-feia-emissora-tenta-corrigir-problema-no-globoplay-confira/', 'https://picsum.photos/id/1074/200'),
-('Vacinas contra Covid-19 podem provocar alterações genéticas', 'Circula a desinformação de que as vacinas de RNA mensageiro contra a Covid-19 alteram o DNA humano. Especialistas e agências de saúde afirmam que a tecnologia não interfere no núcleo das células.', 'Molécula de DNA e uma seringa', 'Fake', 100.00, 'Governo do Brasil', 'https://www.gov.br/saude/pt-br/assuntos/saude-com-ciencia/noticias/2023/outubro/conheca-as-fake-news-mais-recorrentes', 'https://picsum.photos/id/1073/200'),
-('Brasil recebe antídoto contra metanol após casos de intoxicação', 'O Ministério da Saúde recebeu milhares de unidades de fomepizol, antídoto usado no tratamento de intoxicação por metanol, para distribuir aos estados com surtos da contaminação.', 'Frascos do medicamento fomepizol em uma prateleira', 'Real', 99.50, 'Agência Brasil', 'https://agenciabrasil.ebc.com.br/saude/noticia/2025-10/brasil-recebe-25-mil-unidades-de-fomepizol-antidoto-contra-metanol', 'https://picsum.photos/id/1014/200'),
-('Folha de S. Paulo publica por engano morte da Rainha Elizabeth II', 'O jornal publicou acidentalmente uma nota de rascunho anunciando a morte da Rainha Elizabeth II antes do ocorrido. O veículo rapidamente removeu o conteúdo e se retratou pelo erro.', 'Logo do jornal Folha de S. Paulo', 'Error', 100.00, 'Hojemais', 'https://www.hojemais.com.br/tres-lagoas/noticia/geral/relembre-os-erros-de-reportagem-que-ja-mataram-celebridades', 'https://picsum.photos/id/1074/200'),
-('Voto em 2024 servirá como prova de vida para o INSS', 'É falsa a informação de que o voto nas eleições servirá como prova de vida para aposentados e pensionistas do INSS. A Justiça Eleitoral e o INSS desmentiram o boato.', 'Título de eleitor e cartão do INSS', 'Fake', 100.00, 'Justiça Eleitoral', 'https://www.justicaeleitoral.jus.br/fato-ou-boato/', 'https://picsum.photos/id/1073/200'),
-('Lula participa de fórum mundial contra a fome em Roma', 'O presidente Luiz Inácio Lula da Silva viajou a Roma, na Itália, para participar do Fórum Internacional da Alimentação, organizado pela FAO.', 'Presidente Lula discursando em evento internacional', 'Real', 99.70, 'R7', 'https://noticias.r7.com/brasil/lula-chega-a-roma-para-participar-de-forum-mundial-contra-a-fome-10102025', 'https://picsum.photos/id/1015/200'),
-('CNN Brasil celebra "jovem que descobriu asteroide"', 'Veículos de imprensa, incluindo a CNN Brasil, noticiaram o caso de uma jovem que teria descoberto um asteroide e faria um curso na NASA. A informação, posteriormente, se revelou imprecisa e foi corrigida.', 'Ilustração de um asteroide no espaço', 'Error', 95.00, 'Observatório da Imprensa', 'https://www.observatoriodaimprensa.com.br/objethos/em-tempos-de-fake-news-e-preciso-elevar-os-padroes-de-correcao-de-erros-jornalisticos/', 'https://picsum.photos/id/1074/200'),
-('Água fervida com alho cura o coronavírus', 'Uma das primeiras fake news da pandemia, a alegação de que chá de alho curava a Covid-19 foi amplamente disseminada. Não há qualquer comprovação científica para essa afirmação.', 'Dentes de alho ao lado de uma xícara', 'Fake', 100.00, 'Fiocruz', 'https://informe.ensp.fiocruz.br/noticias/48548', 'https://picsum.photos/id/1073/200'),
-('Moraes destitui advogados de réus em investigação de trama golpista', 'O ministro Alexandre de Moraes, do STF, destituiu os advogados de dois réus do Núcleo 2 da trama golpista após a perda de um prazo processual, citando conduta procrastinatória.', 'Fachada do Supremo Tribunal Federal em Brasília', 'Real', 99.90, 'Agência Brasil', 'https://agenciabrasil.ebc.com.br/justica/noticia/2025-10/moraes-destitui-advogados-de-dois-reus-do-nucleo-2-da-trama-golpista', 'https://picsum.photos/id/1016/200'),
-('Repórter da GloboNews confunde plural de "cidadão"', 'Durante uma transmissão ao vivo, um repórter da GloboNews cometeu um deslize ao usar "cidadões" como o plural de "cidadão". O erro viralizou nas redes sociais.', 'Microfone com o logo da GloboNews', 'Error', 100.00, 'Incrível.club', 'https://incrivel.club/articles/20-fotos-hilarias-de-erros-em-telejornais-que-chamaram-mais-atencao-do-que-a-propria-noticia-1238388/', 'https://picsum.photos/id/1074/200'),
-('Madonna doa R$ 10 milhões para vítimas das enchentes no RS', 'Após o show da cantora no Brasil, circulou a notícia de uma grande doação para as vítimas da tragédia no Rio Grande do Sul. A informação, no entanto, nunca foi confirmada oficialmente.', 'Cantora Madonna no palco', 'Fake', 98.00, 'Brasil de Fato', 'https://www.brasildefato.com.br/2024/05/08/30-noticias-falsas-golpes-e-fraudes-em-andamento-no-meio-das-enchentes-no-rs', 'https://picsum.photos/id/1073/200'),
-('Anvisa suspende venda de cosméticos capilares e produtos com ozônio', 'A Agência Nacional de Vigilância Sanitária determinou a suspensão da comercialização, distribuição e uso de diversos cosméticos para cabelo e equipamentos de ozonioterapia.', 'Embalagens de cosméticos em uma prateleira', 'Real', 99.60, 'Agência Brasil', 'https://agenciabrasil.ebc.com.br/saude/noticia/2025-10/anvisa-suspende-venda-de-cosmeticos-capilares-e-produtos-com-ozonio', 'https://picsum.photos/id/1018/200'),
-('Texto jornalístico afirma que Jesus foi enforcado', 'Um erro histórico famoso no jornalismo brasileiro, em que um texto descreveu a crucificação de Cristo como um enforcamento, exemplificando a importância da revisão.', 'Ilustração de uma cruz de madeira', 'Error', 100.00, 'EducaMídia', 'https://educamidia.org.br/jornais-tambem-erram-e-isso-nao-e-fake-news/', 'https://picsum.photos/id/1074/200'),
-('Vacina da gripe causa autismo', 'Um boato antigo, mas que ainda circula, associa a vacina a casos de autismo. Inúmeros estudos científicos, envolvendo centenas de milhares de crianças, já refutaram essa conexão.', 'Criança recebendo uma vacina no braço', 'Fake', 100.00, 'Pfizer', 'https://www.pfizer.com.br/noticias/ultimas-noticias/conheca-5-fake-news-sobre-saude', 'https://picsum.photos/id/1073/200'),
-('Mega-Sena acumula e prêmio principal vai para R$ 27 milhões', 'Nenhum apostador acertou as seis dezenas do último concurso da Mega-Sena, e o prêmio acumulou, com estimativa de R$ 27 milhões para o próximo sorteio.', 'Volante de apostas da Mega-Sena', 'Real', 99.00, 'Agência Brasil', 'https://agenciabrasil.ebc.com.br/geral/noticia/2025-10/mega-sena-acumula-e-premio-principal-vai-para-r-27-milhoes', 'https://picsum.photos/id/1019/200'),
-('Telejornal exibe "Bebê de 1 ano e 9 meses" como um adulto', 'Em uma reportagem sobre um crime, a legenda de um telejornal identificou a vítima, um homem adulto, com a idade "1 ano e 9 meses", causando confusão e virando meme.', 'Homem adulto ao lado de uma legenda de telejornal', 'Error', 100.00, 'Incrível.club', 'https://incrivel.club/articles/20-fotos-hilarias-de-erros-em-telejornais-que-chamaram-mais-atencao-do-que-a-propria-noticia-1238388/', 'https://picsum.photos/id/1074/200'),
-('Desodorante antitranspirante causa câncer de mama', 'Uma teoria popular, mas sem base científica, alega que o uso de desodorantes, especialmente os com sais de alumínio, está ligado ao desenvolvimento de câncer de mama. Estudos já desmentiram a relação.', 'Pessoa aplicando desodorante roll-on na axila', 'Fake', 100.00, 'Pfizer', 'https://www.pfizer.com.br/noticias/ultimas-noticias/conheca-5-fake-news-sobre-saude', 'https://picsum.photos/id/1073/200'),
-('Congresso do Peru aprova impeachment da presidente Dina Boluarte', 'O Congresso peruano aprovou a destituição da presidente Dina Boluarte, aprofundando a crise política no país. A decisão gerou protestos e incerteza sobre o futuro político do Peru.', 'Prédio do Congresso da República do Peru em Lima', 'Real', 99.80, 'Estadão', 'https://www.estadao.com.br/internacional/congresso-do-peru-aprova-impeachment-da-presidente-dina-boluarte/', 'https://picsum.photos/id/1020/200'),
-('Jornal Hoje exibe "Nova York" como "Nova Iorque"', 'Apesar de ambas as grafias serem aceitas, a exibição de "Nova Iorque" em uma matéria do Jornal Hoje gerou debate nas redes sociais sobre a preferência da forma aportuguesada, sendo visto por muitos como um erro.', 'Letreiro de rua em Nova York', 'Error', 70.00, 'Incrível.club', 'https://incrivel.club/articles/20-fotos-hilarias-de-erros-em-telejornais-que-chamaram-mais-atencao-do-que-a-propria-noticia-1238388/', 'https://picsum.photos/id/1074/200'),
-('Elon Musk oferece internet grátis da Starlink para o Rio Grande do Sul', 'Um falso plantão da Globo anunciou que o bilionário Elon Musk teria disponibilizado gratuitamente o serviço de internet via satélite Starlink para todo o estado durante as enchentes. A informação é falsa.', 'Antena da Starlink em um telhado', 'Fake', 100.00, 'Brasil de Fato', 'https://www.brasildefato.com.br/2024/05/08/30-noticias-falsas-golpes-e-fraudes-em-andamento-no-meio-das-enchentes-no-rs', 'https://picsum.photos/id/1073/200'),
-('Crise do metanol derruba faturamento de bares em até 50%', 'A onda de intoxicações por metanol em bebidas alcoólicas artesanais impactou severamente o setor de bares e restaurantes, com empresários relatando quedas drásticas no faturamento.', 'Interior de um bar com poucas mesas ocupadas', 'Real', 98.90, 'Gazeta do Povo', 'https://www.gazetadopovo.com.br/economia/crise-do-metanol-derruba-faturamento-de-bares/', 'https://picsum.photos/id/1021/200'),
-('Erro de interpretação gera ranking falso de "fake news"', 'Um levantamento acadêmico sobre o debate político foi mal interpretado por veículos de imprensa, que o transformaram em um "ranking" de produtores de fake news, distorcendo a pesquisa original.', 'Gráfico de pizza com dados estatísticos', 'Error', 100.00, 'Notícias R7', 'https://noticias.r7.com/tecnologia-e-ciencia/erro-de-interpretacao-espalha-uma-fake-news-sobre-fake-news-03042018/', 'https://picsum.photos/id/1074/200'),
-('Usar celular no escuro pode causar câncer nos olhos', 'Boatos afirmam que a luz emitida pelas telas de celulares em ambientes escuros aumenta o risco de câncer ocular. Oftalmologistas esclarecem que, embora possa causar fadiga visual, não há evidências que liguem o hábito ao câncer.', 'Pessoa usando o celular em um quarto escuro', 'Fake', 100.00, 'Cuidamos Juntos', 'https://www.cuidamosjuntos.com.br/prevencao/conheca-fake-news-saude-como-checar-informacoes', 'https://picsum.photos/id/1073/200'),
-('Putin admite que Rússia abateu avião da Embraer no Cazaquistão', 'O presidente russo, Vladimir Putin, reconheceu que forças russas foram responsáveis pela derrubada de um avião cargueiro fabricado pela Embraer no Cazaquistão, alegando que transportava armamentos.', 'Destroços de um avião em uma paisagem nevada', 'Real', 99.20, 'Gazeta do Povo', 'https://www.gazetadopovo.com.br/mundo/putin-admite-que-russia-abateu-aviao-da-embraer-no-cazaquistao/', 'https://picsum.photos/id/1022/200'),
-('Justiça condena Pablo Marçal a pagar R$ 30 mil a Boulos por fake news', 'O empresário e político Pablo Marçal foi condenado a indenizar Guilherme Boulos por danos morais após divulgar um vídeo editado para simular uma fala que o deputado nunca disse.', 'Montagem com as fotos de Pablo Marçal e Guilherme Boulos', 'Real', 99.00, 'Veja', 'https://veja.abril.com.br/coluna/radar/justica-condena-marcal-a-pagar-r-30-mil-a-boulos-por-fake-news/', 'https://picsum.photos/id/1023/200'),
-('Micro-ondas contamina alimentos e causa problemas de saúde', 'A ideia de que a radiação do micro-ondas torna os alimentos perigosos ou cancerígenos é um mito. A radiação não-ionizante apenas aquece as moléculas de água, e a estrutura do aparelho impede vazamentos.', 'Pessoa colocando um prato de comida dentro de um micro-ondas', 'Fake', 100.00, 'Pfizer', 'https://www.pfizer.com.br/noticias/ultimas-noticias/conheca-5-fake-news-sobre-saude', 'https://picsum.photos/id/1073/200'),
-('PM que matou homem que furtou sabão em SP é condenado', 'O policial militar que atirou e matou um homem que havia furtado sabonetes em um supermercado de São Paulo foi condenado a dois anos de prisão em regime semiaberto por homicídio culposo.', 'Fita de isolamento da polícia em uma cena de crime', 'Real', 99.30, 'Estadão', 'https://www.estadao.com.br/sao-paulo/pm-que-matou-homem-que-furtou-sabao-em-sp-e-condenado-a-2-anos-em-regime-semiaberto/', 'https://picsum.photos/id/1024/200'),
-('Governo alerta para golpe com deepfake de Haddad', 'Criminosos estão usando a tecnologia deepfake para criar vídeos falsos do ministro Fernando Haddad, prometendo dinheiro em contas para aplicar golpes financeiros. O governo emitiu um alerta oficial.', 'Imagem distorcida do rosto do ministro Fernando Haddad', 'Fake', 100.00, 'Veja', 'https://veja.abril.com.br/coluna/radar/governo-alerta-para-golpe-com-deepfake-de-haddad-sobre-dinheiro-em-contas/', 'https://picsum.photos/id/1073/200');
+INSERT INTO news (
+  title, 
+  description, 
+  imagesrc, 
+  imagealt, 
+  status, 
+  confidence, 
+  source, 
+  link
+) 
+VALUES
+(
+  'Primeira Turma do STF forma unanimidade recursos de Bolsonaro, mas prisão não é imediata; entenda', 
+  'Julgamento no plenário virtual vai até a sexta-feira da semana que vem. Só então é considerado concluído.',
+  'https://th.bing.com/th?id=OVFT.9rPjuCF7mIfvsDFJCysArC&pid=News&w=80&h=80&c=14&rs=2&qlt=90',
+  'Primeira Turma do STF forma unanimidade recursos de Bolsonaro, mas prisão não é imediata; entenda',
+  'Real', 1.00, 'G1', 'https://g1.globo.com/politica/noticia/2025/11/07/primeira-turma-do-stf-forma-maioria-contra-recursos-de-bolsonaro-mas-prisao-nao-e-imediata-entenda.ghtml'
+),
+(
+  'Inadimplência em condomínios bate recordes e empresas criam soluções para ajudar na gestão', 
+  'Falta de pagamento compromete manutenção, trava melhorias e pode desvalorizar imóveis; ferramenta de IA tem ajudado síndicos e administradores com dúvidas jurídicas e financeiras',
+  'https://www.estadao.com.br/resizer/v2/HXC6HWOBKNHHFH3QUSWBIJWORQ.jpg?quality=80&auth=acfed81ced51dee3ce6134c88678d0af19838e5dc91e1b3be225df7881025a8a&width=550&height=309&smart=true',
+  'Inadimplência condominial atingiu 11,95% no primeiro trimestre de 2025 Foto: Taba Benedicto/Estadão',
+  'Real', 1.00, 'Estadão', 'https://www.estadao.com.br/economia/negocios/inadimplencia-em-condominios-bate-recordes-e-empresas-criam-solucoes-para-ajudar-na-gestao/'
+),
+(
+  'UE fica de fora de acordo para quadruplicar produção de combustíveis sustentáveis', 
+  'Ao todo, 19 países confirmaram comprometimento na cúpula de líderes que precede a COP30, em Belém. Número é considerado promissor pelo Itamaraty; Itália e Holanda estão dentro',
+  'https://f.i.uol.com.br/fotografia/2025/11/07/1762563540690e95d429c2a_1762563540_3x2_xl.jpg',
+  'UE fica de fora de acordo para quadruplicar produção de combustíveis sustentáveis',
+  'Real', 1.00, 'Folha de S.Paulo', 'https://www1.folha.uol.com.br/ambiente/2025/11/ue-fica-de-fora-de-acordo-para-quadruplicar-producao-de-combustiveis-sustentaveis.shtml'
+),
+(
+  'Trump se irrita com preço de carne e manda investigar frigoríficos nos EUA', 
+  'Presidente dos Estados Unidos disse que empresas estão manipulando os valores comercializados.',
+  'https://th.bing.com/th?id=OVFT.9Y5v48A6KY9QHCNOl_FXxC&pid=News&w=234&h=132&c=14&rs=2&qlt=90',
+  'Trump se irrita com preço de carne e manda investigar frigoríficos nos EUA',
+  'Real', 1.00, 'G1', 'https://g1.globo.com/economia/agronegocios/noticia/2025/11/07/trump-diz-que-pediu-investigacao-sobre-frigorificos-por-aumentarem-preco-da-carne-bovina.ghtml'
+),
+(
+  'Flávio Bolsonaro chama julgamento do STF de ‘farsa’ e acusa Moraes de ‘vingança pessoal’', 
+  'Senador reagiu à decisão que manteve a condenação de Jair Bolsonaro a 27 anos de prisão e afirmou que o ministro não tem ‘nenhuma justificativa’; procurado, STF e ministro não se manifestaram',
+  'https://static.poder360.com.br/2020/12/flavio-bolsonaro-1.jpg',
+  'Flávio Bolsonaro chama julgamento do STF de ‘farsa’ e acusa Moraes de ‘vingança pessoal’',
+  'Real', 1.00, 'Estadão', 'https://www.estadao.com.br/politica/flavio-bolsonaro-chama-julgamento-do-stf-de-farsa-e-acusa-moraes-de-vinganca-pessoal-nprp/'
+),
+(
+  'STJ julga ação que pode afetar construção em 741 mil hectares no litoral brasileiro', 
+  'Corte decide na próxima terça-feira (11/11) se toda a vegetação de restinga na costa deve ser considerada Área de Preservação Permanente (APP)',
+  'https://classic.exame.com/wp-content/uploads/2025/11/WhatsApp-Image-2025-11-07-at-15.23.48.jpeg?ims=750x/filters:quality(85):format(webp)',
+  'Vista de Florianopolis, onde teve início o processo, em 2012 (Leandro Fonseca /Exame)',
+  'Real', 1.00, 'Exame', 'https://exame.com/brasil/stj-juga-acao-que-pode-afetar-construcao-em-740-mil-hectares-do-litoral-brasileiro/'
+),
+(
+  'Após repercussão negativa, preços de comida na COP30 são reduzidos', 
+  'Lojistas da COP30 reduziram preços das refeições após críticas nas redes sociais sobre valores elevados na Zona Azul. As refeições como lasanha e estrogonofe tiveram redução para R$ 45, enquanto a água passou a custar R$ 20. Preços são calculados em dólar.',
+  'https://conteudo.imguol.com.br/c/noticias/8c/2025/11/07/salgados-vendidos-na-cop30-pao-de-queijo-por-r-30-1762545812479_v2_300x225.jpg.webp',
+  'Lucas Borges Teixeira/UOL',
+  'Real', 1.00, 'UOL', 'https://www.uol.com.br/ecoa/ultimas-noticias/2025/11/07/cop-precos-restaurantes-alta.htm'
+),
+(
+  'Imposto sobre multinacionais e tributação de super-ricos podem gerar recursos valiosos para as ações climáticas, diz Lula', 
+  'Na COP30, o presidente da República também citou os mercados regulados de carbono como importantes fontes de receita pública',
+  'https://s2-valor.glbimg.com/ZdNCGo9ei5plKrcSBV-1de3SbPM=/0x0:485x643/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_63b422c2caee4269b8b34177e8876b93/internal_photos/bs/2025/h/l/X9jri8RYqIKAxEvZMR5g/presidente-do-brasil-luiz-inacio-da-silva-..-sessao-plenaria-geral-dos-lideres-conferencia-das-nacoes-unidas-sobre-mudancas-climaticas-cop-30.png',
+  'Presidente Luiz Inácio da Silva durante sessão plenária da Cúpula de Líderes do Clima, na COP30, em Belém (PA)',
+  'Real', 1.00, 'Valor Globo', 'https://valor.globo.com/brasil/cop30-amazonia/noticia/2025/11/07/imposto-sobre-multinacionais-e-tributacao-de-super-ricos-podem-gerar-recursos-valiosos-para-as-acoes-climaticas-diz-lula.ghtml'
+),
+(
+  'Lula diz que mundo está “distante” de cumprir o Acordo de Paris', 
+  'No encerramento da Cúpula de Líderes, presidente avalia que houve retrocesso no pacto climático e reforça defesa da tributação dos super-ricos e de multinacionais',
+  'https://static.poder360.com.br/2025/11/Lula-COP30-Ricardo-Stuckert-Planalto-06.nov_.2025-848x477.jpg',
+  'O presidente Lula em frente a banner onde tirou fotos com chefes de Estado durante a Cúpula de Líderes da COP30, em Belém (PA)',
+  'Real', 1.00, 'Poder 360', 'https://www.poder360.com.br/cop30/lula-diz-que-mundo-falhou-em-cumprir-o-acordo-de-paris/'
+),
+(
+  'Por que o Sudão vive uma crise humanitária há tanto tempo', 
+  'Grupo paramilitar disse aceitar um cessar-fogo após tomar principal cidade da região de Darfur. País tem histórico de golpes e guerras civis',
+  'https://nexo-uploads-beta.s3.amazonaws.com/wp-content/uploads/images/2025/11/darfur-unicef_batcheditor_fotor.webp',
+  'Milhares de sudaneses em busca de refúgio em Darfur',
+  'Real', 1.00, 'Nexo Jornal', 'https://www.nexojornal.com.br/expresso/2025/11/06/sudao-guerra-civil-crise-humanitaria'
+),
+(
+  'Punitivismo não resolve: analistas criticam lei sobre crime organizado sancionada por Lula', 
+  'Aprovar lei foi “bola fora” de Lula, diz Nilo Batista; analistas citam mais leis que focam nas penas e foram “inúteis”',
+  'https://apublica.org/wp-content/uploads/2025/11/Capa_Punitivismo-nao-resolve-analistas-criticam-lei-sobre-crime-organizado-sancionada-por-Lula.jpg',
+  'Brasília, 04/06/2024 - O presidente Luiz Inácio Lula da Silva, sanciona o projeto de Lei nº 4364/2020, que institui a política nacional de cuidado integral às pessoas com doença de alzheimer e outras demências. Foto: Rafa Neddermeyer/Agência Brasil',
+  'Real', 1.00, 'A Pública', 'https://apublica.org/2025/11/analistas-criticam-punitivismo-de-lei-sobre-crime-organizado/'
+),
+(
+  'Ibaneis sanciona lei que autoriza ocupação de becos nos lagos Sul e Norte', 
+  'Governador autorizou a ocupação das áreas intersticiais entre as residências no Lago Sul e no Lago Norte. Decisão foi publicada no Diário Oficial do DF',
+  'https://midias.correiobraziliense.com.br/_midias/jpg/2025/10/31/675x450/1_mj3110-03-60504041.jpg?20251031202220?20251031202220',
+  'Ibaneis sanciona lei que autoriza ocupação de becos no lago -  (crédito:  Minervino Júnior/CB)',
+  'Real', 1.00, 'Correio Braziliense', 'https://www.correiobraziliense.com.br/cidades-df/2025/11/7287754-ibaneis-sanciona-lei-que-autoriza-ocupacao-de-becos-nos-lagos-sul-e-norte.html'
+);
