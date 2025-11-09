@@ -1,7 +1,11 @@
 site_name: Eh Fake
 site_description: Documentação completa do projeto Eh Fake, incluindo guias, relatórios e estratégias para desenvolvimento ágil.
 site_author: Equipe Eh Fake
+<<<<<<< Updated upstream
 site_url: https://unb-mds.github.io/2025-2-Eh_Fake/ 
+=======
+site_url: https://unb-mds.github.io/2025-2-Eh_Fake/  
+>>>>>>> Stashed changes
 
 repo_name: unb-mds/2025-2-Eh_Fake
 repo_url: https://unb-mds.github.io/2025-2-Eh_Fake/
@@ -18,7 +22,11 @@ plugins:
       minify_css: true
       minify_js: true
   - glightbox  
+<<<<<<< Updated upstream
   - awesome-pages 
+=======
+  - awesome-pages  
+>>>>>>> Stashed changes
 
 theme:
   name: material
@@ -45,7 +53,11 @@ theme:
     text: Roboto
     code: Fira Code
   favicon: assets/favicon.ico 
+<<<<<<< Updated upstream
   logo: assets/logo.png  # Lembrar de Adicionar um logo em docs/assets
+=======
+  logo: assets/logo.png 
+>>>>>>> Stashed changes
   icon:
     repo: fontawesome/brands/github
   features:
@@ -77,7 +89,6 @@ theme:
     - toc.follow
     - toc.integrate
 
-# Links sociais no rodapé
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -85,6 +96,10 @@ extra:
   generator: false 
 
 
+copyright: |
+  &copy; 2025 Equipe Eh Fake. Todos os direitos reservados.
+
+========
 copyright: |
   &copy; 2025 Equipe Eh Fake. Todos os direitos reservados.
 
