@@ -12,22 +12,38 @@ interface LoadCardsProps {
   searchTerm: string;
 }
 
+interface ApiResponse {
+  news: NewsCardData[];
+  totalItems: number;
+  totalPages: number;
+  currentPage: number;
+}
+
 const LoadCards: React.FC<LoadCardsProps> = ({ searchTerm }) => {
   const [items, setItems] = useState<NewsCardData[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
-  useEffect(() => {
+  const fetchNews = (page: number, search: string) => {
     const controller = new AbortController();
+    const url = new URL("/api/noticias", window.location.origin);
+    url.searchParams.set("page", page.toString());
+    url.searchParams.set("limit", PAGE_SIZE.toString());
+    if (search) {
+      url.searchParams.set("q", search);
+    }
 
-    fetch("/api/noticias", { signal: controller.signal })
+    fetch(url.toString(), { signal: controller.signal })
       .then(async (response) => {
         if (!response.ok) {
           throw new Error("Falha ao carregar notícias");
         }
-        const data = (await response.json()) as NewsCardData[];
-        setItems(data);
+        const data = (await response.json()) as ApiResponse;
+        setItems(data.news);
+        setTotalPages(data.totalPages);
+        setCurrentPage(data.currentPage);
       })
       .catch((err: Error) => {
         if (err.name !== "AbortError") {
@@ -37,30 +53,26 @@ const LoadCards: React.FC<LoadCardsProps> = ({ searchTerm }) => {
       .finally(() => setLoading(false));
 
     return () => controller.abort();
-  }, []);
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    setError(null);
+    const cleanup = fetchNews(1, searchTerm);
+    return cleanup;
+  }, [searchTerm]);
 
   const filteredItems = useSearchFilter(items, searchTerm);
   const normalizedSearchTerm = searchTerm.trim();
 
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [normalizedSearchTerm]);
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    setLoading(true);
+    setError(null);
+    fetchNews(page, searchTerm);
+  };
 
-  useEffect(() => {
-    const total = Math.max(1, Math.ceil(filteredItems.length / PAGE_SIZE));
-    if (currentPage > total) {
-      setCurrentPage(total);
-    }
-  }, [filteredItems, currentPage]);
-
-  const { pagedItems, totalPages } = useMemo(() => {
-    const total = Math.max(1, Math.ceil(filteredItems.length / PAGE_SIZE));
-    const startIndex = (currentPage - 1) * PAGE_SIZE;
-    return {
-      pagedItems: filteredItems.slice(startIndex, startIndex + PAGE_SIZE),
-      totalPages: total,
-    };
-  }, [filteredItems, currentPage]);
+  const pagedItems = items;
 
   return (
     <Container>
@@ -82,7 +94,7 @@ const LoadCards: React.FC<LoadCardsProps> = ({ searchTerm }) => {
                 <Pagination
                   totalPages={totalPages}
                   currentPage={currentPage}
-                  onPageChange={setCurrentPage}
+                  onPageChange={handlePageChange}
                 />
               )}
             </>
