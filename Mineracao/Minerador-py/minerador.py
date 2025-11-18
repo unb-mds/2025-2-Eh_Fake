@@ -26,22 +26,22 @@ BASE_OUTPUT_DIR = 'noticias'
 # No topo do seu minerador.py, atualize o dicionário:
 
 SITE_MAP = {
-    #"G1": {
-    #    "homepage": "https://g1.globo.com/",
-    #    "scraper": "scrape_g1_links"
-    #},
-    #"OLHAR_DIGITAL": {
-    #    "homepage": "https://olhardigital.com.br/",
-    #    "scraper": "scrape_olhardigital_links"
-    #},
-    #"TECMUNDO": {
-    #    "homepage": "https://www.tecmundo.com.br/",
-    #    "scraper": "scrape_tecmundo_links"
-    #},
-    #"OFUXICO": {
-    #    "homepage": "https://www.ofuxico.com.br/",
-    #    "scraper": "scrape_ofuxico_links"
-    #},
+    "G1": {
+        "homepage": "https://g1.globo.com/",
+        "scraper": "scrape_g1_links"
+    },
+    "OLHAR_DIGITAL": {
+        "homepage": "https://olhardigital.com.br/",
+        "scraper": "scrape_olhardigital_links"
+    },
+    "TECMUNDO": {
+        "homepage": "https://www.tecmundo.com.br/",
+        "scraper": "scrape_tecmundo_links"
+    },
+    "OFUXICO": {
+        "homepage": "https://www.ofuxico.com.br/",
+        "scraper": "scrape_ofuxico_links"
+    },
     "TV_FOCO": {
         "homepage": "https://tvfoco.uai.com.br/",
         "scraper": "scrape_tvfoco_links"
