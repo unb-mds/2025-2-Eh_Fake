@@ -1,0 +1,13 @@
+<svg width="200" height="50" viewBox="0 0 200 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g>
+        <path d="M25 44C13.9543 44 5 35.0457 5 24V11L25 4L45 11V24C45 35.0457 36.0457 44 25 44Z" fill="#2563EB"/>
+        
+        <path d="M18 24L22 28L32 18" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        
+        <circle cx="25" cy="12" r="1.5" fill="white" fill-opacity="0.5"/>
+    </g>
+
+    <text x="55" y="32" font-family="Arial, Helvetica, sans-serif" font-weight="bold" font-size="24" fill="#1e293b">
+        Eh <tspan fill="#2563EB">Fake</tspan>
+    </text>
+</svg>
