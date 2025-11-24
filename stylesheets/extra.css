@@ -1,0 +1,312 @@
+/* docs/stylesheets/extra.css */
+
+/* --- 1. CORREÇÃO DE ESTABILIDADE (ANTI-PULO LATERAL) --- */
+html {
+    /* OBRIGATÓRIO: Força a barra de rolagem aparecer sempre, 
+       mesmo em páginas curtas. Isso impede o site de "dançar" para os lados. */
+    overflow-y: scroll;
+}
+
+/* --- LAYOUT DESKTOP UNIFICADO --- */
+@media screen and (min-width: 76.25em) {
+
+    /* 2. HEADER (Barra Fixa) */
+    .md-header {
+        background-color: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #e2e8f0;
+        height: 64px !important;
+        position: sticky !important;
+        /* Fixa no topo */
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
+    }
+
+    .md-header--shadow {
+        box-shadow: none !important;
+    }
+
+    /* 3. CORREÇÃO DE CONTEÚDO (ANTI-PULO VERTICAL) */
+    /* Aplica uma margem padrão em TODAS as páginas para o texto não ficar
+       escondido atrás do menu. */
+    .md-main__inner {
+        margin-top: 80px !important;
+        /* Empurra o conteúdo para baixo do menu */
+        padding-top: 0 !important;
+    }
+
+    /* TRUQUE: Na Home, nós já temos padding no Hero. 
+       Então removemos essa margem extra SÓ na home via CSS embutido ou ajuste aqui.
+       Mas para simplificar, vamos deixar o padrão global e ajustar a home depois. */
+
+    /* 4. LOGO */
+    .md-header__button.md-logo {
+        margin: 0 !important;
+        margin-top: 8px !important;
+        z-index: 50;
+        display: block !important;
+    }
+
+    .md-header__button.md-logo img {
+        height: 36px !important;
+        width: auto !important;
+    }
+
+    .md-header__title {
+        display: none !important;
+    }
+
+    /* 5. MENU CENTRAL (Travado) */
+    .md-tabs {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 64px !important;
+        margin: 0 !important;
+
+        /* Zonas de proteção anti-colisão */
+        padding-left: 200px !important;
+        padding-right: 300px !important;
+        box-sizing: border-box;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        pointer-events: none;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .md-tabs__list {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        gap: 4px;
+        pointer-events: auto;
+    }
+
+    .md-tabs__item {
+        padding: 0 !important;
+        background: transparent !important;
+    }
+
+    .md-tabs__link {
+        color: #64748b !important;
+        font-weight: 500;
+        font-size: 0.9rem;
+        padding: 8px 16px !important;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+        margin: 0 !important;
+        opacity: 1 !important;
+    }
+
+    .md-tabs__link:hover,
+    .md-tabs__link--active {
+        color: #2563EB !important;
+        background-color: #eff6ff !important;
+    }
+
+    /* 6. BUSCA (Direita) */
+    .md-search {
+        margin-left: auto;
+        margin-right: 10px;
+        z-index: 50;
+    }
+
+    .md-search__form {
+        background-color: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 99px !important;
+        height: 36px !important;
+        box-shadow: none !important;
+    }
+
+    .md-search__input {
+        background: transparent !important;
+        padding-left: 40px !important;
+        height: 36px !important;
+        color: #334155 !important;
+    }
+
+    .md-search__icon {
+        color: #64748b !important;
+        top: 4px !important;
+        left: 10px !important;
+    }
+
+    .md-search__inner {
+        width: 220px !important;
+        transition: width 0.3s ease;
+    }
+
+    .md-search__inner:focus-within {
+        width: 280px !important;
+    }
+
+    .md-header__source {
+        margin-left: 8px !important;
+        border-left: 1px solid #e2e8f0;
+        padding-left: 16px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        z-index: 50;
+    }
+
+    /* Esconde abas nativas */
+    .md-container>.md-tabs {
+        display: none !important;
+    }
+}
+
+/* MOBILE */
+@media screen and (max-width: 76.24em) {
+    .md-header {
+        background: white !important;
+    }
+
+    .md-header__title {
+        color: #333 !important;
+    }
+
+    .md-search__inner {
+        width: auto !important;
+    }
+}
+
+/* ============================================================
+   FOOTER CUSTOMIZADO — OTIMIZADO
+   ============================================================ */
+
+/* 1. Container principal do footer */
+.md-footer {
+    background-color: #EBEBEB !important;
+    color: #1e293b !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 2. Remove navegação anterior/próximo */
+.md-footer__inner {
+    display: none !important;
+}
+
+/* 3. Fundo das camadas internas do footer */
+.md-footer__meta,
+.md-footer-meta,
+.md-footer-meta__inner {
+    background-color: #EBEBEB !important;
+    border: none !important;
+}
+
+/* 4. Layout e centralização (Flexbox) */
+.md-footer__meta,
+.md-footer-meta,
+.md-footer-meta__inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 1rem 0 !important;
+    gap: 0.25rem !important;
+}
+
+/* 5. Remove margens internas de texto */
+.md-footer-meta__inner p,
+.md-footer__meta p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 6. Tamanho da tipografia (restaura padrão Material) */
+.md-footer .md-footer-meta,
+.md-footer .md-footer-meta p,
+.md-footer .md-footer-meta span {
+    font-size: 1.0rem !important;
+    line-height: 1.4 !important;
+    font-weight: 400 !important;
+}
+
+/* 7. Texto customizado do copyright */
+.custom-cp {
+    color: #000 !important;
+    font-weight: 600;
+    opacity: 1 !important;
+    display: inline-block !important;
+    margin: 0 auto !important;
+}
+
+/* 8. Ícones sociais centralizados */
+.md-social {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    margin-top: 10px !important;
+}
+
+/* ===========================
+   FIX: FORÇAR FUNDO DO COPYRIGHT
+   =========================== */
+
+/* 1) Variantes comuns do wrapper do footer */
+.md-footer__meta,
+.md-footer-meta,
+.md-footer-meta__inner,
+.md-footer .md-footer__meta,
+.md-footer .md-footer-meta,
+.md-footer .md-footer-meta__inner {
+    background: #EBEBEB !important;
+    background-color: #EBEBEB !important;
+    --md-surface-bg: #EBEBEB !important;
+    --md-default-surface: #EBEBEB !important;
+}
+
+/* 2) Caso exista um pseudo-elemento cobrindo o fundo */
+.md-footer__meta::before,
+.md-footer-meta::before,
+.md-footer-meta__inner::before,
+.md-footer__meta::after,
+.md-footer-meta::after,
+.md-footer-meta__inner::after,
+.md-footer .md-footer__meta::before,
+.md-footer .md-footer-meta::before,
+.md-footer .md-footer-meta__inner::before {
+    background: transparent !important;
+    background-color: transparent !important;
+    content: none !important;
+    /* remove overlays que só servem pra decorar */
+}
+
+/* 3) Se o texto/camada interna usa .md-typeset ou container sem classe */
+.md-footer .md-typeset,
+.md-footer .md-typeset>* {
+    background: transparent !important;
+}
+
+/* 4) Segurança: garante que o bloco interno tenha a mesma cor do footer */
+.md-footer .md-footer-meta__inner,
+.md-footer .md-footer-meta__inner>* {
+    background: transparent !important;
+}
+
+/* 5) Caso a versão do tema use wrappers diferentes (idênticos por acidente) */
+footer.md-footer,
+footer.md-footer * {
+    background-repeat: no-repeat !important;
+}
+
+/* 6) Fallback final (aplica background por camada) */
+.md-footer,
+.md-footer__meta,
+.md-footer-meta,
+.md-footer-meta__inner {
+    background-image: none !important;
+    background-blend-mode: normal !important;
+}
