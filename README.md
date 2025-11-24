@@ -38,10 +38,14 @@ cd 2025-2-Eh_Fake
 ---
 
 #### 2️⃣ Instalar dependências
-Entre no diretório do projeto e execute:
+Entre no diretório do projeto.
+
+**Para o primeiro uso**, utilize o comando `install` para criar a pasta `node_modules`:
 ```bash
-npm ci
+npm install
 ```
+
+> **Nota:** Para atualizações futuras ou ambientes de integração contínua (CI), recomenda-se usar `npm ci`, que instala as versões exatas listadas no `package-lock.json`.
 
 > 💡 Caso esteja no **Windows PowerShell**, talvez seja necessário permitir scripts antes de rodar:
 > ```bash
@@ -102,7 +106,8 @@ npx prisma db push
 
 | Etapa | Comando principal |
 |-------|-------------------|
-| Instalar dependências | `npm ci` |
+| Instalar dependências | `npm install` |
+| Atualizar dependências | `npm ci` |
 | Subir banco (Docker) | `docker-compose up -d` |
 | Gerar Prisma Client | `npx prisma generate` |
 | Rodar o servidor | `npm run dev` |
