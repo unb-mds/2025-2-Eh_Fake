@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 [data-theme-initializing] body {
   opacity: 0;
 }
