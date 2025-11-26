@@ -13,7 +13,7 @@ export interface NewsCardData {
   link?: string;
 }
 
-type StatusToken = NonNullable<NewsCardData["status"]>;
+export type StatusToken = NonNullable<NewsCardData["status"]>;
 
 const STATUS_STYLES: Record<
   StatusToken,
