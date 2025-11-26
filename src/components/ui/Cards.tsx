@@ -20,18 +20,18 @@ const STATUS_STYLES: Record<
   { badge: string; background: string; label: string }
 > = {
   Fake: {
-    badge: "bg-red-300 text-red-700",
-    background: "bg-red-100",
+    badge: "bg-red-300 text-red-700 dark:bg-red-900/50 dark:text-red-300",
+    background: "bg-red-100 dark:bg-red-950/30",
     label: "É FAKE",
   },
   Real: {
-    badge: "bg-emerald-300 text-emerald-700",
-    background: "bg-emerald-100",
+    badge: "bg-emerald-300 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300",
+    background: "bg-emerald-100 dark:bg-emerald-950/30",
     label: "É REAL",
   },
   Error: {
-    badge: "bg-yellow-100 text-yellow-700",
-    background: "bg-yellow-50",
+    badge: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/50 dark:text-yellow-300",
+    background: "bg-yellow-50 dark:bg-yellow-950/30",
     label: "Deveria estar classificado",
   },
 };
@@ -61,7 +61,7 @@ export const NewsCard: React.FC<{ data: NewsCardData }> = ({ data }) => {
           {style.label}
         </span>
         {typeof data.confidence === "number" && (
-          <span className="ml-auto text-xs font-semibold uppercase tracking-wide text-slate-500">
+          <span className="ml-auto text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
             {data.confidence}% confiança
           </span>
         )}
@@ -69,9 +69,9 @@ export const NewsCard: React.FC<{ data: NewsCardData }> = ({ data }) => {
 
       <div className="mt-4 flex flex-1 gap-4">
         <div className="flex-1">
-          <h2 className="text-lg font-bold text-slate-900 break-words">{data.title}</h2>
+          <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100 break-words">{data.title}</h2>
           <p
-            className="mt-3 text-sm leading-relaxed text-slate-700 break-words overflow-hidden text-ellipsis"
+            className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300 break-words overflow-hidden text-ellipsis"
             style={{
               display: "-webkit-box",
               WebkitLineClamp: 3,
@@ -95,14 +95,14 @@ export const NewsCard: React.FC<{ data: NewsCardData }> = ({ data }) => {
         </div>
       </div>
 
-      <footer className="mt-6 flex items-center justify-between text-xs font-medium text-slate-500">
+      <footer className="mt-6 flex items-center justify-between text-xs font-medium text-slate-500 dark:text-slate-400">
         <span>{data.source ?? "Fonte desconhecida"}</span>
         {data.link && (
           <a
             href={data.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-blue-600 hover:underline"
+            className="flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline"
           >
             <FiExternalLink className="h-4 w-4" />
             Acessar
