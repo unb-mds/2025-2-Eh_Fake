@@ -1,23 +1,168 @@
 /* docs/stylesheets/extra.css */
 
-/* --- 1. CORREÇÃO DE ESTABILIDADE (ANTI-PULO LATERAL) --- */
+/* ============================================================
+   0. LAYOUT GLOBAL FULL WIDTH (UNIVERSALIZAÇÃO)
+   Isso remove as margens laterais padrão do MkDocs.
+   Agora, toda página ocupa 100% da largura da tela.
+   ============================================================ */
+.md-grid {
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+
+.md-content__inner {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Garante que o conteúdo comece do topo absoluto (o Header ajusta depois) */
+.md-main__inner {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+/* 1. CORREÇÃO DE ESTABILIDADE (ANTI-PULO LATERAL) */
 html {
-    /* OBRIGATÓRIO: Força a barra de rolagem aparecer sempre, 
-       mesmo em páginas curtas. Isso impede o site de "dançar" para os lados. */
     overflow-y: scroll;
 }
 
-/* --- LAYOUT DESKTOP UNIFICADO --- */
+/* ============================================================
+   2. COMPONENTES VISUAIS GLOBAIS (HERO, MOCKUP, CARDS)
+   Use estas classes em qualquer arquivo .md
+   ============================================================ */
+
+/* HERO SECTION (Fundo com Gradiente) */
+.hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+    padding: 60px 20px 60px 20px;
+    width: 100%;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: #1a202c;
+    max-width: 950px;
+    letter-spacing: -0.03em;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #4a5568;
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+/* CONTAINER DE CONTEÚDO (Para texto não ficar muito largo) */
+.section-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.section-center-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* BROWSER MOCKUP (Janela de Navegador) */
+.browser-mockup {
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    background: white;
+}
+
+.browser-header {
+    background: #f1f3f4;
+    padding: 12px 16px;
+    display: flex;
+    gap: 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+/* BOTÕES & ÍCONES */
+.cta-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.md-button--primary {
+    font-weight: 700;
+    padding: 12px 32px;
+}
+
+/* TECH STACK BAR */
+.tech-stack-bar {
+    background: white;
+    padding: 50px 0;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.tech-stack-icons {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    opacity: 0.7;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+
+/* ============================================================
+   3. HEADER DESKTOP UNIFICADO (ONE LINE)
+   ============================================================ */
 @media screen and (min-width: 76.25em) {
 
-    /* 2. HEADER (Barra Fixa) */
+    /* HEADER (Barra Fixa) */
     .md-header {
         background-color: rgba(255, 255, 255, 0.98) !important;
         backdrop-filter: blur(12px);
         border-bottom: 1px solid #e2e8f0;
         height: 64px !important;
         position: sticky !important;
-        /* Fixa no topo */
         top: 0;
         z-index: 100;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02) !important;
@@ -27,20 +172,14 @@ html {
         box-shadow: none !important;
     }
 
-    /* 3. CORREÇÃO DE CONTEÚDO (ANTI-PULO VERTICAL) */
-    /* Aplica uma margem padrão em TODAS as páginas para o texto não ficar
-       escondido atrás do menu. */
+    /* CORREÇÃO DE CONTEÚDO (Compensa o Header Fixo) */
     .md-main__inner {
         margin-top: 80px !important;
-        /* Empurra o conteúdo para baixo do menu */
+        /* Espaço para o header não cobrir o texto */
         padding-top: 0 !important;
     }
 
-    /* TRUQUE: Na Home, nós já temos padding no Hero. 
-       Então removemos essa margem extra SÓ na home via CSS embutido ou ajuste aqui.
-       Mas para simplificar, vamos deixar o padrão global e ajustar a home depois. */
-
-    /* 4. LOGO */
+    /* LOGO */
     .md-header__button.md-logo {
         margin: 0 !important;
         margin-top: 8px !important;
@@ -57,7 +196,7 @@ html {
         display: none !important;
     }
 
-    /* 5. MENU CENTRAL (Travado) */
+    /* MENU CENTRAL (Travado) */
     .md-tabs {
         position: absolute;
         top: 0;
@@ -65,12 +204,9 @@ html {
         width: 100% !important;
         height: 64px !important;
         margin: 0 !important;
-
-        /* Zonas de proteção anti-colisão */
         padding-left: 200px !important;
         padding-right: 300px !important;
         box-sizing: border-box;
-
         display: flex;
         justify-content: center;
         align-items: center;
@@ -110,7 +246,7 @@ html {
         background-color: #eff6ff !important;
     }
 
-    /* 6. BUSCA (Direita) */
+    /* BUSCA (Direita) */
     .md-search {
         margin-left: auto;
         margin-right: 10px;
@@ -157,7 +293,6 @@ html {
         z-index: 50;
     }
 
-    /* Esconde abas nativas */
     .md-container>.md-tabs {
         display: none !important;
     }
@@ -179,23 +314,21 @@ html {
 }
 
 /* ============================================================
-   FOOTER CUSTOMIZADO — OTIMIZADO
+   4. FOOTER CUSTOMIZADO (Seu código preservado)
    ============================================================ */
 
-/* 1. Container principal do footer */
 .md-footer {
     background-color: #EBEBEB !important;
+    /* Ajustado conforme seu pedido anterior */
     color: #1e293b !important;
     border: none !important;
     box-shadow: none !important;
 }
 
-/* 2. Remove navegação anterior/próximo */
 .md-footer__inner {
     display: none !important;
 }
 
-/* 3. Fundo das camadas internas do footer */
 .md-footer__meta,
 .md-footer-meta,
 .md-footer-meta__inner {
@@ -203,7 +336,6 @@ html {
     border: none !important;
 }
 
-/* 4. Layout e centralização (Flexbox) */
 .md-footer__meta,
 .md-footer-meta,
 .md-footer-meta__inner {
@@ -217,14 +349,12 @@ html {
     gap: 0.25rem !important;
 }
 
-/* 5. Remove margens internas de texto */
 .md-footer-meta__inner p,
 .md-footer__meta p {
     margin: 0 !important;
     padding: 0 !important;
 }
 
-/* 6. Tamanho da tipografia (restaura padrão Material) */
 .md-footer .md-footer-meta,
 .md-footer .md-footer-meta p,
 .md-footer .md-footer-meta span {
@@ -233,7 +363,6 @@ html {
     font-weight: 400 !important;
 }
 
-/* 7. Texto customizado do copyright */
 .custom-cp {
     color: #000 !important;
     font-weight: 600;
@@ -242,7 +371,6 @@ html {
     margin: 0 auto !important;
 }
 
-/* 8. Ícones sociais centralizados */
 .md-social {
     display: flex !important;
     justify-content: center !important;
@@ -251,11 +379,7 @@ html {
     margin-top: 10px !important;
 }
 
-/* ===========================
-   FIX: FORÇAR FUNDO DO COPYRIGHT
-   =========================== */
-
-/* 1) Variantes comuns do wrapper do footer */
+/* Fixes de fundo para o Footer */
 .md-footer__meta,
 .md-footer-meta,
 .md-footer-meta__inner,
@@ -268,45 +392,40 @@ html {
     --md-default-surface: #EBEBEB !important;
 }
 
-/* 2) Caso exista um pseudo-elemento cobrindo o fundo */
 .md-footer__meta::before,
 .md-footer-meta::before,
 .md-footer-meta__inner::before,
 .md-footer__meta::after,
 .md-footer-meta::after,
-.md-footer-meta__inner::after,
-.md-footer .md-footer__meta::before,
-.md-footer .md-footer-meta::before,
-.md-footer .md-footer-meta__inner::before {
+.md-footer-meta__inner::after {
     background: transparent !important;
-    background-color: transparent !important;
     content: none !important;
-    /* remove overlays que só servem pra decorar */
 }
 
-/* 3) Se o texto/camada interna usa .md-typeset ou container sem classe */
 .md-footer .md-typeset,
 .md-footer .md-typeset>* {
     background: transparent !important;
 }
 
-/* 4) Segurança: garante que o bloco interno tenha a mesma cor do footer */
 .md-footer .md-footer-meta__inner,
 .md-footer .md-footer-meta__inner>* {
     background: transparent !important;
 }
 
-/* 5) Caso a versão do tema use wrappers diferentes (idênticos por acidente) */
 footer.md-footer,
 footer.md-footer * {
     background-repeat: no-repeat !important;
 }
 
-/* 6) Fallback final (aplica background por camada) */
 .md-footer,
 .md-footer__meta,
 .md-footer-meta,
 .md-footer-meta__inner {
     background-image: none !important;
     background-blend-mode: normal !important;
+}
+
+.md-footer__meta {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
