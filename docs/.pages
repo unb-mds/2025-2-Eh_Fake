@@ -1,0 +1,8 @@
+# Arquivo: docs/.pages
+
+title: Home
+
+nav:
+  - Início: index.md             # Aponta para a raiz
+  - Equipe: paginas   # Aponta para dentro da pasta 'paginas' (ISSO CONSERTA O 404)
+  - Documentação: documentacao   # Aponta para a pasta documentacao

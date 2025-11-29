@@ -1,0 +1,8 @@
+# Arquivo: docs/documentacao/.pages
+
+title: Documentação
+nav:
+  - ...                          # O "..." significa "liste os arquivos soltos aqui"
+  - Tecnologias: tecnologias     # Aponta para a pasta tecnologias
+  - Processo: relatorios         # Aponta para a pasta relatorios (com nome Processo)
+  - Reuniões: reunioes           # Aponta para a pasta reunioes

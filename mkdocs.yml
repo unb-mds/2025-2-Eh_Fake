@@ -16,9 +16,6 @@ extra_css:
 plugins:
   - search:
       lang: pt
-  #- git-revision-date-localized:
-      #enable_creation_date: true
-      #type: timeago
   - minify:
       minify_html: true
       minify_css: true
@@ -69,58 +66,59 @@ extra:
 
 
 # Navegação
-nav:
-  - Início: index.md
-  - Equipe: equipe.md 
-  - Sobre: sobre.md
-  - Documentação:
-      - Backlog: Backlog.md
-      - Como baixar o RagFlow: como_baixar_ragflow.md
-      - Documentação StoryMap: Documentacao_StoryMaps.md
-      - Documentação Next.js: documentacao_nextjs.md
-      - Documentação React: documentacao_react.md
-      - Documentação Tailwind: documentacao_tailwind.md
-      - Documentação Git: documentacao_git.md
-      - Documentação Rag/RagFlow: documentacao_rag_ragflow.md
-      - Normas de Envio: normas_de_envio.md
-      - Estudo sobre Gestão: Estudo sobre Gestão.md
-      - Estudo sobre Metodologias Ágeis e Scrum: Agilidade e Scrum.md
-      - Estudo sobre Ciclo de Vida de Software: Estudo sobre Ciclo de Vida de Software.md
-      - Documentação sobre Agentes de IA: Agentes de IA.md
-      - Documento de Estratégia: Documento de Estratégia.md
-      - Requisitos de Software: Requisitos de Software.md
-      - Tecnologias:
-          - Documentação Next.js: documentacao_nextjs.md
-          - Documentação React: documentacao_react.md
-          - Documentação Tailwind: documentacao_tailwind.md
-          - Documentação Git: documentacao_git.md
-          - Documentação Rag/RagFlow: documentacao_rag_ragflow.md
-      - Processo:
-          - Normas de Envio: normas_de_envio.md
-          - Documento de Estratégia: "Documento de Estratégia.md"
-          - Requisitos de Software: "Requisitos de Software.md"
-      - Relatórios:
-          - Relatório Sprint 00: relatorio_sprint_00.md
-          - Relatório Sprint 01: relatorio_sprint_01.md
-          - Relatório Sprint 02: relatorio_sprint_02.md
-          - Relatório Sprint 03: relatorio_sprint_03.md
-          - Relatório Sprint 11: relatorio_sprint11_ragflow.md
-      - Estudos e Reuniões:
-          - Agentes de IA: "Agentes de IA.md"
-          - Agilidade e Scrum: "Agilidade e Scrum.md"
-          - Estudo sobre Ciclo de Vida de Software: "Estudo sobre Ciclo de Vida de Software.md"
-          - Estudo sobre Gestão: "Estudo sobre Gestão.md"
-          - Como Baixar RagFlow: como_baixar_ragflow.md
-          - Reuniões:
-              - Relatório da reunião de planejamento semanal (21-09-2025): reunioes/Relatório da reunião de planejamento semanal (21-09-2025).md
-              - Relatório Reunião Eh fake 19 09 2025: reunioes/Relatório Reunião Eh fake 19 09 2025.md
-              - Relatório Reunião Eh fake 23 09 2025: reunioes/Relatório Reunião Eh fake 23 09 2025.md
-              - Relatório Reunião Eh fake 28 09 2025: reunioes/Relatório Reunião Eh fake 28 09 2025.md
-              - Relatório Reunião Eh fake 30 09 2025: reunioes/Relatório Reunião Eh fake 30 09 2025.md
-              - Relatório Reunião Eh fake 07 10 2025: reunioes/Relatório Reunião Eh fake 07 10 2025.md
-              - Relatório Reunião Eh fake 12 10 2025: reunioes/Relatório Reunião Eh fake 12 10 2025.md
-              - Relatório Reunião Eh fake 14 10 2025: reunioes/Relatório Reunião Eh fake 14 10 2025.md
-              - Relatório Reunião Eh fake 21 10 2025: reunioes/Relatório Reunião Eh fake 21 10 2025.md
-              - Relatório Reunião Eh fake 04 11 2025: reunioes/Relatório Reunião Eh fake 04 11 2025.md
-              - Relatório Reunião Eh fake 09 11 2025: reunioes/Relatório Reunião Eh fake 09 11 2025.md
-              - Relatório Reunião Eh fake 11 11 2025: reunioes/Relatório Reunião Eh fake 11 11 2025.md
+# nav:
+#   - Início: paginas/index.md
+#   - Equipe: paginas/equipe.md 
+#   - Documentação:
+#       - Backlog: Backlog.md
+#       - Como baixar o RagFlow: como_baixar_ragflow.md
+#       - Documentação StoryMap: Documentacao_StoryMaps.md
+#       - Documentação Next.js: documentacao_nextjs.md
+#       - Documentação React: documentacao_react.md
+#       - Documentação Tailwind: documentacao_tailwind.md
+#       - Documentação Git: documentacao_git.md
+#       - Documentação Rag/RagFlow: documentacao_rag_ragflow.md
+#       - Normas de Envio: normas_de_envio.md
+#       - Estudo sobre Gestão: Estudo sobre Gestão.md
+#       - Estudo sobre Metodologias Ágeis e Scrum: Agilidade e Scrum.md
+#       - Estudo sobre Ciclo de Vida de Software: Estudo sobre Ciclo de Vida de Software.md
+#       - Documentação sobre Agentes de IA: Agentes de IA.md
+#       - Documento de Estratégia: Documento de Estratégia.md
+#       - Requisitos de Software: Requisitos de Software.md
+#       - Tecnologias:
+#           - Documentação Next.js: documentacao_nextjs.md
+#           - Documentação React: documentacao_react.md
+#           - Documentação Tailwind: documentacao_tailwind.md
+#           - Documentação Git: documentacao_git.md
+#           - Documentação Rag/RagFlow: documentacao_rag_ragflow.md
+#       - Processo:
+#           - Normas de Envio: normas_de_envio.md
+#           - Documento de Estratégia: "Documento de Estratégia.md"
+#           - Requisitos de Software: "Requisitos de Software.md"
+#       - Relatórios:
+#           - Relatório Sprint 00: relatorio_sprint_00.md
+#           - Relatório Sprint 01: relatorio_sprint_01.md
+#           - Relatório Sprint 02: relatorio_sprint_02.md
+#           - Relatório Sprint 03: relatorio_sprint_03.md
+#           - Relatório Sprint 11: relatorio_sprint11_ragflow.md
+#       - Estudos e Reuniões:
+#           - Agentes de IA: "Agentes de IA.md"
+#           - Agilidade e Scrum: "Agilidade e Scrum.md"
+#           - Estudo sobre Ciclo de Vida de Software: "Estudo sobre Ciclo de Vida de Software.md"
+#           - Estudo sobre Gestão: "Estudo sobre Gestão.md"
+#           - Como Baixar RagFlow: como_baixar_ragflow.md
+#           - Reuniões:
+#               - Relatório da reunião de planejamento semanal (21-09-2025): reunioes/Relatório da reunião de planejamento semanal (21-09-2025).md
+#               - Relatório Reunião Eh fake 19 09 2025: reunioes/Relatório Reunião Eh fake 19 09 2025.md
+#               - Relatório Reunião Eh fake 23 09 2025: reunioes/Relatório Reunião Eh fake 23 09 2025.md
+#               - Relatório Reunião Eh fake 28 09 2025: reunioes/Relatório Reunião Eh fake 28 09 2025.md
+#               - Relatório Reunião Eh fake 30 09 2025: reunioes/Relatório Reunião Eh fake 30 09 2025.md
+#               - Relatório Reunião Eh fake 07 10 2025: reunioes/Relatório Reunião Eh fake 07 10 2025.md
+#               - Relatório Reunião Eh fake 12 10 2025: reunioes/Relatório Reunião Eh fake 12 10 2025.md
+#               - Relatório Reunião Eh fake 14 10 2025: reunioes/Relatório Reunião Eh fake 14 10 2025.md
+#               - Relatório Reunião Eh fake 21 10 2025: reunioes/Relatório Reunião Eh fake 21 10 2025.md
+#               - Relatório Reunião Eh fake 04 11 2025: reunioes/Relatório Reunião Eh fake 04 11 2025.md
+#               - Relatório Reunião Eh fake 09 11 2025: reunioes/Relatório Reunião Eh fake 09 11 2025.md
+#               - Relatório Reunião Eh fake 11 11 2025: reunioes/Relatório Reunião Eh fake 11 11 2025.md
+#           - Teste:
+#             reunioes
