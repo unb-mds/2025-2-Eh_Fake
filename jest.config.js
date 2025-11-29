@@ -1,3 +1,4 @@
+
 // Importa as configurações padrão do Next.js para o Jest
 const nextJest = require('next/jest');
 
@@ -32,3 +33,23 @@ const customJestConfig = {
 
 // Exporta a configuração final
 module.exports = createJestConfig(customJestConfig);
+
+const nextJest = require('next/jest')
+
+const createJestConfig = nextJest({
+  // Porfavor dê certo 
+  dir: './',
+})
+
+// Add any custom config to be passed to Jest
+const customJestConfig = {
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
+  testEnvironment: 'jest-environment-jsdom',
+}
+
+
+module.exports = createJestConfig(customJestConfig)
+
