@@ -6,13 +6,13 @@ const createJestConfig = nextJest({
 
 /** @type {import('jest').Config} */
 const customJestConfig = {
-  // Setup file executed after the test framework is installed in the environment
+ 
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
 
-  // Use jsdom test environment to simulate browser APIs
+  // Define o ambiente de teste como jsdom 
   testEnvironment: 'jest-environment-jsdom',
 
-  // Map the `@/...` alias to the src folder
+  // Ajusta os caminhos de importação para funcionar nos testes
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
@@ -20,8 +20,8 @@ const customJestConfig = {
   // Only look for tests inside src
   roots: ['<rootDir>/src'],
 
-  // Ignore node_modules and Next.js build output
+  // Ignora os modulos do node
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/.next/'],
 }
-
+// Exporta a configuração final do Jest
 module.exports = createJestConfig(customJestConfig)
