@@ -1,55 +1,34 @@
-
-// Importa as configurações padrão do Next.js para o Jest
+// Importa a integração do Jest com o Next.js
 const nextJest = require('next/jest');
 
-// Função para criar a configuração do Jest
+// Cria a configuração base do Jest usando o ambiente do Next.js
 const createJestConfig = nextJest({
-  // Informa ao Next.js onde está seu projeto (neste caso, na pasta 'src')
-  dir: './src',
+  dir: './', // Diretório raiz do projeto Next.js
 });
 
 // Configurações personalizadas do Jest
 const customJestConfig = {
-  // Informa ao Jest para carregar o arquivo 'jest.setup.js' antes de cada teste
-  setupFilesAfterEnv: ['<rootDir>/../jest.setup.js'],
-  
-  // Define o ambiente de teste como 'jsdom' (simula um navegador no terminal)
+  // Arquivo carregado antes de cada teste (ex.: extensões do Testing Library)
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+
+  // Define o ambiente de teste como o jsdom (simula o navegador)
   testEnvironment: 'jest-environment-jsdom',
-  
-  // Mapeia os caminhos de importação (ex: @/components/*) para que o Jest os entenda
+
+  // Ajusta os caminhos de importação para funcionar nos testes
   moduleNameMapper: {
-    '^@/components/(.*)$': '<rootDir>/components/$1',
-    '^@/lib/(.*)$': '<rootDir>/lib/$1',
-    '^@/hooks/(.*)$': '<rootDir>/hooks/$1',
-    '^@/app/(.*)$': '<rootDir>/app/$1',
+    '^@/(.*)$': '<rootDir>/src/$1',
+    '^@/components/(.*)$': '<rootDir>/src/components/$1',
+    '^@/lib/(.*)$': '<rootDir>/src/lib/$1',
+    '^@/hooks/(.*)$': '<rootDir>/src/hooks/$1',
+    '^@/app/(.*)$': '<rootDir>/src/app/$1',
   },
-  
-  // Define o diretório raiz como a pasta 'src'
-  rootDir: 'src',
-  // Procura por testes nas pastas __tests__ dentro de 'src'
-  testPathIgnorePatterns: ['<rootDir>/../node_modules/', '<rootDir>/../.next/'],
-  roots: ['<rootDir>'],
+  roots: ['<rootDir>/src'],
+  // Pastas ignoradas pelo Jest
+  testPathIgnorePatterns: [
+    '<rootDir>/node_modules/',
+    '<rootDir>/.next/',
+  ],
 };
 
 // Exporta a configuração final
 module.exports = createJestConfig(customJestConfig);
-
-const nextJest = require('next/jest')
-
-const createJestConfig = nextJest({
-  // Porfavor dê certo 
-  dir: './',
-})
-
-// Add any custom config to be passed to Jest
-const customJestConfig = {
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
-  },
-  testEnvironment: 'jest-environment-jsdom',
-}
-
-
-module.exports = createJestConfig(customJestConfig)
-
