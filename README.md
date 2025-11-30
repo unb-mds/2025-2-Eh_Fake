@@ -115,6 +115,33 @@ npx prisma db push
 
 ---
 
+## 🧪 Testes Automatizados (E2E)
+
+Este projeto utiliza **Playwright** para realizar testes End-to-End, simulando a jornada real do usuário (Busca, Feed, Paginação e Temas) e garantindo a integridade entre o Frontend, Backend e Banco de Dados.
+
+### ⚙️ Configuração e Execução
+
+Certifique-se de que o **banco de dados esteja rodando** (`docker-compose up -d`), pois os testes interagem com dados reais.
+
+#### 1. Instalar os navegadores do Playwright
+Após instalar as dependências do projeto (`npm ci`), execute este comando uma única vez para baixar os binários dos navegadores:
+```bash
+npx playwright install
+```
+
+#### 2. Rodar os testes (Modo Terminal)
+Para uma verificação rápida sem interface gráfica:
+```bash
+npx playwright test
+```
+
+#### 3. Rodar os testes (Modo Interface Visual)
+Para ver o navegador abrindo e inspecionar o passo a passo de cada teste:
+```bash
+npx playwright test --ui
+```
+
+---
 <!-- A partir daqui não tem erro, sempre que fizer uma coisa nova que for relevante para vir para o README é só colocar -->
 ## Licença
 
