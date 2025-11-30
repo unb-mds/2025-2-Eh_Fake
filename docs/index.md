@@ -226,4 +226,4 @@ graph TD
 </div>
 </div>
 
-<div align="center" style="padding: 100px 20px;"> <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">Pronto para colaborar?</h3> <p style="margin-bottom: 30px; font-size: 1.1rem; opacity: 0.8;">O código é aberto e precisamos de contribuidores.</p> <a href="equipe.md" class="md-button md-button--primary md-button--large">Conheça a Equipe</a> </div> 
+<div align="center" style="padding: 100px 20px;"> <h3 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">Pronto para colaborar?</h3> <p style="margin-bottom: 30px; font-size: 1.1rem; opacity: 0.8;">O código é aberto e precisamos de contribuidores.</p> <a href="equipe" class="md-button md-button--primary md-button--large">Conheça a Equipe</a> </div> 
