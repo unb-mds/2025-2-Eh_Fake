@@ -30,5 +30,5 @@ const customJestConfig = {
   ],
 };
 
-// Exporta a configuração final
+// Exporta a configuração final do Jest
 module.exports = createJestConfig(customJestConfig);
