@@ -29,6 +29,11 @@ describe('NewsCard', () => {
     const link = screen.getByRole('link', { name: /Acessar/i })
     expect(link).toHaveAttribute('href', sample.link)
   })
+
+  it('exibe fonte da notícia no rodapé do card', () => {
+    render(<NewsCard data={sample} />)
+    expect(screen.getByText(sample.source)).toBeInTheDocument()
+  })
 })
 
 describe('NewsCardGrid', () => {
