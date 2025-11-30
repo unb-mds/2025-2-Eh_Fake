@@ -345,7 +345,7 @@ html {
     justify-content: center !important;
     width: 100% !important;
     text-align: center !important;
-    padding: 1rem 0 !important;
+    padding: 0.75rem 0 !important;
     gap: 0.25rem !important;
 }
 
@@ -360,7 +360,7 @@ html {
 .md-footer .md-footer-meta span {
     font-size: 1.0rem !important;
     line-height: 1.4 !important;
-    font-weight: 400 !important;
+    font-weight: 350 !important;
 }
 
 .custom-cp {
@@ -423,9 +423,4 @@ footer.md-footer * {
 .md-footer-meta__inner {
     background-image: none !important;
     background-blend-mode: normal !important;
-}
-
-.md-footer__meta {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
 }

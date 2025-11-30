@@ -3,6 +3,12 @@
 title: Documentação
 nav:
   - ...                          # O "..." significa "liste os arquivos soltos aqui"
-  - Tecnologias: tecnologias     # Aponta para a pasta tecnologias
-  - Processo: relatorios         # Aponta para a pasta relatorios (com nome Processo)
+  - Comece aqui: comece_aqui.md
+  - Configuração: configuracao.md
+  - Releases: releases.md
+  - Arquitetura: arquitetura
+  - Gestão: gestao
+  - Processo: relatorios
+  - Produto: produto
   - Reuniões: reunioes           # Aponta para a pasta reunioes
+  - Tecnologias: tecnologias     # Aponta para a pasta tecnologias
