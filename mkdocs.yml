@@ -1,157 +1,124 @@
 site_name: Eh Fake
-site_description: Documentação completa do projeto Eh Fake, incluindo guias, relatórios e estratégias para desenvolvimento ágil.
+site_description: Documentação completa do projeto Eh Fake.
 site_author: Equipe Eh Fake
-site_url: https://unb-mds.github.io/2025-2-Eh_Fake/  # Ajuste conforme o repositório GitHub Pages
+site_url: https://unb-mds.github.io/2025-2-Eh_Fake/
 
-# Repositório para integração GitHub
 repo_name: unb-mds/2025-2-Eh_Fake
-repo_url: https://unb-mds.github.io/2025-2-Eh_Fake/
-edit_uri: edit/main/docs/  # Permite edição direta no GitHub
+repo_url: https://github.com/unb-mds/2025-2-Eh_Fake
+edit_uri: edit/main/docs/
 
-# Plugins para funcionalidades avançadas
+
+# CSS Personalizado
+extra_css:
+  - stylesheets/extra.css
+
+# Plugins
 plugins:
   - search:
       lang: pt
-  - git-revision-date-localized:
-      enable_creation_date: true
-      type: timeago
   - minify:
       minify_html: true
       minify_css: true
       minify_js: true
-  - glightbox  # Para galerias de imagens interativas
-  - awesome-pages  # Organização automática de páginas (opcional, mas útil para nav dinâmica)
+  - glightbox
+  - awesome-pages
 
-# Tema Material com ultra-personalização
+# Tema Material
 theme:
   name: material
-  palette:
-    primary: indigo
-    accent: blue
   language: pt
   palette:
-    # Paleta clara
     - scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Modo claro
-      primary: blue
-      accent: orange
-    # Paleta escura
-    - scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Modo escuro
-      primary: blue
-      accent: orange
+      primary: white 
+      accent: orange 
   font:
     text: Roboto
     code: Fira Code
-  favicon: assets/favicon.ico  # Adicione um favicon em docs/assets/
-  logo: assets/logo.png  # Adicione um logo em docs/assets/ (crie se necessário)
+  favicon: assets/logo.svg
+  logo: assets/logo.svg
   icon:
     repo: fontawesome/brands/github
   features:
-    - announce.dismiss
-    - content.action.edit
-    - content.action.view
-    - content.code.annotate
+    - navigation.tabs        # Menu horizontal
+    - navigation.tabs.sticky # Menu fixo no topo
+    - navigation.top         # Botão voltar ao topo
+    - header.autohide        # Esconde ao rolar para baixo (opcional, mas elegante)
     - content.code.copy
-    - content.code.select
-    - content.footnote.tooltips
-    - content.tabs.link
-    - content.tooltips
-    - header.autohide
-    - navigation.expand
-    - navigation.footer
-    - navigation.indexes
-    - navigation.instant
-    - navigation.instant.prefetch
-    - navigation.instant.progress
-    - navigation.prune
-    - navigation.sections
-    - navigation.tabs
-    - navigation.tabs.sticky
-    - navigation.top
-    - navigation.tracking
-    - search.highlight
-    - search.share
-    - search.suggest
-    - toc.follow
-    - toc.integrate
+    #- navigation.footer
 
-# Links sociais no rodapé
+
+# Extensões Markdown (Essenciais para o layout)
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+copyright: |
+  <span class="custom-cp">Copyright © 2025 Eh Fake.</span>
+
 extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/unb-mds/2025-2-Eh_Fake
   generator: false 
 
-# Copyright no rodapé
-copyright: |
-  &copy; 2025 Equipe Eh Fake. Todos os direitos reservados.
 
-# SEO e Analytics (opcional, adicione se desejar)
-# extra:
-#   analytics:
-#     provider: google
-#     property: G-XXXXXXXXXX  # Substitua pelo seu GA ID
-
-# Navegação organizada e aprimorada
-nav:
-  - Início: index.md
-  - Sobre o Projeto: sobre.md
-  - Documentação:
-      - Backlog: Backlog.md
-      - Como baixar o RagFlow: como_baixar_ragflow.md
-      - Documentação StoryMap: Documentacao_StoryMaps.md
-      - Documentação Next.js: documentacao_nextjs.md
-      - Documentação React: documentacao_react.md
-      - Documentação Tailwind: documentacao_tailwind.md
-      - Documentação Git: documentacao_git.md
-      - Documentação Rag/RagFlow: documentacao_rag_ragflow.md
-      - Normas de Envio: normas_de_envio.md
-      - Estudo sobre Gestão: Estudo sobre Gestão.md
-      - Estudo sobre Metodologias Ágeis e Scrum: Agilidade e Scrum.md
-      - Estudo sobre Ciclo de Vida de Software: Estudo sobre Ciclo de Vida de Software.md
-      - Documentação sobre Agentes de IA: Agentes de IA.md
-      - Documento de Estratégia: Documento de Estratégia.md
-      - Requisitos de Software: Requisitos de Software.md
-      - Tecnologias:
-          - Documentação Next.js: documentacao_nextjs.md
-          - Documentação React: documentacao_react.md
-          - Documentação Tailwind: documentacao_tailwind.md
-          - Documentação Git: documentacao_git.md
-          - Documentação Rag/RagFlow: documentacao_rag_ragflow.md
-      - Processo:
-          - Normas de Envio: normas_de_envio.md
-          - Documento de Estratégia: "Documento de Estratégia.md"
-          - Requisitos de Software: "Requisitos de Software.md"
-      - Relatórios:
-          - Relatório Sprint 00: relatorio_sprint_00.md
-          - Relatório Sprint 01: relatorio_sprint_01.md
-          - Relatório Sprint 02: relatorio_sprint_02.md
-          - Relatório Sprint 03: relatorio_sprint_03.md
-      - Estudos e Reuniões:
-          - Agentes de IA: "Agentes de IA.md"
-          - Agilidade e Scrum: "Agilidade e Scrum.md"
-          - Estudo sobre Ciclo de Vida de Software: "Estudo sobre Ciclo de Vida de Software.md"
-          - Estudo sobre Gestão: "Estudo sobre Gestão.md"
-          - Como Baixar RagFlow: como_baixar_ragflow.md
-          - Reuniões:
-              - Relatório da reunião de planejamento semanal (21-09-2025): reunioes/Relatório da reunião de planejamento semanal (21-09-2025).md
-              - Relatório Reunião Eh fake 19 09 2025: reunioes/Relatório Reunião Eh fake 19 09 2025.md
-              - Relatório Reunião Eh fake 23 09 2025: reunioes/Relatório Reunião Eh fake 23 09 2025.md
-              - Relatório Reunião Eh fake 28 09 2025: reunioes/Relatório Reunião Eh fake 28 09 2025.md
-              - Relatório Reunião Eh fake 30 09 2025: reunioes/Relatório Reunião Eh fake 30 09 2025.md
-              - Relatório Reunião Eh fake 07 10 2025: reunioes/Relatório Reunião Eh fake 07 10 2025.md
-              - Relatório Reunião Eh fake 12 10 2025: reunioes/Relatório Reunião Eh fake 12 10 2025.md
-              - Relatório Reunião Eh fake 14 10 2025: reunioes/Relatório Reunião Eh fake 14 10 2025.md
-              - Relatório Reunião Eh fake 04 11 2025: reunioes/Relatório Reunião Eh fake 04 11 2025.md
-              - Relatório Reunião Eh fake 09 11 2025: reunioes/Relatório Reunião Eh fake 09 11 2025.md
-     
-   
-    
-            
-
-  
+# Navegação
+# nav:
+#   - Início: paginas/index.md
+#   - Equipe: paginas/equipe.md 
+#   - Documentação:
+#       - Backlog: Backlog.md
+#       - Como baixar o RagFlow: como_baixar_ragflow.md
+#       - Documentação StoryMap: Documentacao_StoryMaps.md
+#       - Documentação Next.js: documentacao_nextjs.md
+#       - Documentação React: documentacao_react.md
+#       - Documentação Tailwind: documentacao_tailwind.md
+#       - Documentação Git: documentacao_git.md
+#       - Documentação Rag/RagFlow: documentacao_rag_ragflow.md
+#       - Normas de Envio: normas_de_envio.md
+#       - Estudo sobre Gestão: Estudo sobre Gestão.md
+#       - Estudo sobre Metodologias Ágeis e Scrum: Agilidade e Scrum.md
+#       - Estudo sobre Ciclo de Vida de Software: Estudo sobre Ciclo de Vida de Software.md
+#       - Documentação sobre Agentes de IA: Agentes de IA.md
+#       - Documento de Estratégia: Documento de Estratégia.md
+#       - Requisitos de Software: Requisitos de Software.md
+#       - Tecnologias:
+#           - Documentação Next.js: documentacao_nextjs.md
+#           - Documentação React: documentacao_react.md
+#           - Documentação Tailwind: documentacao_tailwind.md
+#           - Documentação Git: documentacao_git.md
+#           - Documentação Rag/RagFlow: documentacao_rag_ragflow.md
+#       - Processo:
+#           - Normas de Envio: normas_de_envio.md
+#           - Documento de Estratégia: "Documento de Estratégia.md"
+#           - Requisitos de Software: "Requisitos de Software.md"
+#       - Relatórios:
+#           - Relatório Sprint 00: relatorio_sprint_00.md
+#           - Relatório Sprint 01: relatorio_sprint_01.md
+#           - Relatório Sprint 02: relatorio_sprint_02.md
+#           - Relatório Sprint 03: relatorio_sprint_03.md
+#           - Relatório Sprint 11: relatorio_sprint11_ragflow.md
+#       - Estudos e Reuniões:
+#           - Agentes de IA: "Agentes de IA.md"
+#           - Agilidade e Scrum: "Agilidade e Scrum.md"
+#           - Estudo sobre Ciclo de Vida de Software: "Estudo sobre Ciclo de Vida de Software.md"
+#           - Estudo sobre Gestão: "Estudo sobre Gestão.md"
+#           - Como Baixar RagFlow: como_baixar_ragflow.md
+#           - Reuniões:
+#               - Relatório da reunião de planejamento semanal (21-09-2025): reunioes/Relatório da reunião de planejamento semanal (21-09-2025).md
+#               - Relatório Reunião Eh fake 19 09 2025: reunioes/Relatório Reunião Eh fake 19 09 2025.md
+#               - Relatório Reunião Eh fake 23 09 2025: reunioes/Relatório Reunião Eh fake 23 09 2025.md
+#               - Relatório Reunião Eh fake 28 09 2025: reunioes/Relatório Reunião Eh fake 28 09 2025.md
+#               - Relatório Reunião Eh fake 30 09 2025: reunioes/Relatório Reunião Eh fake 30 09 2025.md
+#               - Relatório Reunião Eh fake 07 10 2025: reunioes/Relatório Reunião Eh fake 07 10 2025.md
+#               - Relatório Reunião Eh fake 12 10 2025: reunioes/Relatório Reunião Eh fake 12 10 2025.md
+#               - Relatório Reunião Eh fake 14 10 2025: reunioes/Relatório Reunião Eh fake 14 10 2025.md
+#               - Relatório Reunião Eh fake 21 10 2025: reunioes/Relatório Reunião Eh fake 21 10 2025.md
+#               - Relatório Reunião Eh fake 04 11 2025: reunioes/Relatório Reunião Eh fake 04 11 2025.md
+#               - Relatório Reunião Eh fake 09 11 2025: reunioes/Relatório Reunião Eh fake 09 11 2025.md
+#               - Relatório Reunião Eh fake 11 11 2025: reunioes/Relatório Reunião Eh fake 11 11 2025.md
+#           - Teste:
+#             reunioes

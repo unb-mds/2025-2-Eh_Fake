@@ -1,0 +1,8 @@
+# Arquivo: docs/.pages
+
+title: Home
+
+nav:
+  - Início: index.md             # Aponta para a raiz
+  - Equipe: equipe
+  - Documentação: documentacao 
