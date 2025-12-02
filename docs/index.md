@@ -106,7 +106,202 @@ hide:
 
 .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
 
+/* ---------- CARROSSEL CSS-ONLY ---------- */
+
+/* =============================================
+   CARROSSEL CORRIGIDO (LÓGICA MATEMÁTICA PURA)
+   ============================================= 
+*/
+
+.carousel-wrapper {
+  /* Tamanho máximo do carrossel na tela */
+  max-width: 900px;
+  width: 100%;
+  margin: 40px auto;
+  position: relative;
+  
+  /* Define a proporção da caixa (16:10) para evitar pulos de layout */
+  aspect-ratio: 16 / 10;
+  background: #f1f3f4; /* Fundo cinza claro enquanto carrega */
+  border-radius: 12px;
+  box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2);
+}
+
+/* Esconde os inputs de controle */
+.carousel-wrapper input {
+  display: none;
+}
+
+.carousel-viewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* O SEGREDO: Corta tudo que sai da caixa */
+  border-radius: 12px;
+  position: relative;
+}
+
+.slides-track {
+  display: flex;
+  height: 100%;
+  /* Largura = 100% * número de imagens. Temos 2 imagens, então 200% */
+  width: 200%; 
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Animação suave */
+}
+
+.slide {
+  /* Largura relativa ao TRILHO. Se o trilho é 200%, cada slide é 50% dele */
+  width: 50%;
+  height: 100%;
+  position: relative;
+  
+  /* Centralização Flexbox para a imagem */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide img {
+  /* Garante que a imagem caiba NA CAIXA sem distorcer */
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* O SEGREDO 2: Ajusta a imagem dentro do espaço disponível */
+  display: block;
+}
+
+/* LÓGICA DE MOVIMENTO 
+   Slide 1: Move 0%
+   Slide 2: Move -50% (Metade do trilho de 200%, ou seja, 1 tela inteira)
+*/
+#slide1:checked ~ .carousel-viewport .slides-track {
+  transform: translateX(0%);
+}
+
+#slide2:checked ~ .carousel-viewport .slides-track {
+  transform: translateX(-50%);
+}
+
+/* CONTROLES (SETAS) */
+.carousel-controls label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: rgba(0,0,0,0.3);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+  user-select: none;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.carousel-controls label:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+/* Posicionamento das setas */
+.prev-btn { left: 15px; }
+.next-btn { right: 15px; }
+
+/* Lógica de visibilidade das setas */
+/* Se slide 1 checked -> esconde seta esquerda, mostra direita apontando p/ slide 2 */
+#slide1:checked ~ .carousel-controls .prev-btn { display: none; }
+#slide1:checked ~ .carousel-controls .next-btn { display: flex; }
+
+/* Se slide 2 checked -> mostra seta esquerda apontando p/ slide 1, esconde direita */
+#slide2:checked ~ .carousel-controls .prev-btn { display: flex; }
+#slide2:checked ~ .carousel-controls .next-btn { display: none; }
+
+
+/* NAVEGAÇÃO (BOLINHAS) */
+.carousel-nav {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.nav-dot {
+  width: 10px;
+  height: 10px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+  border: 1px solid white;
+}
+
+#slide1:checked ~ .carousel-nav label:nth-of-type(1),
+#slide2:checked ~ .carousel-nav label:nth-of-type(2) {
+  background: #333;
+  transform: scale(1.2);
+}
+
+/* ===========================================================
+   LÓGICA PARA CARROSSEL DE 3 SLIDES (SCHEMA RAGFLOW)
+   =========================================================== */
+
+/* 1. Ajusta a largura da pista para caber 3 imagens (300%) */
+#schema-slide1 ~ .carousel-viewport .slides-track,
+#schema-slide2 ~ .carousel-viewport .slides-track,
+#schema-slide3 ~ .carousel-viewport .slides-track {
+    width: 300%;
+}
+
+/* 2. Ajusta a largura de cada slide individual (100% / 3 = 33.33%) */
+#schema-slide1 ~ .carousel-viewport .slides-track .slide,
+#schema-slide2 ~ .carousel-viewport .slides-track .slide,
+#schema-slide3 ~ .carousel-viewport .slides-track .slide {
+    width: 33.333333%;
+}
+
+/* 3. Lógica de Movimento (Translação) */
+#schema-slide1:checked ~ .carousel-viewport .slides-track { transform: translateX(0%); }
+#schema-slide2:checked ~ .carousel-viewport .slides-track { transform: translateX(-33.333333%); }
+#schema-slide3:checked ~ .carousel-viewport .slides-track { transform: translateX(-66.666666%); }
+
+/* 4. Controle de Setas (Quem aparece e quem some) */
+
+/* Slide 1 Ativo: Esquerda vai p/ 3, Direita vai p/ 2 */
+#schema-slide1:checked ~ .carousel-controls label[for="schema-slide3"].prev-btn { display: flex; }
+#schema-slide1:checked ~ .carousel-controls label[for="schema-slide2"].next-btn { display: flex; }
+
+/* Slide 2 Ativo: Esquerda vai p/ 1, Direita vai p/ 3 */
+#schema-slide2:checked ~ .carousel-controls label[for="schema-slide1"].prev-btn { display: flex; }
+#schema-slide2:checked ~ .carousel-controls label[for="schema-slide3"].next-btn { display: flex; }
+
+/* Slide 3 Ativo: Esquerda vai p/ 2, Direita vai p/ 1 (Loop) */
+#schema-slide3:checked ~ .carousel-controls label[for="schema-slide2"].prev-btn { display: flex; }
+#schema-slide3:checked ~ .carousel-controls label[for="schema-slide1"].next-btn { display: flex; }
+
+/* Esconde as setas que não estão sendo usadas no momento */
+.carousel-controls label { display: none; }
+
+/* 5. Bolinhas de Navegação Ativas */
+#schema-slide1:checked ~ .carousel-nav label:nth-of-type(1),
+#schema-slide2:checked ~ .carousel-nav label:nth-of-type(2),
+#schema-slide3:checked ~ .carousel-nav label:nth-of-type(3) {
+  background: #333; transform: scale(1.2);
+}
+
+
+
 </style>
+
+
+
+
 
 <div class="hero-wrapper">
 
@@ -117,7 +312,7 @@ hide:
 </p>
 
 <div class="cta-group">
-    <a href="como_baixar_ragflow.md" class="md-button md-button--primary md-button--large">
+    <a href="documentacao/comece_aqui" class="md-button md-button--primary md-button--large">
         Começar Agora ⚡
     </a>
     <a href="https://github.com/unb-mds/2025-2-Eh_Fake" class="md-button md-button--secondary md-button--large">
@@ -125,20 +320,45 @@ hide:
     </a>
 </div>
 
-<div class="browser-mockup">
-    <div class="browser-header">
-        <div class="dot red"></div>
-        <div class="dot yellow"></div>
-        <div class="dot green"></div>
+
+<div class="carousel-wrapper">
+    
+    <input type="radio" name="slider" id="slide1" checked>
+    <input type="radio" name="slider" id="slide2">
+
+    <div class="carousel-viewport">
+        <div class="slides-track">
+            
+            <div class="slide">
+                <img src="assets/imagens/Eh fake - Tema Claro.png" alt="Tema Claro">
+            </div>
+
+            <div class="slide">
+                <img src="assets/imagens/Eh fake - Tema Escuro.png" alt="Tema Escuro">
+            </div>
+
+        </div>
     </div>
-    <img src="https://placehold.co/1200x700/f8fafc/cbd5e1?text=Dashboard+do+Eh+Fake&font=roboto"
-         style="display: block; width: 100%;">
-</div>
+
+    <div class="carousel-controls">
+        <label for="slide1" class="prev-btn">❮</label>
+        <label for="slide2" class="next-btn">❯</label>
+    </div>
+
+    <div class="carousel-nav">
+        <label for="slide1" class="nav-dot"></label>
+        <label for="slide2" class="nav-dot"></label>
+    </div>
 
 </div>
+
+
+
+</div>
+
 
 <div align="center" style="background: white; padding: 50px 0; border-bottom: 1px solid #eee;">
-    <p style="opacity: 0.5; font-size: 0.8rem; letter-spacing: 1.5px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase;">Powered by Modern Tech</p>
+    <p style="opacity: 0.5; font-size: 0.8rem; letter-spacing: 1.5px; font-weight: bold; margin-bottom: 25px; text-transform: uppercase;">Desenvolvido com Tecnologias Modernas</p>
     
     <div style="display: flex; gap: 40px; justify-content: center; opacity: 0.7; flex-wrap: wrap;">
         <img src="https://cdn.simpleicons.org/react" title="React" width="40" height="40" />
@@ -155,74 +375,104 @@ hide:
     </div>
 </div>
 
-<div class="section-container">
-    <div class="section-center-text">
-        <h2 class="section-title">Por que o Eh Fake é diferente?</h2>
-        <p>Tecnologia projetada para transparência e precisão.</p>
-    </div>
 
-    <div class="grid cards" markdown>
-
--   :material-brain: **Inteligência Híbrida**
-    ---
-    Não é apenas um chat. O sistema busca em bases de dados confiáveis (RAG) antes de responder, eliminando alucinações.
-
--   :material-flash: **Tempo Real**
-    ---
-    Processamento otimizado para verificar links e textos em segundos, ideal para o ritmo das redes sociais.
-
--   :material-shield-check: **Transparência Radical**
-    ---
-    Ao contrário de "caixas pretas", o Eh Fake cita as fontes exatas utilizadas para chegar a cada veredito.
-
--   :material-api: **API First**
-    ---
-    Arquitetura desacoplada. Integre nosso motor de verificação ao seu aplicativo ou fluxo editorial via API.
-
-    </div>
+<div class="section-container" markdown="1">
+<div class="section-center-text" markdown="1">
+<h2 class="section-title">Por que o Eh Fake é diferente?</h2>
+<p>Tecnologia projetada para transparência e precisão.</p>
 </div>
 
-<div style="background-color: #f8f9fa; border-top: 1px solid #eee; border-bottom: 1px solid #eee;">
-    <div class="section-container">
-        <div class="section-center-text">
-            <h2 class="section-title">Como Funciona</h2>
-            <p>Entenda o fluxo da notícia através do nosso motor RAG.</p>
-        </div>
+<div class="grid cards" markdown="1">
 
-<div style="display: flex; justify-content: center;">
+-   :material-brain: **RAG Avançado (RagFlow)**
+    ---
+    Utilizamos *Retrieval-Augmented Generation* para cruzar a notícia suspeita com uma base de conhecimento confiável antes de gerar o veredito, reduzindo alucinações.
 
-```mermaid
-graph TD
-    %% Atores e Sistemas Externos
-    User([Usuário])
-    Agent[Agente de IA<br/>(RagFlow + Gemini)]
+-   :material-web: **Busca Híbrida na Web**
+    ---
+    Além da base interna, nossa IA realiza pesquisas em tempo real na internet (Web Search) para validar fatos muito recentes que ainda não foram catalogados.
 
-    %% Subsistemas do Eh Fake
-    subgraph "Plataforma Eh Fake"
-        Front[Front End]
-        Miner[Minerador]
-        SQL[(Banco Relacional)]
-        Vec[(Banco Vetorizado)]
-    end
+-   :material-database-search: **Coleta Controlada**
+    ---
+    Nosso **Minerador** varre fontes oficiais e jornalísticas de forma automatizada quando acionado, garantindo que o banco de dados receba apenas dados relevantes e curados.
 
-    %% Relacionamentos (Conforme Diagrama C4)
-    User <-->|Consulta & Veracidade| Front
-    Front <-->|Lê Notícias Processadas| SQL
-    
-    Miner -->|Envia Notícias| Agent
-    
-    Agent -->|Salva Dados Tratados| SQL
-    Agent <-->|Embedding & Contexto| Vec
+-   :material-text-box-check: **Análise Fundamentada**
+    ---
+    O veredito não é um palpite. A IA realiza uma verificação lógica complexa nos bastidores, cruzando evidências para garantir que a classificação (Real/Fake) seja tecnicamente precisa.
 
-    %% Estilização
-    style User fill:#fff,stroke:#333,stroke-width:2px
-    style Front fill:#e3f2fd,stroke:#1565c0,stroke-width:2px
-    style Agent fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
-    style SQL fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
-    style Vec fill:#fff3e0,stroke:#e65100,stroke-width:2px
-```
+-   :material-palette-swatch: **UX Moderna & Acessível**
+    ---
+    Interface desenvolvida em Next.js com suporte nativo a Tema Escuro/Claro e paginação otimizada, garantindo acessibilidade e conforto visual.
 
-</div> 
+-   :material-docker: **Arquitetura Modular**
+    ---
+    Sistema conteinerizado e desacoplado. O Front-end, o Banco de Dados e o Motor de IA operam de forma independente, facilitando escalabilidade e manutenção.
+
+</div>
+</div>
+
+
+
+
+
+
+
+<div style="background-color: #f8f9fa; border-top: 1px solid #eee; border-bottom: 1px solid #eee;" markdown="1">
+<div class="section-container" markdown="1">
+
+<div class="section-center-text">
+<h2 class="section-title">Como Funciona</h2>
+<p>Nossa arquitetura combina mineração de dados contínua com a capacidade analítica de LLMs.</p>
+</div>
+
+<div class="grid cards" markdown="1">
+
+-   :material-spider-web: **1. Coleta e Indexação**
+    ---
+    Nosso **Minerador** extrai notícias de portais confiáveis de forma massiva. O **RagFlow** processa esses textos, transformando-os em vetores matemáticos para nosso banco de dados.
+
+-   :material-magnify-scan: **2. Recuperação de Contexto (RAG)**
+    ---
+    Quando você envia uma notícia, o sistema busca fatos semelhantes na nossa base vetorial e realiza uma **Web Search** em tempo real para cobrir eventos de última hora.
+
+-   :material-robot-happy: **3. Análise e Veredito**
+    ---
+    O **Google Gemini** recebe sua notícia + o contexto recuperado (fatos reais). Ele analisa as contradições internamente e gera um veredito validado pelas fontes encontradas.
+
+</div>
+
+<div class="carousel-wrapper">
+<input type="radio" name="schema-slider" id="schema-slide1" checked>
+<input type="radio" name="schema-slider" id="schema-slide2">
+<input type="radio" name="schema-slider" id="schema-slide3">
+<div class="carousel-viewport">
+<div class="slides-track">
+<div class="slide">
+<img src="assets/imagens/schema ragflow.jpeg" alt="Arquitetura do RagFlow">
+</div>
+<div class="slide">
+<img src="assets/imagens/Agente.jpeg" alt="Agente">
+</div>
+<div class="slide">
+<img src="assets/imagens/Bases de dado.jpeg" alt="Bases de Dado">
+</div>
+</div>
+</div>
+<div class="carousel-controls">
+<label for="schema-slide3" class="prev-btn">❮</label>
+<label for="schema-slide1" class="prev-btn">❮</label>
+<label for="schema-slide2" class="prev-btn">❮</label>
+<label for="schema-slide2" class="next-btn">❯</label>
+<label for="schema-slide3" class="next-btn">❯</label>
+<label for="schema-slide1" class="next-btn">❯</label>
+</div>
+<div class="carousel-nav">
+<label for="schema-slide1" class="nav-dot"></label>
+<label for="schema-slide2" class="nav-dot"></label>
+<label for="schema-slide3" class="nav-dot"></label>
+</div>
+</div>
+
 </div>
 </div>
 
