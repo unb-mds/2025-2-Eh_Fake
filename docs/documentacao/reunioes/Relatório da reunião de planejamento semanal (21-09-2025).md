@@ -4,9 +4,6 @@
 
 ## Sprint 4  
 
-**Link da Gravação:**  
-[Reunião de planejamento semanal - 21/09/2025 (Microsoft Teams)](https://teams.microsoft.com/l/meetingrecap?driveId=b%21PRG_ajLi9Ee_nbRzZ5XZCVEOvym4_P1HuEZ-flZFryGeiQpLxWrzToCHWhTsFwYy&driveItemId=01OEJPBZT65YDFWF27YJG35EGPX7UO4V5E&sitePath=https%3A%2F%2Funbbr.sharepoint.com%2Fsites%2FMDSSquad8%2FDocumentos%2520Compartilhados%2FGeneral%2FRecordings%2FReuni%25C3%25A3o%2520em%2520General-20250921_143458-Grava%25C3%25A7%25C3%25A3o%2520de%2520Reuni%25C3%25A3o.mp4%3Fweb%3D1&fileUrl=https%3A%2F%2Funbbr.sharepoint.com%2Fsites%2FMDSSquad8%2FDocumentos%2520Compartilhados%2FGeneral%2FRecordings%2FReuni%25C3%25A3o%2520em%2520General-20250921_143458-Grava%25C3%25A7%25C3%25A3o%2520de%2520Reuni%25C3%25A3o.mp4%3Fweb%3D1)  
-
 ---
 
 ## Anotações da Reunião  
