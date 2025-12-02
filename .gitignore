@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+/node_modul
 /.pnp
 .pnp.*
 .yarn/*
@@ -45,3 +45,8 @@ next-env.d.ts
 
 # Firebase service account key
 config/serviceAccountKey.json
+
+# --- Mineração de Notícias ---
+# Ignora a pasta onde os dados de notícia são salvos.
+# Garante que o Git não suba nenhum arquivo JSON de dados.
+/Mineracao/Minerador-py/noticias/
