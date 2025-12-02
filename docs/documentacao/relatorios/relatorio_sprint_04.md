@@ -1,6 +1,8 @@
 # Relatório da Sprint 04
 
+
 ## 1. Informações Gerais
+
 
 * **Sprint:** 04
 
@@ -12,7 +14,9 @@
 
 * **Time de Desenvolvimento:** Allan, Bryan, Daniel, Davi, Mateus, Rafael
 
+
 ## 2. Objetivos da Sprint
+
 
 * Desenvolvimento inicial do Front-end (Página inicial, Searchbar, Cards)
 
@@ -26,7 +30,9 @@
 
 * Estudo sobre Story Maps
 
+
 ## 3. Backlog da Sprint
+
 
 ### Tabela das histórias de usuário
 
@@ -38,6 +44,8 @@
 | 4 | Como desenvolvedor, quero que o front-end consuma dados do Firebase | Integração do Realtime Database e substituição de dados estáticos por dinâmicos | Concluído | 
 | 5 | Como equipe, quero definir o backlog da Release 1 | Documento com features (Verificação, Busca, UX) e User Stories priorizadas | Concluído | 
 | 6 | Como equipe, quero definir a arquitetura do software (C4) | Diagramas de Contexto (Nível 1) e Contêiner (Nível 2) finalizados | Concluído | 
+| 7 | **[Feat] Implementar Banco de Dados #41** | Definição da tecnologia (Firebase) e implementação em código da comunicação com o Back-End | Concluído |
+
 
 ### Estudos e Pesquisas Técnicas
 
@@ -47,21 +55,28 @@
 | 2 | Documentar Sprint 03 | Relatório da sprint anterior finalizado e enviado | Concluído | 
 | 3 | Relatórios de Reuniões Semanais | Documentação das reuniões de 23/09 e 28/09 (Planejamento) | Concluído | 
 
+
 ## 4. Entregas (Review)
+
 
 É possível visualizar tudo que foi feito na semana pela [Milestone #5](https://github.com/unb-mds/2025-2-Eh_Fake/milestones)
 
+
 ## 5. Métricas da Sprint
+
 
 * **Velocity (story points concluídos):** 100%
 
 * **Burn-down Chart:** Gráfico indisponível
 
-* **Qtd. de histórias concluídas / planejadas:** 9/9
+* **Qtd. de histórias concluídas / planejadas:** 10/10
+
 
 ## 6. Retrospectiva
 
+
 ### O que funcionou bem
+
 
 * **Avanço rápido do Front-end:** O MVP visual (Header, Search, Cards) foi entregue e integrado.
 
@@ -69,13 +84,17 @@
 
 * **Documentação:** Rafael documentou arquitetura do front e vídeos explicativos; Davi manteve relatórios de reunião em dia.
 
+
 ### O que pode melhorar
+
 
 * **Definição de papéis no Back-end:** Houve necessidade de remanejamento de membros e recusa de liderança em gerência, exigindo ajustes durante o planejamento.
 
 * **Dificuldades com ferramentas:** Problemas pontuais com manipulação no Figma para os diagramas.
 
+
 ### Ações de melhoria
+
 
 * **Reorganização do time:** Allan assumiu liderança técnica do back-end temporariamente.
 

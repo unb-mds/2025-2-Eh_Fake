@@ -424,3 +424,21 @@ footer.md-footer * {
     background-image: none !important;
     background-blend-mode: normal !important;
 }
+
+/* ============================================================
+   ESTILO ESPECÍFICO PARA DIAGRAMAS C4
+   Uso: ![Alt](imagem.png){: .c4-diagram }
+   ============================================================ */
+.c4-diagram {
+    display: block !important;
+    margin: 2rem auto !important;
+    /* Centraliza horizontalmente */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    max-width: 100%;
+    /* Responsivo */
+    background-color: white;
+    /* Fundo branco (útil para PNGs transparentes) */
+}
