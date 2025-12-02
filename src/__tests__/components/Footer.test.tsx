@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import Footer from '@/components/Footer'
 
 describe('Footer', () => {
-  it('renders copyright text', () => {
+  it('renderiza texto de copyright', () => {
     render(<Footer />)
     // There are multiple occurrences (brand and link text); ensure at least one exists
     const matches = screen.getAllByText(/Eh Fake/i)

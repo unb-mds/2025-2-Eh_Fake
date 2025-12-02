@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import ThemeProviderComponent from '@/components/theme/Provider'
 
-describe('Theme Provider', () => {
+describe('Provedor de Tema', () => {
   it('renderiza filhos', () => {
     render(
       <ThemeProviderComponent>
