@@ -46,9 +46,9 @@ Dentro do diretório raiz do projeto:
 |--------|---------|-----------|
 | Desenvolvimento | `npm run dev` | Inicia servidor de desenvolvimento |
 | Build | `npm run build` | Compila o projeto para produção |
-| Start | `npm start` | Inicia servidor de produção |
-| Tests | `npm test` | Executa testes (Jest) |
-| Tests (Watch) | `npm run test:watch` | Testes em modo observação |
+| Iniciar | `npm start` | Inicia servidor de produção |
+| Testes | `npm test` | Executa testes (Jest) |
+| Testes (Watch) | `npm run test:watch` | Testes em modo observação |
 | Coverage | `npm run test:coverage` | Relatório de cobertura de testes |
 | E2E Tests | `npm run test:e2e` | Testes end-to-end (Playwright) |
 | Lint | `npm run lint` | Verifica linting com ESLint |
