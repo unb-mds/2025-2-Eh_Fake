@@ -31,11 +31,74 @@ INSERT INTO news (
 ) 
 VALUES
 (
-  'Primeira Turma do STF forma unanimidade recursos de Bolsonaro, mas prisão não é imediata; entenda', 
-  'Julgamento no plenário virtual vai até a sexta-feira da semana que vem. Só então é considerado concluído.',
-  'https://th.bing.com/th?id=OVFT.9rPjuCF7mIfvsDFJCysArC&pid=News&w=80&h=80&c=14&rs=2&qlt=90',
-  'Primeira Turma do STF forma unanimidade recursos de Bolsonaro, mas prisão não é imediata; entenda',
-  'Real', 1.00, 'G1', 'https://g1.globo.com/politica/noticia/2025/11/07/primeira-turma-do-stf-forma-maioria-contra-recursos-de-bolsonaro-mas-prisao-nao-e-imediata-entenda.ghtml'
+  'Os argentinos que vendem seus bens para fechar o mês',
+  'A feira de Villa Fiorito, bairro onde nasceu Diego Maradona, não para de crescer. Moradores vendem o que têm — ou o que encontram nas ruas — para sobreviver em meio à crise.',
+  'https://s2-g1.glbimg.com/NXUZW5G1JaZ_KNpSFEaj45lI8F4=/5559x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/h/e/VUqmUqTLAbL4kXeQw5hQ/afp-20251022-79cb6g3-v2-highres-argentinaeconomypoverty.jpg',
+  'imagem',
+  'Real', 99.00, 'G1', 'https://g1.globo.com/economia/noticia/2025/10/26/os-argentinos-que-vendem-bens-pessoais-para-chegar-ao-fim-do-mes.ghtml'
+),
+(
+  'Entenda caso de juiz acusado de intolerância religiosa contra mãe de santo',
+  'O juiz Adhemar de Paula Leite Ferreira Neto julgou uma ação da mãe de santo que acusava um motorista de aplicativo de intolerância religiosa e entendeu que ela cometeu intolerância',
+  'https://s2-g1.glbimg.com/oPLZwD_JVMcDKzP-0TNwHCnHGfs=/1280x0/filters:format(jpeg)/https://thumbor.globoi.com/unsafe/fit-in/1280x720/s04.video.glbimg.com/deo/vi/67/15/14031567',
+  'imagem',
+  'Fake', 50.00, 'G1', 'https://g1.globo.com/pb/paraiba/noticia/2025/10/26/mae-de-santo-processa-motorista-de-aplicativo-por-racismo-religioso-e-acaba-acusada-de-intolerancia-por-juiz-entenda-o-caso.ghtml'
+),
+(
+  'Veja reações ao encontro Lula-Trump',
+  'Lula e Donald Trump se reuniram pela primeira vez neste domingo. Críticos do governo defendem que encontro não rendeu frutos; apoiadores celebram primeiro encontro presencial entre os dois presidentes.',
+  'https://s2-g1.glbimg.com/P4s675hwVkbSz2Xx0fZdB3yoK6U=/5500x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/n/6/Ck3VvhToCTwdvAYR74zQ/2025-10-26t080027z-737688219-rc2kjha9zuwl-rtrmadp-3-asean-summit.jpg',
+  'imagem',
+  'Real', 100.00, 'G1', 'https://g1.globo.com/politica/noticia/2025/10/26/encontro-entre-lula-e-trump-repercute-imagina-o-que-foi-tratado-a-portas-fechadas-quimica-so-aumenta.ghtml'
+),
+(
+  'Argentina faz eleição para renovar Congresso em prova de fogo para Milei',
+  'Pleito deste domingo (26) vai renovar metade da Câmara dos Deputados e um terço do Senado da Argentina. Pesquisas mostram disputa acirrada entre sigla de Milei e peronistas; vitória do presidente é associada a futura ajuda do governo Trump em meio a crises financeira e de popularidade.',
+  'https://s2-g1.glbimg.com/sXkf59fonU-deFBD8v-vbFI6cBs=/5000x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/u/z/pY6XRsSKePyENf0xYcUg/2025-10-26t144207z-47680177-rc2qjhahx5ts-rtrmadp-3-argentina-election.jpg',
+  'imagem',
+  'Real', 99.90, 'G1', 'https://g1.globo.com/mundo/noticia/2025/10/26/argentina-faz-eleicao-para-renovar-congresso-em-prova-de-fogo-para-milei.ghtml'
+),
+(
+  'Especialistas avaliam encontro e negociações',
+  'Especialistas analisam o encontro de Lula e Trump e apontam os próximos passos nas negociações entre Brasil e EUA. Entenda os principais pontos da reunião.',
+  'https://s2-g1.glbimg.com/4lPbRHgxu_xajwbX2HCzzB6VCf8=/1280x0/filters:format(jpeg)/https://s02.video.glbimg.com/x720/14044409.jpg',
+  'imagem',
+  'Real', 98.00, 'G1', 'https://g1.globo.com/politica/noticia/2025/10/26/os-interesses-americanos-estao-falando-alto-ainda-nao-da-para-falar-em-vitoria-especialistas-avaliam-encontro-de-lula-e-trump.ghtml'
+),
+(
+  'Otimismo comedido, avanço concreto: as reações da indústria e do agro ao encontro Lula-Trump',
+  'Presidente da Confederação Nacional da Indústria, Ricardo Alban, disse que defende um processo transparente para avançar nas negociações; Amcham fala em otimismo com os resultados do encontro.',
+  'https://s2-g1.glbimg.com/r17b-WmFze7Yy0iRfW6o9eMuw-s=/1200x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/7/n/mirZINRSAAsPRWMQQyMw/251026-info-quem-e-quem-lula-trump.jpg',
+  'img',
+  'Real', 98.23, 'G1', 'https://g1.globo.com/sp/sao-paulo/noticia/2025/10/26/encontro-lula-trump-cni-tarifaco.ghtml'
+),
+(
+  'Navio de guerra dos EUA chega a Trinidad e Tobago, em frente à Venezuela',
+  'Chegada do navio USS Gravely havia sido anunciada na semana passada, e acontece em meio à crescente pressão do presidente norte-americano, Donald Trump, sobre Nicolás Maduro, presidente da Venezuela.',
+  'https://s2-g1.glbimg.com/0-mWvh_pfKKiQFpONxXz-w0ssXg=/5341x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/S/s/VyqtxWT6WhWCci8CoAlQ/afp-20251026-822w4kl-v1-highres-trinidadusvenezueladiplomacy.jpg',
+  'imagem',
+  'Real', 99.90, 'G1', 'https://g1.globo.com/mundo/noticia/2025/10/26/navio-de-guerra-dos-eua-chega-a-trinidad-e-tobago-em-frente-a-venezuela.ghtml'
+),
+(
+  'Lula e Trump se encontram na Malásia e indicam início de negociação sobre tarifa',
+  'Presidentes conversaram por cerca de 45 minutos e, segundo chanceler brasileiro, concordaram em começar imediatamente discussões relativas à sobretaxa',
+  'https://s2-g1.glbimg.com/BOl1_1IiDssQBrvRlfbm38Hh8Jk=/5500x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/B/t/RruWXUTIWCtTu7Bf1sgw/2025-10-26t080955z-476235525-rc2kjhayjr35-rtrmadp-3-asean-summit.jpg',
+  'imagem',
+  'Real', 99.00, 'G1', 'https://g1.globo.com/politica/noticia/2025/10/26/lula-e-trump-se-encontram-na-malasia.ghtml'
+),
+(
+  'O que está em jogo para a economia com a eleição deste domingo',
+  'Metade da Câmara dos Deputados e um terço do Senado argentino estão em disputa. O mercado acompanha de perto o desempenho do partido do presidente Javier Milei.',
+  'https://s2-g1.glbimg.com/3vhRT82cY6XiTS6fwL0e_JPv4C4=/4000x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/9/Q/wX7kjHQCqR5XylVy9Dng/2025-07-26t154601z-612507204-rc2kfca5yc1r-rtrmadp-3-argentina-economy.jpg',
+  'imagem',
+  'Real', 99.00, 'G1', 'https://g1.globo.com/economia/noticia/2025/10/26/eleicao-argentina-o-que-esta-em-jogo-para-a-economia.ghtml'
+),
+(
+  'Lula se oferece para mediar diálogo entre EUA e Venezuela',
+  'Após tensão, Lula propõe diálogo entre EUA e Venezuela. Entenda o conflito e a possível mediação para soluções entre os países.',
+  'https://s2-g1.glbimg.com/SifyMGie1WPiWv1p9eV8dhyAAAs=/3200x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2025/F/6/U6S7EQQpi2UleBtvjw4A/afp-jim-watson-mostra-o-presidente-dos-eua-donald-trump-e-em-washington-dc-em-9-de-julho-de-2025-e-o-presidente-venezuelano-nicolas-maduro-d-em-caracas-em-31-de-julho-de-2024..jpg',
+  'imagem',
+  'Real', 100.00, 'G1', 'https://g1.globo.com/mundo/noticia/2025/10/26/lula-propoe-ser-interlocutor-no-dialogo-entre-eua-e-venezuela.ghtml'
 ),
 (
   'Inadimplência em condomínios bate recordes e empresas criam soluções para ajudar na gestão', 
