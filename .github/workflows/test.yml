@@ -57,7 +57,11 @@ jobs:
     - name: Install Python dependencies 
       run: |
         python -m pip install --upgrade pip
-        if [ -f Mineracao/Minerador-py/requirements.txt ]; then python -m pip install -r Mineracao/Minerador-py/requirements.txt; fi
+          if [ -f Mineracao/Minerador-py/requirements.txt ]; then
+            python -m pip install -r Mineracao/Minerador-py/requirements.txt
+          else
+            python -m pip install requests beautifulsoup4 news-please lxml
+          fi
 
     - name: Run Python unittests (Minerador)
       run: |
