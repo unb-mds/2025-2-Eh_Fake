@@ -50,3 +50,16 @@ config/serviceAccountKey.json
 # Ignora a pasta onde os dados de notícia são salvos.
 # Garante que o Git não suba nenhum arquivo JSON de dados.
 /Mineracao/Minerador-py/noticias/
+
+# Ignorar pasta de build do MkDocs
+site/
+
+# Ignorar arquivos de sistema do Mac
+.DS_Store
+
+# Ignorar ambientes virtuais Python e cache (se houver)
+venv/
+__pycache__/
+*.pyc
+.envnode_modules/
+node_modules/

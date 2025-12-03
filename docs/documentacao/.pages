@@ -12,3 +12,4 @@ nav:
   - Produto: produto
   - Reuniões: reunioes           # Aponta para a pasta reunioes
   - Tecnologias: tecnologias     # Aponta para a pasta tecnologias
+  - Minerador: Minerador

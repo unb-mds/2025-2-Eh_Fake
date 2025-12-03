@@ -34,8 +34,8 @@ theme:
   font:
     text: Roboto
     code: Fira Code
-  favicon: assets/Logorecort.png
-  logo: assets/Logorecort.png
+  favicon: assets/Favicon.ico
+  logo: assets/Logo.png
   icon:
     repo: fontawesome/brands/github
   features:
