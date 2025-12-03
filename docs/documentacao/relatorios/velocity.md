@@ -59,6 +59,8 @@ Este documento apresenta a evolução da produtividade da equipe **Eh Fake** ao 
 
 ## 2. Gráfico de Evolução
 
+![Gráfico de Velocity](Gráfico Velocity.png)
+
 !!! tip "Visualização"
     O gráfico demonstra a curva de aprendizado inicial, a estabilização na fase intermediária e o aumento de produtividade (delivery) nas etapas finais do projeto (Sprints 04 e 13).
 
