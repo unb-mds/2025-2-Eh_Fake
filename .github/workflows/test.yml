@@ -34,9 +34,40 @@ jobs:
         CI: true
         NODE_OPTIONS: '--max-old-space-size=4096'
 
-    - name: Upload Jest coverage (if produced)
+    - name: Upload do Jest coverage 
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: jest-coverage
         path: coverage || ./coverage
+
+  python-test:
+    name: Rodar Testes Python (Minerador)
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install Python dependencies 
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f Mineracao/Minerador-py/requirements.txt ]; then python -m pip install -r Mineracao/Minerador-py/requirements.txt; fi
+
+    - name: Run Python unittests (Minerador)
+      run: |
+        python -m unittest discover -s Mineracao/Minerador-py -p "test*.py" -v
+      env:
+        PYTHONUNBUFFERED: 1
+
+    - name: Upload Python test log
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: python-minerador-test-log
+        path: Mineracao/Minerador-py
