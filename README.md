@@ -142,6 +142,30 @@ npx playwright test --ui
 ```
 
 ---
+
+## 🧪 Testes Unitários (Jest)
+
+Para realizar os testes unitários basta usar o jest que foi instalado junto com as dependências do projeto
+
+### ⚙️ Execução
+
+Os testes são realizados com o jest e fazem os testes de 90% dos arquivos do projeto
+
+#### 1. 
+Após instalar as dependências do projeto (`npm ci`), execute este comando para testar:
+```bash
+npm test 
+```
+#### 2. 
+Caso queira ver mais detalhadamente os testes do proejeto:
+```bash
+npm run test:coverage
+```
+#### 3. 
+Caso queira ver os testes em modo observação:
+```bash
+npm run test:watch 
+```
 <!-- A partir daqui não tem erro, sempre que fizer uma coisa nova que for relevante para vir para o README é só colocar -->
 ## Licença
 
