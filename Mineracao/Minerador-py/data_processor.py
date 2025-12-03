@@ -1,7 +1,7 @@
 # Arquivo: data_processor.py
 import os
 import json
-from glob import glob
+import glob
 from datetime import datetime
 
 # --- CONFIGURAÇÕES DE DIRETÓRIOS ---
@@ -30,7 +30,7 @@ def process_and_unify_data():
     if not os.path.exists(FINAL_OUTPUT_DIR):
         os.makedirs(FINAL_OUTPUT_DIR)
 
-    all_json_files = glob(os.path.join(BASE_INPUT_DIR, '**', '*.json'), recursive=True)
+    all_json_files = glob.glob(os.path.join(BASE_INPUT_DIR, '**', '*.json'), recursive=True)
     # Filtra arquivos da pasta finais
     files_to_process = [fp for fp in all_json_files if EXCLUDE_FOLDER_NAME not in fp.split(os.sep)]
     
